@@ -1,0 +1,37 @@
+div {
+  background-color: black;
+  text-align: center;
+}
+.Header {
+  border: 1px solid yellow;
+  background-color: black;
+  color: yellow;
+}
+
+.Navbar {
+  border: 1px solid blue;
+  background-color: black;
+  color: blue;
+}
+
+.Section {
+  border: 1px solid purple;
+  background-color: black;
+  color: purple;
+  height: 50vh;
+  width: 80%;
+}
+.Footer {
+  border: 1px solid red;
+  background-color: black;
+  color: red;
+}
+.flex {
+  display: flex;
+}
+.Aside {
+  border: 1px solid greenyellow;
+  background-color: black;
+  color: greenyellow;
+  width: 30%;
+}
