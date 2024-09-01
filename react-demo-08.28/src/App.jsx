@@ -28,12 +28,12 @@ import "./App.css";
 // }
 // export default App;
 
-function App() {
-  const user = "Billy";
-  if (user) {
-    return <div>Hello</div>;
-  } else {
-    return <div>User Not Found</div>;
-  }
-}
+// function App() {
+//   const user = "Billy";
+//   if (user) {
+//     return <div>Hello</div>;
+//   } else {
+//     return <div>User Not Found</div>;
+//   }
+// }
 export default App;

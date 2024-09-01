@@ -4,6 +4,8 @@ import Logo from "@/icons/Logo";
 import Toggle from "@/icons/toggle";
 import Intro from "./intro";
 import About from "./about";
+import Image from "next/image";
+import Portfolio from "../public/Portfolio.jpg";
 
 export default function Home() {
   return (

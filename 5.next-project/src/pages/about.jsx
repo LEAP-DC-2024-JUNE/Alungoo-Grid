@@ -6,7 +6,7 @@ export default function About() {
           About me
         </button>
         <div className="flex gap-20 mt-10 mx-20 pb-10">
-          <img src="" width={300} height={200} />
+          <Image src={portfolio} width={300} height={200} />
           <div>
             <p className=" font-extrabold text-3xl">
               Curious about me? Here you have it:
