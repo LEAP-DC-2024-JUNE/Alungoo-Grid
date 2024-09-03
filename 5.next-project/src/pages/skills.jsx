@@ -5,7 +5,9 @@ export default function Skills() {
         Skills
       </button>
       <p>The skills, tools and technologies I am really good at:</p>
-      <div className="Logos"></div>
+      <div className="Logos">
+        <JS />
+      </div>
     </div>
   );
 }

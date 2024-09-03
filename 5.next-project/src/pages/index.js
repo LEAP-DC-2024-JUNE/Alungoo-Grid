@@ -4,7 +4,7 @@ import Logo from "@/icons/Logo";
 import Toggle from "@/icons/toggle";
 import Intro from "./intro";
 import About from "./about";
-import Experience from "./Experience";
+import Experience from "./experience";
 
 import Skills from "./skills";
 
