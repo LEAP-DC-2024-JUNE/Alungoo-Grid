@@ -12,7 +12,7 @@ import TS from "@/icons/TS";
 export default function Skills() {
   return (
     <div>
-      <button className="bg-gradient-to-r from-slate-200 to-slate-500">
+      <button className=" text-sm px-4 py-2 bg-gradient-to-r from-slate-200 to-slate-500 rounded-2xl mt-10 mx-96 text-gray-800 font-medium">
         Skills
       </button>
       <p>The skills, tools and technologies I am really good at:</p>
@@ -20,17 +20,17 @@ export default function Skills() {
         <div>
           <JS />
           <TS />
-          <React />
-          <Next />
-          <Node />
-          <Express />
-          <Sass />
-          <Socket />
+          {/* <React />
+          <Next /> */}
+          {/* <Node /> */}
+          {/* <Express /> */}
+          {/* <Sass />
+          <Socket /> */}
         </div>
         <div>
           {/* <SQL /> */}
-          <Mongo />
-          <Sass />
+          {/* <Mongo />
+          <Sass /> */}
         </div>
       </div>
     </div>
