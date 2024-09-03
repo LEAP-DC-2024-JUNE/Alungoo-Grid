@@ -2,6 +2,10 @@
   background-color: black;
   text-align: center;
 } */
+
+.Navbar {
+  background-color: blueviolet;
+}
 .Header {
   border: 1px solid yellow;
   background-color: black;

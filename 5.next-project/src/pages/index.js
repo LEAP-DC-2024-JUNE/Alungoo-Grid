@@ -4,23 +4,24 @@ import Logo from "@/icons/Logo";
 import Toggle from "@/icons/toggle";
 import Intro from "./intro";
 import About from "./about";
-import Image from "next/image";
-import Portfolio from "../public/Portfolio.jpg";
+import Experience from "./Experience";
+
+import Skills from "./skills";
 
 export default function Home() {
   return (
     <div className=" w-screen">
-      <navbar className="flex justify-between gap-4 py-2 mx-20 bg-slate-300">
+      <navbar className=" flex justify-between gap-4 py-2 bg-gradient-to-r from-slate-200 to-slate-500 ">
         <div className=" py-2">
           <Logo />
         </div>
         <div className="flex">
           <div className=" mr-8">
-            <ul className="flex gap-4 font-serif py-2 text-gray-600">
-              <li>About</li>
-              <li>Work</li>
-              <li>Testimonials</li>
-              <li>Contact</li>
+            <ul className="flex gap-4 font-serif py-2 text-gray-800">
+              <li className="hover:shadow-xl">About</li>
+              <li className="hover:shadow-xl"> Work</li>
+              <li className="hover:shadow-xl">Testimonials</li>
+              <li className="hover:shadow-xl">Contact</li>
             </ul>
           </div>
           <div className="flex ">
@@ -34,6 +35,8 @@ export default function Home() {
 
       <Intro />
       <About />
+      <Skills />
+      <Experience />
     </div>
   );
 }

@@ -3,6 +3,8 @@ import Figma from "@/icons/Figmalogo";
 import Gitlogo from "@/icons/Gitlogo";
 import Location from "@/icons/Location";
 import Twitterlogo from "@/icons/Twitterlogo";
+import Pic1 from "../../public/Pic.png";
+import Image from "next/image";
 
 export default function Intro() {
   return (
@@ -34,7 +36,7 @@ export default function Intro() {
         </div>
       </div>
       <div>
-        <img src="/public/" width={250} height={250} />
+        <Image src={Pic1} />
       </div>
     </div>
   );

@@ -1,12 +1,14 @@
+import Pic2 from "../../public/Pic2.png";
+import Image from "next/image";
 export default function About() {
   return (
     <>
       <div className="bg-gray-50 w-screen">
-        <button className=" text-sm px-4 py-2 bg-slate-300 rounded-2xl mt-10 mx-96 text-gray-600">
+        <button className=" text-sm px-4 py-2 bg-gradient-to-r from-slate-200 to-slate-500 rounded-2xl mt-10 mx-96 text-gray-800 font-medium">
           About me
         </button>
         <div className="flex gap-20 mt-10 mx-20 pb-10">
-          <Image src={portfolio} width={300} height={200} />
+          <Image src={Pic2} />
           <div>
             <p className=" font-extrabold text-3xl">
               Curious about me? Here you have it:

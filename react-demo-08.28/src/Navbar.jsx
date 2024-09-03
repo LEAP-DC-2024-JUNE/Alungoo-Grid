@@ -1,8 +1,18 @@
+import { Link } from "react-router-dom";
+
 function Navbar() {
   return (
-    <div className="Navbar">
-      <p>Navbar</p>
-    </div>
+    <Nav>
+      <div className="NavBar">
+        <div>Brand Logo</div>
+        <ul>
+          <li>Home</li>
+          <li>About</li>
+          <li>Product</li>
+        </ul>
+        <input type="text" placeholder="Search..."></input>
+      </div>
+    </Nav>
   );
 }
 

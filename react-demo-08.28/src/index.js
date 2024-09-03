@@ -5,6 +5,7 @@ import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import About from "./Pages/About";
+import Navbar from "./Navbar";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
@@ -14,7 +15,8 @@ root.render(
         <Route path="/about" element={<About />}></Route>
         <Route path="/" element={<App />}></Route>
       </Routes>
-      {/* <App /> */}
+      <App />
+      <Navbar />
     </React.StrictMode>
   </BrowserRouter>
 );
