@@ -10,7 +10,6 @@ export default function Upwork() {
       <g clip-path="url(#clip0_325_184)">
         <mask
           id="mask0_325_184"
-          style="mask-type:luminance"
           maskUnits="userSpaceOnUse"
           x="0"
           y="0"

@@ -10,8 +10,8 @@ import Skills from "./skills";
 
 export default function Home() {
   return (
-    <div className=" w-screen">
-      <navbar className=" flex justify-between gap-4 py-2 bg-gradient-to-r from-slate-200 to-slate-500 ">
+    <div>
+      <navbar className="   w-3/4 m-auto flex justify-between gap-4 py-2 bg-gradient-to-r from-slate-200 to-slate-500 ">
         <div className=" py-2">
           <Logo />
         </div>

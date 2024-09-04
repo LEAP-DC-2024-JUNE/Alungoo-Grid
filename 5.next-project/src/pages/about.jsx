@@ -3,7 +3,7 @@ import Image from "next/image";
 export default function About() {
   return (
     <>
-      <div className="bg-gray-50 w-screen">
+      <div className="bg-gray-50  w-3/4 m-auto text-center">
         <button className=" text-sm px-4 py-2 bg-gradient-to-r from-slate-200 to-slate-500 rounded-2xl mt-10 mx-96 text-gray-800 font-medium">
           About me
         </button>
