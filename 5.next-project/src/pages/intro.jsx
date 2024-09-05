@@ -8,7 +8,7 @@ import Image from "next/image";
 
 export default function Intro() {
   return (
-    <div className=" flex font-serif  text-gray-600 gap-6 w-3/4 m-auto py-24">
+    <div className=" flex font-serif  text-gray-600 gap-6 w-3/4 m-auto py-24 px-20">
       <div>
         <p className=" font-extrabold text-3xl text-gray-900 ">
           Hi, I'm Alungoo 👩‍💻

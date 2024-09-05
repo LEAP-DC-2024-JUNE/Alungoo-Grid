@@ -7,11 +7,12 @@ import About from "./about";
 import Experience from "./experience";
 
 import Skills from "./skills";
+import Work from "./work";
 
 export default function Home() {
   return (
     <div>
-      <navbar className="   w-3/4 m-auto flex justify-between gap-4 py-2 bg-gradient-to-r from-slate-200 to-slate-500 ">
+      <navbar className="   w-3/4 m-auto flex justify-between gap-4 py-2 bg-gradient-to-r from-slate-200 to-slate-500 px-20 ">
         <div className=" py-2">
           <Logo />
         </div>
@@ -37,6 +38,7 @@ export default function Home() {
       <About />
       <Skills />
       <Experience />
+      <Work />
     </div>
   );
 }

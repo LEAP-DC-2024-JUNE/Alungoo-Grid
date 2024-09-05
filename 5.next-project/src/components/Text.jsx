@@ -1,7 +1,7 @@
-export const Text = () => {
+export const Text = (props) => {
   return (
-    <div className="flex">
-      <h1 className=" font-bold text-xl">Header</h1>
+    <div>
+      <p className=" font-bold text-xl"> {props.title}</p>
       <p>
         Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolor
         aspernatur qui, atque amet ipsa non magni ad quia aut quos veritatis
