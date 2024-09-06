@@ -1,24 +1,35 @@
-import Ubcab from "../../public/Ubcab.png";
 import Image from "next/image";
-import Mentor from "../../public/Mentor.png";
 
-export const Workcard = (props) => {
-  return (
-    <div>
-      <div className="flex">
-        <Image src={Ubcab} />
-        <div>
-          <p>UBcab</p>
-          <p className=" ml-60">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla,
-            laboriosam mollitia. Quod deserunt incidunt et nam voluptatum,
-            laboriosam assumenda aliquam fuga ea omnis eligendi cum iure magni.
-            Iste, est fugiat?
-          </p>
+export const WorkCard = ({ title, description, imgSrc, reverse, chips }) => {
+  if (reverse == true) {
+    return (
+      <div className="flex gap-60 flex-row-reverse">
+        <Image src={imgSrc} />
+        <div className=" mt-8 ">
+          <p className=" font-bold">{title}</p>
+          <p className=" mt-5">{description}</p>
+          <div className="flex gap-6 text-gray-200 rounded-md">
+            {arr.map((i) => {
+              <button>{i}</button>;
+            })}
+          </div>
         </div>
       </div>
-      <Image src={Mentor} />
-      <p>{props.para}</p>
+    );
+  }
+
+  return (
+    <div className="flex gap-60 ">
+      <Image src={imgSrc} />
+      <div className=" mt-8 ">
+        <p className=" font-bold">{title}</p>
+        <p className=" mt-5">{description}</p>
+        <div className="flex gap-6 text-gray-200 rounded-md">
+          {arr.map((i) => {
+            <button>{i}</button>;
+          })}
+        </div>
+      </div>
     </div>
   );
 };
