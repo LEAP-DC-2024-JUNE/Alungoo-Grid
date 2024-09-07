@@ -2,7 +2,6 @@ import { WorkCard } from "@/components/workCard";
 import Ubcab from "../../public/Ubcab.png";
 import Mentor from "../../public/Mentor.png";
 import Itoim from "../../public/itoim.png";
-import Buttons from "@/components/buttons";
 
 const Work = () => {
   return (
@@ -18,20 +17,17 @@ const Work = () => {
           imgSrc={Ubcab}
           title="UBCab"
           description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea omnis, aut nobis sequi atque minus deleniti fugiat delectus distinctio eos numquam nemo officia cumque odit provident repellendus eum. Accusamus ipsum excepturi vitae quisquam eius accusantium aspernatur, vero molestias sint porro, incidunt placeat repudiandae eligendi minus? Recusandae quod magnam mollitia ut."
-          chips={Buttons}
         />
         <WorkCard
           imgSrc={Mentor}
           title="MentorHub"
           description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea omnis, aut nobis sequi atque minus deleniti fugiat delectus distinctio eos numquam nemo officia cumque odit provident repellendus eum. Accusamus ipsum excepturi vitae quisquam eius accusantium aspernatur, vero molestias sint porro, incidunt placeat repudiandae eligendi minus? Recusandae quod magnam mollitia ut."
-          chips={Buttons}
           reverse={true}
         />
         <WorkCard
           imgSrc={Itoim}
           title="iToim"
           description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea omnis, aut nobis sequi atque minus deleniti fugiat delectus distinctio eos numquam nemo officia cumque odit provident repellendus eum. Accusamus ipsum excepturi vitae quisquam eius accusantium aspernatur, vero molestias sint porro, incidunt placeat repudiandae eligendi minus? Recusandae quod magnam mollitia ut."
-          chips={Buttons}
         />
       </div>
     </div>

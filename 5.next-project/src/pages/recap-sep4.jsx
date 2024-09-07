@@ -5,7 +5,7 @@
 // });
 
 // return result;
-import Buttons from "@/components/buttons";
+import Buttons from "@/components/Buttons";
 import Pic from "../components/pic";
 export default function recap() {
   return (

@@ -1,5 +1,3 @@
-import { WorkCard } from "./workcard";
-
 export const Buttons = () => {
   const arr = [
     "React",
@@ -16,7 +14,9 @@ export const Buttons = () => {
 
   return (
     <div>
-      <WorkCard chips={arr} />
+      {arr.map((button) => {
+        return <div>{button}</div>;
+      })}
     </div>
   );
 };
