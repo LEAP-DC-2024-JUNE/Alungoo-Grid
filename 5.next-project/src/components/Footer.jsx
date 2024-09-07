@@ -11,8 +11,10 @@ export const Footer = () => {
         What’s next? Feel free to reach out to me if you're looking for <br /> a
         developer, have a query, or simply want to connect.
       </p>
-      <p className=" font-bold text-2xl">✉️ tom@pinecone.mn</p>
-      <p className=" font-bold text-2xl">📞 +976 88112233</p>
+      <div className=" mt-5">
+        <p className=" font-bold text-2xl">✉️ tom@pinecone.mn</p>
+        <p className=" font-bold text-2xl">📞 +976 88112233</p>
+      </div>
       <p className=" text-xs text-gray-500 mt-5">
         You may also find me on these platforms!
       </p>

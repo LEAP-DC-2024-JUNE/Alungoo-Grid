@@ -7,7 +7,7 @@ export default function Experience() {
     {
       imgsrc: <Upwork />,
       title: "Sr.Frontend Developer",
-      description: [
+      decription: [
         "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
         "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
         "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
@@ -18,7 +18,7 @@ export default function Experience() {
     {
       imgsrc: <Upwork />,
       title: "Team Lead",
-      description: [
+      decription: [
         "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
         "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
         "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
@@ -28,7 +28,7 @@ export default function Experience() {
     {
       imgsrc: <Upwork />,
       title: "Full Stack Developer",
-      description: [
+      decription: [
         "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
         "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
         "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
@@ -50,7 +50,7 @@ export default function Experience() {
       <div>
         {arr.map((element) => {
           return (
-            <div className=" m-10 flex justify-between px-10 bg-white drop-shadow-2xl">
+            <div className=" m-10 flex justify-between px-10 bg-white drop-shadow-2xl flex-1">
               <div className=" m-4">{element.imgsrc}</div>
               <div className=" text-center  m-4">
                 <div className=" font-medium">{element.title}</div>

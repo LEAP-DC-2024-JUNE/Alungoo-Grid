@@ -2,8 +2,9 @@ import { Link } from "react-router-dom";
 
 function Navbar() {
   return (
-    <Nav>
-      <div className="NavBar">
+    // <Nav>
+    <div>
+      <Link to={"/about"}>
         <div>Brand Logo</div>
         <ul>
           <li>Home</li>
@@ -11,8 +12,9 @@ function Navbar() {
           <li>Product</li>
         </ul>
         <input type="text" placeholder="Search..."></input>
-      </div>
-    </Nav>
+      </Link>
+    </div>
+    // </Nav>
   );
 }
 

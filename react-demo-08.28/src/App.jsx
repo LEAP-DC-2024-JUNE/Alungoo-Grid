@@ -8,8 +8,8 @@ import Footer from "./Footer";
 function App() {
   return (
     <div>
-      <Header />
       <Navbar />
+      <Header />
       <div className="flex">
         <Section />
         <Aside />

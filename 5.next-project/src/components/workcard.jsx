@@ -16,12 +16,12 @@ export const WorkCard = ({ title, description, imgSrc, reverse }) => {
 
   if (reverse == true) {
     return (
-      <div className="flex gap-60 flex-row-reverse">
+      <div className="flex gap-10 flex-row-reverse">
         <Image src={imgSrc} />
-        <div className=" mt-8 ">
+        <div className=" mt-8 px-[150px]">
           <p className=" font-bold">{title}</p>
           <p className=" mt-5">{description}</p>
-          <div className="flex gap-5 justify-center flex-wrap">
+          <div className="flex gap-3 justify-center flex-wrap">
             {arr.map((button) => {
               return (
                 <span className=" bg-gray-400 text-gray-50 px-4 py-1 rounded-2xl mt-7 ">
@@ -30,18 +30,19 @@ export const WorkCard = ({ title, description, imgSrc, reverse }) => {
               );
             })}
           </div>
+          <span></span>
         </div>
       </div>
     );
   }
 
   return (
-    <div className="flex gap-60 ">
+    <div className="flex gap-10 ">
       <Image src={imgSrc} />
-      <div className=" mt-8 ">
+      <div className=" mt-8 px-[150px] ">
         <p className=" font-bold">{title}</p>
         <p className=" mt-5">{description}</p>
-        <div className="flex gap-5 justify-center flex-wrap">
+        <div className="flex gap-3 justify-center flex-wrap">
           {arr.map((button) => {
             return (
               <span className=" bg-gray-400 text-gray-50 px-4 py-1 rounded-2xl mt-7">
