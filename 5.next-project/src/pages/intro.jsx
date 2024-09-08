@@ -8,12 +8,12 @@ import Image from "next/image";
 
 export default function Intro() {
   return (
-    <div className=" flex font-serif  text-gray-600 gap-6 w-3/4 m-auto py-24 px-20">
-      <div className="">
+    <div className=" flex font-serif  text-gray-600 gap-96 w-3/4 m-auto py-24 px-20">
+      <div className=" text-wrap">
         <p className=" font-extrabold text-3xl text-gray-900 ">
           Hi, I'm Alungoo 👩‍💻
         </p>
-        <p className=" mt-5 text-start ">
+        <p className=" mt-5 w-[900px]">
           I specialize in full stack development, particularly with React.js and
           Node.js. My main goal is to create exceptional digital experiences
           that are fast, visually appealing, and accessible to everyone. With

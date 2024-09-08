@@ -1,31 +1,18 @@
 import Image from "next/image";
 
-export const WorkCard = ({ title, description, imgSrc, reverse }) => {
-  const arr = [
-    "React",
-    "Next.js",
-    "Typescript",
-    "Nest.js",
-    "PostgreSQL",
-    "Tailwind",
-    "Figma",
-    "Cypress",
-    "Storybook",
-    "Git",
-  ];
-
+export const WorkCard = ({ title, description, imgSrc, reverse, buttons }) => {
   if (reverse == true) {
     return (
-      <div className="flex gap-10 flex-row-reverse">
+      <div className="flex gap-60 ">
         <Image src={imgSrc} />
-        <div className=" mt-8 px-[150px]">
+        <div className=" mt-8 ">
           <p className=" font-bold">{title}</p>
-          <p className=" mt-5">{description}</p>
-          <div className="flex gap-3 justify-center flex-wrap">
-            {arr.map((button) => {
+          <p className=" mt-5 w-[800px]">{description}</p>
+          <div className="flex gap-3 justify-center flex-wrap w-[800px]">
+            {buttons.map((buttonName) => {
               return (
                 <span className=" bg-gray-400 text-gray-50 px-4 py-1 rounded-2xl mt-7 ">
-                  {button}
+                  {buttonName}
                 </span>
               );
             })}
@@ -38,15 +25,14 @@ export const WorkCard = ({ title, description, imgSrc, reverse }) => {
 
   return (
     <div className="flex gap-10 ">
-      <Image src={imgSrc} />
-      <div className=" mt-8 px-[150px] ">
+      <div className=" mt-8 text-start ">
         <p className=" font-bold">{title}</p>
-        <p className=" mt-5">{description}</p>
+        <p className=" mt-5 text-start">{description}</p>
         <div className="flex gap-3 justify-center flex-wrap">
-          {arr.map((button) => {
+          {buttons.map((buttonName) => {
             return (
               <span className=" bg-gray-400 text-gray-50 px-4 py-1 rounded-2xl mt-7">
-                {button}
+                {buttonName}
               </span>
             );
           })}

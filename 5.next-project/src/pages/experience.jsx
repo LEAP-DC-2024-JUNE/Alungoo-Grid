@@ -7,7 +7,7 @@ export default function Experience() {
     {
       imgsrc: <Upwork />,
       title: "Sr.Frontend Developer",
-      decription: [
+      description: [
         "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
         "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
         "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
@@ -18,7 +18,7 @@ export default function Experience() {
     {
       imgsrc: <Upwork />,
       title: "Team Lead",
-      decription: [
+      description: [
         "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
         "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
         "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
@@ -28,7 +28,7 @@ export default function Experience() {
     {
       imgsrc: <Upwork />,
       title: "Full Stack Developer",
-      decription: [
+      description: [
         "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
         "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
         "Lorem ipsum dolor sit amet consectetur adipisicing elit.",

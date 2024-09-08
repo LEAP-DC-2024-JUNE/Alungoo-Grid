@@ -5,7 +5,7 @@ import Twitterlogo from "@/icons/Twitterlogo";
 
 export const Footer = () => {
   return (
-    <div className="flex flex-col justify-center text-center m-20">
+    <div className="flex flex-col justify-center text-center m-40">
       <span className="">Get in touch</span>
       <p>
         What’s next? Feel free to reach out to me if you're looking for <br /> a

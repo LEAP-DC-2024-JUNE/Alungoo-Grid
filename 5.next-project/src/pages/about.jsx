@@ -7,9 +7,9 @@ export default function About() {
         <button className=" text-sm px-4 py-2 bg-gradient-to-r from-slate-200 to-slate-500 rounded-2xl mt-10 mx-96 text-gray-800 font-medium">
           About me
         </button>
-        <div className="flex gap-20 mt-10 mx-20 pb-10">
+        <div className="flex gap-40 mt-10 mx-20 pb-10">
           <Image src={Pic2} />
-          <div>
+          <div className=" text-start">
             <p className=" font-extrabold text-3xl">
               Curious about me? Here you have it:
             </p>
