@@ -36,7 +36,7 @@ const Work = () => {
         Some of the noteworthy projects I have built:
       </p>
       <div className=" mt-20 flex flex-col items-center gap-6 drop-shadow-md ">
-        {works.map((work) => {
+        {works.map((work, index) => {
           return (
             <WorkCard
               imgSrc={work.imgSrc}

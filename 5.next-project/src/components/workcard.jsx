@@ -1,10 +1,17 @@
 import Image from "next/image";
 
-export const WorkCard = ({ title, description, imgSrc, reverse, buttons }) => {
+export const WorkCard = (props) => {
+  const { title, description, imgSrc, reverse, buttons, index } = props;
   if (reverse == true) {
     return (
-      <div className="flex gap-60 ">
-        <Image src={imgSrc} />
+      <div className="flex gap-60  flex-row-reverse">
+        <div>
+          <Image src={imgSrc} />
+        </div>
+
+        <div>
+          <Image src={imgSrc} />
+        </div>
         <div className=" mt-8 ">
           <p className=" font-bold">{title}</p>
           <p className=" mt-5 w-[800px]">{description}</p>
