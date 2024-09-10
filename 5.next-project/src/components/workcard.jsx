@@ -9,9 +9,6 @@ export const WorkCard = (props) => {
           <Image src={imgSrc} />
         </div>
 
-        <div>
-          <Image src={imgSrc} />
-        </div>
         <div className=" mt-8 ">
           <p className=" font-bold">{title}</p>
           <p className=" mt-5 w-[800px]">{description}</p>
