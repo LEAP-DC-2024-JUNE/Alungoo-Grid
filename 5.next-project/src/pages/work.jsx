@@ -1,4 +1,4 @@
-import { WorkCard } from "@/components/workCard";
+import { WorkCard } from "@/components/WorkCard";
 import Ubcab from "../../public/Ubcab.png";
 import Mentor from "../../public/Mentor.png";
 import Itoim from "../../public/itoim.png";
@@ -10,7 +10,18 @@ const Work = () => {
       title: "UBCab",
       description:
         "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea omnis, aut nobis sequi atque minus deleniti fugiat delectus distinctio eos numquam nemo officia cumque odit provident repellendus eum. Accusamus ipsum excepturi vitae quisquam eius accusantium aspernatur, vero molestias sint porro, incidunt placeat repudiandae eligendi minus? Recusandae quod magnam mollitia ut.",
-      // button component or button nested array
+      buttons: [
+        "React.js",
+        "Next.js",
+        "Typescript",
+        "Nest.js",
+        "PostgreSQL",
+        "Tailwind",
+        "Figma",
+        "Cypress",
+        "Storybook",
+        "Git",
+      ],
     },
 
     {
@@ -18,6 +29,18 @@ const Work = () => {
       title: "MentorHub",
       description:
         "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea omnis, aut nobis sequi atque minus deleniti fugiat delectus distinctio eos numquam nemo officia cumque odit provident repellendus eum. Accusamus ipsum excepturi vitae quisquam eius accusantium aspernatur, vero molestias sint porro, incidunt placeat repudiandae eligendi minus? Recusandae quod magnam mollitia ut.",
+      buttons: [
+        "React.js",
+        "Next.js",
+        "Typescript",
+        "Nest.js",
+        "PostgreSQL",
+        "Tailwind",
+        "Figma",
+        "Cypress",
+        "Storybook",
+        "Git",
+      ],
     },
 
     {
@@ -25,6 +48,18 @@ const Work = () => {
       title: "iToim",
       description:
         "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea omnis, aut nobis sequi atque minus deleniti fugiat delectus distinctio eos numquam nemo officia cumque odit provident repellendus eum. Accusamus ipsum excepturi vitae quisquam eius accusantium aspernatur, vero molestias sint porro, incidunt placeat repudiandae eligendi minus? Recusandae quod magnam mollitia ut.",
+      buttons: [
+        "React.js",
+        "Next.js",
+        "Typescript",
+        "Nest.js",
+        "PostgreSQL",
+        "Tailwind",
+        "Figma",
+        "Cypress",
+        "Storybook",
+        "Git",
+      ],
     },
   ];
   return (
@@ -35,27 +70,16 @@ const Work = () => {
       <p className=" mt-5 px-60 text-center">
         Some of the noteworthy projects I have built:
       </p>
-      <div className=" mt-20 flex flex-col items-center gap-6 drop-shadow-md ">
+      <div className=" m-20 drop-shadow-md ">
         {works.map((work, index) => {
           return (
             <WorkCard
+              key={index}
               imgSrc={work.imgSrc}
               title={work.title}
               description={work.description}
-              reverse={true}
-              // props nested array
-              buttons={[
-                "React",
-                "Next.js",
-                "Typescript",
-                "Nest.js",
-                "PostgreSQL",
-                "Tailwind",
-                "Figma",
-                "Cypress",
-                "Storybook",
-                "Git",
-              ]}
+              reverse={index % 2 == 0 ? true : false}
+              buttons={work.buttons}
             />
           );
         })}

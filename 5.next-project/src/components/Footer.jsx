@@ -1,6 +1,5 @@
 import Figma from "@/icons/Figmalogo";
 import Gitlogo from "@/icons/Gitlogo";
-import GitPort from "@/icons/GitPort";
 import Twitterlogo from "@/icons/Twitterlogo";
 
 export const Footer = () => {

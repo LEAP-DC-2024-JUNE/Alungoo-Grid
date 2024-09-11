@@ -37,8 +37,8 @@ export const Products = () => {
 
   return (
     <div>
-      <p>Recommended Product</p>
-      <div className="flex gap-60 flex-wrap">
+      <p className=" text-3xl font-semibold">Recommended Products 😎</p>
+      <div className="flex flex-wrap w-[1000px] gap-5">
         {Product.map((frames, index) => {
           return (
             <ProductCards
