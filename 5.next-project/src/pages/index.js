@@ -6,7 +6,7 @@ import Experience from "./experience";
 import Skills from "./skills";
 import Work from "./work";
 import { Footer } from "@/components/Footer";
-import Navbar from "@/components/Navbar";
+import { Navbar } from "@/components/Navbar";
 
 const Home = () => {
   return (

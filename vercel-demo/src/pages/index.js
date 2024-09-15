@@ -1,12 +1,14 @@
 import { Products } from "@/components/Products";
-import Responsive from "@/components/ResponsiveDemo";
+import ResponsiveDemo from "@/components/ResponsiveDemo";
+import LoginStatus from "../components/LoginStatus";
 
 export default function Home() {
   return (
     <div>
       Hello
       <Products />
-      <Responsive />
+      <ResponsiveDemo />
+      <LoginStatus status={LogedIn} />
     </div>
   );
 }

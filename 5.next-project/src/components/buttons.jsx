@@ -1,12 +1,12 @@
 export const ButtonContainer = (props) => {
   const { buttons } = props;
   return (
-    <div className=" flex gap-5 w-[600px] flex-wrap">
+    <div className=" flex flex-wrap w-[500px] gap-5 mt-10">
       {buttons.map((button) => {
         return (
-          <div className=" bg-gray-400 text-gray-50 px-4 py-1 rounded-2xl mt-7">
+          <button className=" bg-gray-200 text-gray-500 px-4 py-0.5 rounded-2xl  mr-1 text-wrap font-bold">
             {button}
-          </div>
+          </button>
         );
       })}
     </div>

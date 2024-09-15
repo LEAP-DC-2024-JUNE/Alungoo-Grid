@@ -8,12 +8,12 @@ import Image from "next/image";
 
 export default function Intro() {
   return (
-    <div className=" flex font-serif  text-gray-600 gap-96 w-3/4 m-auto py-24 px-20">
-      <div className=" text-wrap">
+    <div className=" xl:flex xl:font-serif xl: text-gray-600 xl:gap-96 xl:w-3/4 xl:m-auto xl:py-24 xl:px-20 xl:flex-row sm:flex sm: flex-col-reverse sm:p-16 ">
+      <div>
         <p className=" font-extrabold text-3xl text-gray-900 ">
           Hi, I'm Alungoo 👩‍💻
         </p>
-        <p className=" mt-5 w-[900px]">
+        <p className=" xl:mt-5 ">
           I specialize in full stack development, particularly with React.js and
           Node.js. My main goal is to create exceptional digital experiences
           that are fast, visually appealing, and accessible to everyone. With
@@ -35,7 +35,7 @@ export default function Intro() {
           <Figma />
         </div>
       </div>
-      <div>
+      <div className="">
         <Image src={Pic1} />
       </div>
     </div>

@@ -63,11 +63,11 @@ const Work = () => {
     },
   ];
   return (
-    <div className=" bg-white  w-3/4 m-auto text-center">
-      <button className=" text-sm px-4 py-2 bg-gradient-to-r from-slate-200 to-slate-500 rounded-2xl mt-10 mx-96 text-gray-800 font-medium">
+    <div className=" bg-white  xl:w-full m-auto text-center">
+      <button className=" text-sm px-4 py-2 bg-gradient-to-r from-slate-200 to-slate-500 rounded-2xl mt-10 xl:mx-96 text-gray-800 font-medium">
         Works
       </button>
-      <p className=" mt-5 px-60 text-center">
+      <p className=" mt-5 xl:px-60 text-center">
         Some of the noteworthy projects I have built:
       </p>
       <div className=" m-20 drop-shadow-md ">

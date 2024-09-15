@@ -5,7 +5,9 @@ import Twitterlogo from "@/icons/Twitterlogo";
 export const Footer = () => {
   return (
     <div className="flex flex-col justify-center text-center m-40">
-      <span className="">Get in touch</span>
+      <button className=" text-sm px-4 py-2 bg-gradient-to-r from-slate-200 to-slate-500 rounded-2xl mt-10 xl:mx-96 text-gray-800 font-medium">
+        Get in touch
+      </button>
       <p>
         What’s next? Feel free to reach out to me if you're looking for <br /> a
         developer, have a query, or simply want to connect.
