@@ -8,10 +8,17 @@ import Work from "./work";
 import { Footer } from "@/components/Footer";
 import { Navbar } from "@/components/Navbar";
 
+import { useTheme } from "next-themes";
+
 const Home = () => {
+  const { setTheme, theme } = useTheme();
+
+  const toggleTheme = () => {
+    theme == "dark" ? setTheme("light") : setTheme("dark");
+  };
   return (
     <div>
-      <Navbar />
+      <Navbar toggle={toggleTheme} theme={theme} />
       <Intro />
       <About />
       <Skills />

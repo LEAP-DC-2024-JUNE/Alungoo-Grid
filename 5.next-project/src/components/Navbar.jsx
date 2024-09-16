@@ -3,19 +3,26 @@ import Toggle from "../icons/Toggle";
 import Moon from "../icons/Moon";
 import { useTheme } from "next-themes";
 import Image from "next/image";
+import { useState, useEffect } from "react";
+import ItsMounted from "./ItsMounted";
 
-export const Navbar = () => {
-  // const { setTheme, theme } = useTheme();
+export const Navbar = ({ toggle, theme }) => {
+  // const { systemTheme, setTheme, theme } = useTheme();
+  // const { mounted, setMounted } = useState(false);
 
-  // const toggleTheme = () => {
+  // useEffect(() => setMounted(true), []);
+
+  // if (!mounted) return null;
+  // const sysTheme = theme === "system" ? systemTheme : theme;
+  // let toggleTheme = () => {
   //   if (theme == "dark") {
   //     setTheme("light");
   //   } else {
   //     setTheme("dark");
   //   }
   // };
-  //
-  // const currentTheme = theme === "system" ? systemTheme : theme;
+
+  let NowMounted = ItsMounted();
   return (
     <div className=" sm:flex sm:flex-col">
       <navbar className="   xl:w-3/4 xl:m-auto xl:flex xl:justify-between xl:gap-4 xl:py-2 ">
@@ -33,10 +40,8 @@ export const Navbar = () => {
           </div>
 
           <div className="xl:flex sm:flex sm:flex-col xl:flex-row">
-            <button className=" sm: p-4">
-              <Toggle />
-            </button>
-            <button className=" xl:px-2.5 bg-gray-900 text-white rounded-3xl xl:mx-4 ">
+            <div onClick={toggle}>{NowMounted && <Toggle theme={theme} />}</div>
+            <button className=" xl:px-4 py-1.5  bg-gray-900 text-white rounded-xl xl:mx-4 ">
               Download CV
             </button>
           </div>
