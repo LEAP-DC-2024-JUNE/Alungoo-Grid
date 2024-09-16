@@ -3,11 +3,11 @@ import Image from "next/image";
 export default function About() {
   return (
     <>
-      <div className="xl:bg-gray-50  w-3/4 m-auto text-center sm: bg-gray-50 sm: w-auto">
+      <div className="xl:bg-gray-50  xl:w-3/4 m-auto text-center  bg-gray-50 dark:bg-gray-900">
         <button className=" xl:text-sm px-4 py-2 bg-gradient-to-r from-slate-200 to-slate-500 rounded-2xl mt-10 xl:mx-96 text-gray-800 xl:font-medium">
           About me
         </button>
-        <div className="xl:flex xl:flex-row sm: flex sm: flex-col gap-40 mt-10 mx-20 pb-10">
+        <div className="xl:flex xl:flex-row  flex  flex-col gap-40 mt-10 mx-20 pb-10">
           <Image src={Pic2} />
           <div className=" text-start">
             <p className=" font-extrabold text-3xl">

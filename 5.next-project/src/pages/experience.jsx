@@ -38,7 +38,7 @@ const Experience = () => {
   ];
 
   return (
-    <div className=" bg-gray-50  xl:w-fill m-auto px-22 text-center py-4">
+    <div className=" bg-gray-50  xl:w-3/4 m-auto px-22 text-center py-4 dark:bg-gray-900">
       <button className=" text-sm px-4 py-2 bg-gradient-to-r from-slate-200 to-slate-500 rounded-2xl mt-10 xl:mx-96 text-gray-800 font-medium">
         Experiences
       </button>
@@ -46,7 +46,7 @@ const Experience = () => {
         Here is a quick summary of my most recent experiences:
       </p>
 
-      <div className=" xl:m-10 bg-gray-50">
+      <div className=" xl:m-10 bg-gray-50 dark:bg-gray-900">
         {Experiences.map((experience, index) => {
           return (
             <ExperienceCard

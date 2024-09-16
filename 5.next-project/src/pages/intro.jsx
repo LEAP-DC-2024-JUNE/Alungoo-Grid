@@ -6,11 +6,11 @@ import Twitterlogo from "@/icons/Twitterlogo";
 import Pic1 from "../../public/Pic.png";
 import Image from "next/image";
 
-export default function Intro() {
+export default function Intro({}) {
   return (
-    <div className=" xl:flex xl:font-serif xl: text-gray-600 xl:gap-96 xl:w-3/4 xl:m-auto xl:py-24 xl:px-20 xl:flex-row sm:flex sm: flex-col-reverse sm:p-16 ">
+    <div className=" xl:flex xl:font-serif xl: text-gray-600 xl:gap-96 xl:w-3/4 xl:m-auto xl:py-24 xl:px-20 xl:flex-row flex flex-col-reverse p-16 dark:bg-gray-950 dark:text-gray-600">
       <div>
-        <p className=" font-extrabold text-3xl text-gray-900 ">
+        <p className=" font-extrabold text-3xl text-gray-900 dark:text-gray-300">
           Hi, I'm Alungoo 👩‍💻
         </p>
         <p className=" xl:mt-5 ">
@@ -36,7 +36,7 @@ export default function Intro() {
         </div>
       </div>
       <div className="">
-        <Image src={Pic1} />
+        <Image src={Pic1} width={800} height={800} />
       </div>
     </div>
   );

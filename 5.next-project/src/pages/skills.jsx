@@ -19,7 +19,7 @@ import GitPort from "@/icons/GitPort";
 
 export default function Skills() {
   return (
-    <div className=" m-auto w-3/4 text-center">
+    <div className=" m-auto w-3/4 text-center dark:bg-gray-950">
       <button className=" text-sm px-4 py-2 bg-gradient-to-r from-slate-200 to-slate-500 rounded-2xl mt-10 xl:mx-96 text-gray-800 font-medium">
         Skills
       </button>
@@ -27,7 +27,7 @@ export default function Skills() {
         The skills, tools and technologies I am really good at:
       </p>
       <div>
-        <div className=" xl: flex xl: flex-row xl:gap-32 py-10  xl:justify-center sm: flex-wrap sm: gap-24 ">
+        <div className=" xl: flex xl: flex-row xl:gap-32 py-10  xl:justify-center  flex-wrap  gap-24 ">
           <JS />
           <TS />
           <Image src={Reactlogo} />
@@ -37,7 +37,7 @@ export default function Skills() {
           <Nest />
           <Socket />
         </div>
-        <div className="xl: flex xl: flex-row xl:gap-32 py-10 xl:justify-center sm: flex-wrap sm: gap-24 ">
+        <div className="xl: flex xl: flex-row xl:gap-32 py-10 xl:justify-center  flex-wrap  gap-24 ">
           <Image src={Tech} />
           <Image src={Next} />
 
