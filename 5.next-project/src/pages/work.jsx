@@ -63,14 +63,14 @@ const Work = () => {
     },
   ];
   return (
-    <div className=" bg-white  xl:w-full m-auto text-center">
+    <div className=" bg-white  xl:w-full text-center dark:bg-gray-950">
       <button className=" text-sm px-4 py-2 bg-gradient-to-r from-slate-200 to-slate-500 rounded-2xl mt-10 xl:mx-96 text-gray-800 font-medium">
         Works
       </button>
       <p className=" mt-5 xl:px-60 text-center">
         Some of the noteworthy projects I have built:
       </p>
-      <div className=" m-20 drop-shadow-md ">
+      <div className="">
         {works.map((work, index) => {
           return (
             <WorkCard

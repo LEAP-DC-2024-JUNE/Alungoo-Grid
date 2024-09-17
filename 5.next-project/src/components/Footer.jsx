@@ -4,10 +4,10 @@ import Twitterlogo from "@/icons/Twitterlogo";
 
 export const Footer = () => {
   return (
-    <div className="flex flex-col justify-center text-center m-40">
-      <button className=" text-sm px-4 py-2 bg-gradient-to-r from-slate-200 to-slate-500 rounded-2xl mt-10 xl:mx-96 text-gray-800 font-medium">
-        Get in touch
-      </button>
+    <div className="flex flex-col justify-center text-center w-full dark:bg-gray-900">
+      <div className=" text-sm  text-gray-800 font-medium">
+        <button>Get in touch</button>
+      </div>
       <p>
         What’s next? Feel free to reach out to me if you're looking for <br /> a
         developer, have a query, or simply want to connect.
@@ -24,7 +24,7 @@ export const Footer = () => {
         <Twitterlogo />
         <Figma />
       </div>
-      <p className="mt-10 bg-gray-50">
+      <p className="mt-10 text-gray-600 dark:text-gray-300 text-center">
         {" "}
         © 2024 | Greetings with 🖤 from Ulaanbaatar
       </p>

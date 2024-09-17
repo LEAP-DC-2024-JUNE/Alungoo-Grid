@@ -8,7 +8,7 @@ import Image from "next/image";
 
 export default function Intro({}) {
   return (
-    <div className=" xl:flex xl:font-serif xl: text-gray-600 xl:gap-96 xl:w-3/4 xl:m-auto xl:py-24 xl:px-20 xl:flex-row flex flex-col-reverse p-16 dark:bg-gray-950 dark:text-gray-600">
+    <div className="xl:flex font-serif xl: text-gray-600 xl:gap-96 w-full xl:m-auto xl:py-24 xl:px-20 xl:flex-row flex flex-col-reverse p-16 dark:bg-gray-950 dark:text-gray-150">
       <div>
         <p className=" font-extrabold text-3xl text-gray-900 dark:text-gray-300">
           Hi, I'm Alungoo 👩‍💻
@@ -35,8 +35,8 @@ export default function Intro({}) {
           <Figma />
         </div>
       </div>
-      <div className="">
-        <Image src={Pic1} width={800} height={800} />
+      <div className=" xl:w-[700px]">
+        <Image src={Pic1} />
       </div>
     </div>
   );

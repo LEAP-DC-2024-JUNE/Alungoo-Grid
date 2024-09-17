@@ -3,46 +3,51 @@ import { ButtonContainer } from "./Buttons";
 import Pin from "@/icons/pin";
 
 export const WorkCard = (props) => {
-  const { title, description, imgSrc, reverse, buttons, key, pin } = props;
+  const { title, description, imgSrc, reverse, buttons, key } = props;
   if (reverse == false) {
     return (
-      <div className=" sm:flex-col sm:m-16 sm: drop-shadow-lg sm: rounded-xl sm:bg-white-50 sm: w-fit">
-        <div
-          key={key}
-          className="xl:flex xl: justify-between xl:flex-row-reverse xl:m-10 xl: bg-white xl: drop-shadow-md xl: rounded-lg"
-        >
-          <Image src={imgSrc} height={0} />
-
-          <div className="  text-start p-14">
-            <p className=" font-bold">{title}</p>
-            <p className=" mt-5 xl:w-[800px] text-start">{description}</p>
-            <div>
-              <ButtonContainer buttons={buttons} />
-            </div>
-            <div className=" mt-10">
-              <Pin />
-            </div>
-          </div>
+      <div
+        key={key}
+        className="flex flex-col xl:flex-row-reverse xl:m-10 xl: bg-white  drop-shadow-md  rounded-lg dark:bg-gray-900  xl:p-16 bg-white-50 xl: dark:text-gray-100"
+      >
+        <div className=" dark:bg-gray-700 dark:border-gray-700 p-12 border-r bg-gray-50 xl:w-[850px]">
+          <Image src={imgSrc} />
         </div>
-      </div>
-    );
-  }
 
-  return (
-    <div className=" sm:flex-col sm: m-16 sm:w-fit sm: content-center">
-      <div className="xl:flex  xl: justify-between xl:m-10 xl: bg-white xl: drop-shadow-md xl: rounded-lg">
-        <Image src={imgSrc} height={0} />
-        <div className="  text-start p-14">
-          <p className=" font-bold">{title}</p>
-          <p className=" mt-5 text-start xl:w-[800px]">{description}</p>
+        <div className="  flex flex-col gap-6 p-12 xl:w-[850px] text-start dark:bg-gray-800">
+          <p className=" font-bold text-xl text-gray-900 dark:text-gray-50">
+            {title}
+          </p>
+          <p className="  mt-5 text-base text-gray-600 dark:text-gray-300">
+            {description}
+          </p>
           <div>
             <ButtonContainer buttons={buttons} />
           </div>
-          <div className=" mt-10">
+          <button className="">
             <Pin />
-          </div>
+          </button>
         </div>
       </div>
-    </div>
-  );
+    );
+  } else
+    return (
+      <div className="flex flex-col xl:m-10  bg-white drop-shadow-md rounded-lg xl:flex-row  dark:bg-gray-900  xl:p-16 bg-white-50 xl: dark:text-gray-100">
+        <div className=" dark:bg-gray-700 dark:border-gray-700 p-12 border-r bg-gray-50 xl:w-[850px]">
+          <Image src={imgSrc} />
+        </div>
+        <div className="   flex flex-col gap-6 p-12 xl:w-[850px] text-start dark:bg-gray-800">
+          <p className=" font-bold">{title}</p>
+          <p className=" mt-5 text-base text-gray-600 dark:text-gray-300">
+            {description}
+          </p>
+          <div>
+            <ButtonContainer buttons={buttons} />
+          </div>
+          <button className=" ">
+            <Pin />
+          </button>
+        </div>
+      </div>
+    );
 };

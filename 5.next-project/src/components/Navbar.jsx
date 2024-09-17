@@ -22,14 +22,14 @@ export const Navbar = () => {
   };
 
   return (
-    <div className="flex flex-col">
-      <navbar className="   xl:w-3/4 xl:m-auto xl:flex xl:justify-between xl:gap-4 xl:py-2  dark:bg-gray-950 dark:border-gray-950">
-        <div className="  py-2">
+    <div className="flex flex-col ">
+      <navbar className=" w-full xl:m-auto xl:flex xl:justify-between xl:gap-4 xl:py-2  dark:bg-gray-950 dark:border-gray-950">
+        <div className="  py-2 ml-20">
           <Logo />
         </div>
         <div className="xl:flex">
           <div className="">
-            <ul className="xl:flex gap-4 font-serif py-2 text-gray-800 text-pretty xl:visible">
+            <ul className="flex gap-6 font-serif py-2 text-gray-600 text-pretty xl:visible dark:text-gray-300">
               <li className="hover:shadow-xl sm: m-5">About</li>
               <li className="hover:shadow-xl sm: m-5"> Work</li>
               <li className="hover:shadow-xl sm: m-5">Testimonials</li>
@@ -41,7 +41,7 @@ export const Navbar = () => {
               Switch theme
               {theme === "dark" ? <Sun /> : <Moon />}
             </button>
-            <button className=" px-4 py-[5px] bg-gray-900 text-white rounded-xl dark:bg-gray-50 dark:text-gray-900">
+            <button className=" px-3 py-1 text-base  bg-gray-900 text-gray-50 rounded-2xl dark:bg-gray-100 dark:text-gray-900">
               Download CV
             </button>
           </div>

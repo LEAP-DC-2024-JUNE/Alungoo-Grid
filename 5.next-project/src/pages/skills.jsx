@@ -3,7 +3,7 @@ import JS from "@/icons/JS";
 import Mongo from "@/icons/Mongo";
 
 import Node from "@/icons/Node";
-import Tailwindcss from "../../public/tailwindcss.png";
+import Tailwind from "../../public/tailwind.png";
 import Sass from "@/icons/Sass";
 import Socket from "@/icons/Socket";
 import Next from "../../public/next.png";
@@ -19,7 +19,7 @@ import GitPort from "@/icons/GitPort";
 
 export default function Skills() {
   return (
-    <div className=" m-auto w-3/4 text-center dark:bg-gray-950">
+    <div className=" m-auto w-full text-center dark:bg-gray-950">
       <button className=" text-sm px-4 py-2 bg-gradient-to-r from-slate-200 to-slate-500 rounded-2xl mt-10 xl:mx-96 text-gray-800 font-medium">
         Skills
       </button>
@@ -31,7 +31,7 @@ export default function Skills() {
           <JS />
           <TS />
           <Image src={Reactlogo} />
-          <Image src={Tailwindcss} />
+          <Image src={Tailwind} />
           <Node />
           <Express />
           <Nest />
