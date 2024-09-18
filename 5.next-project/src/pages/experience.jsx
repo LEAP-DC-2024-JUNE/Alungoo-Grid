@@ -1,4 +1,4 @@
-import ExperienceCard from "@/components/experienceCard";
+import ExperienceCard from "@/components/ExperienceCard";
 import Upwork from "../../public/upwork.png";
 
 const Experience = () => {

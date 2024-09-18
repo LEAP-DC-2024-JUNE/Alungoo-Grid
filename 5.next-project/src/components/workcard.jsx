@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { ButtonContainer } from "./Buttons";
+import ButtonContainer from "./Buttons";
 import Pin from "@/icons/pin";
 
 export const WorkCard = (props) => {

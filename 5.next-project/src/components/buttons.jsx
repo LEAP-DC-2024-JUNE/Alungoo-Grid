@@ -1,4 +1,4 @@
-export const ButtonContainer = (props) => {
+const ButtonContainer = (props) => {
   const { buttons } = props;
   return (
     <div className=" flex flex-wrap xl:w-[500px] gap-5 mt-10">
@@ -12,3 +12,4 @@ export const ButtonContainer = (props) => {
     </div>
   );
 };
+export default ButtonContainer;
