@@ -1,4 +1,4 @@
-const Assignment4 = () => {
+const Assignment3 = () => {
   const people = [
     { name: "John", age: 17 },
     { name: "Jane", age: 22 },
@@ -11,11 +11,11 @@ const Assignment4 = () => {
 
   return (
     <div>
-      <div>
+      <div className="font-bold text-xl flex gap-10">
         Filter By Age
-        {filterByAge.map((human) => {
+        {filterByAge.map((human, index) => {
           return (
-            <div>
+            <div key={index}>
               <p>{human.name}</p>
               <p>{human.age}</p>
             </div>
@@ -25,4 +25,4 @@ const Assignment4 = () => {
     </div>
   );
 };
-export default Assignment4;
+export default Assignment3;

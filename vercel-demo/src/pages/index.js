@@ -6,6 +6,7 @@ import Assignment1 from "./assignment1";
 import Assignment2 from "./assignment2";
 import Assignment3 from "./assignment3";
 import Assignment4 from "./assignment4";
+import Assignment5 from "./assignment5";
 
 export default function Home() {
   return (
@@ -22,6 +23,7 @@ export default function Home() {
         <Assignment2 />
         <Assignment3 />
         <Assignment4 />
+        <Assignment5 />
       </div>
       <div>
         {/* <Products />

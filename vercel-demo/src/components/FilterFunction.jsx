@@ -40,9 +40,9 @@ export const FilterFunction = () => {
         buh nasniihan
       </button>
       <div>
-        {filteredArray.map((person) => {
+        {filteredArray.map((person, index) => {
           return (
-            <div>
+            <div key={index}>
               <p>{person.name}</p>
               <span>{person.age}</span>
             </div>
