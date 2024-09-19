@@ -1,4 +1,7 @@
+import { useState } from "react";
+
 const Assignment5 = () => {
+  const [isPassed, setIsPassed] = useState(true);
   const students = [
     { name: "Alice", grade: 58 },
     { name: "Bob", grade: 72 },
@@ -6,13 +9,27 @@ const Assignment5 = () => {
     { name: "David", grade: 45 },
   ];
   const passingStudents = students.filter((student) => {
-    return student.grade >= 60;
+    return isPassed ? student.grade >= 60 : student.grade < 59;
   });
-
+  const handlePass = (param1) => {
+    setIsPassed(param1);
+  };
   return (
     <div>
-      <div className=" font-bold text-xl flex gap-10">
-        Filter Passing Students :
+      <div>
+        <div className=" font-bold text-xl ">Filter Passing Students :</div>
+        <button
+          className=" bg-blue-400 border-2"
+          onClick={() => handlePass(true)}
+        >
+          Passed Exam
+        </button>
+        <button
+          className=" bg-pink-400 border-2"
+          onClick={() => handlePass(false)}
+        >
+          Failed Exam
+        </button>
         {passingStudents.map((pass, index) => {
           return (
             <div key={index}>

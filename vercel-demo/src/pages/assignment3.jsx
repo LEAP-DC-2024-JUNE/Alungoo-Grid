@@ -12,11 +12,8 @@ const Assignment4 = () => {
     return product.available == available;
   });
 
-  const handleClickAvailable = () => {
-    return setProduct(true);
-  };
-  const handleClickUnvailable = () => {
-    return setProduct(false);
+  const handleClickAll = (param1) => {
+    return setProduct(param1);
   };
 
   return (
@@ -25,13 +22,13 @@ const Assignment4 = () => {
         <div>Available Products :</div>
         <button
           className=" bg-green-400 border-2"
-          onClick={handleClickAvailable}
+          onClick={() => handleClickAll(true)}
         >
           In Stock Products
         </button>
         <button
           className=" bg-red-400 border-2"
-          onClick={handleClickUnvailable}
+          onClick={() => handleClickAll(false)}
         >
           Out of Stock Products
         </button>

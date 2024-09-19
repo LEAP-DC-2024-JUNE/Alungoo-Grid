@@ -7,6 +7,8 @@ import Assignment2 from "./assignment2";
 import Assignment3 from "./assignment3";
 import Assignment4 from "./assignment4";
 import Assignment5 from "./assignment5";
+import Assignment2New from "./assignment2New";
+import InputForm from "../pages/inputForm";
 
 export default function Home() {
   return (
@@ -24,6 +26,11 @@ export default function Home() {
         <Assignment3 />
         <Assignment4 />
         <Assignment5 />
+      </div>
+      <div style={{ border: "2px solid purple", margin: "10px" }}>
+        September/19/2024
+        <Assignment2New />
+        <InputForm />
       </div>
       <div>
         {/* <Products />
