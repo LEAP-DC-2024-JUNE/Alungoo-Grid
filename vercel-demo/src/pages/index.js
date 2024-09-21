@@ -9,6 +9,7 @@ import Assignment4 from "./assignment4";
 import Assignment5 from "./assignment5";
 import Assignment2New from "./assignment2New";
 import InputForm from "../pages/inputForm";
+import MemberReg from "../pages/memberReg";
 
 export default function Home() {
   return (
@@ -31,6 +32,9 @@ export default function Home() {
         September/19/2024
         <Assignment2New />
         <InputForm />
+      </div>
+      <div>
+        <MemberReg />
       </div>
       <div>
         {/* <Products />
