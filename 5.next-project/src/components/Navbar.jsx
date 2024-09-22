@@ -3,6 +3,7 @@ import Sun from "@/icons/Sun";
 import { Moon } from "@/icons/Moon";
 import { useTheme } from "next-themes";
 import { useEffect, useState } from "react";
+import Hamburger from "@/icons/Hamburger";
 
 export const Navbar = () => {
   const { theme, setTheme } = useTheme();
@@ -22,13 +23,13 @@ export const Navbar = () => {
   };
 
   return (
-    <div className="flex flex-col ">
-      <navbar className=" w-full xl:m-auto xl:flex xl:justify-between xl:gap-4 xl:py-2  dark:bg-gray-950 dark:border-gray-950">
-        <div className="  py-2 ml-20">
+    <div>
+      <navbar className=" w-full xl:flex xl:gap-4 xl:py-2  dark:bg-gray-950 dark:border-gray-950 flex flex-row">
+        <div className="  xl:py-2 xl:ml-20">
           <Logo />
         </div>
-        <div className="xl:flex">
-          <div className="">
+        <div className="xl:flex invisible">
+          <div className=" ">
             <ul className="flex gap-6 font-serif py-2 text-gray-600 text-pretty xl:visible dark:text-gray-300">
               <li className="hover:shadow-xl sm: m-5">About</li>
               <li className="hover:shadow-xl sm: m-5"> Work</li>
@@ -36,16 +37,18 @@ export const Navbar = () => {
               <li className="hover:shadow-xl sm: m-5">Contact</li>
             </ul>
           </div>
-          <div className="xl:flex flex flex-col xl:flex-row">
-            <button onClick={toggleTheme} className=" flex items-center">
-              Switch theme
+          <div className="xl:flex xl:flex-row xl:visible">
+            <button onClick={toggleTheme} className=" flex">
               {theme === "dark" ? <Sun /> : <Moon />}
             </button>
-            <button className=" px-3 py-1 text-base  bg-gray-900 text-gray-50 rounded-2xl dark:bg-gray-100 dark:text-gray-900">
+            <button className="rounded-xl bg-gray-900 text-gray-50 font-medium text-base px-4 py-[6px] dark:bg-gray-50 dark:text-gray-900">
               Download CV
             </button>
           </div>
         </div>
+        <span className="xl:invisible ml-10">
+          <Hamburger />
+        </span>
       </navbar>
     </div>
   );
