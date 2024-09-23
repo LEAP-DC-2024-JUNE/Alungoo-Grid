@@ -1,4 +1,4 @@
-const Hamburger = () => {
+const Hamburger = ({ theme }) => {
   return (
     <svg
       width="24"
@@ -9,22 +9,22 @@ const Hamburger = () => {
     >
       <path
         d="M4 12H20"
-        stroke="#4B5563"
-        stroke-width="2"
+        stroke={theme === "light " ? "#4B5563" : "#D1D5DB"}
+        stroke-width="3"
         stroke-linecap="round"
         stroke-linejoin="round"
       />
       <path
         d="M4 6H20"
-        stroke="#4B5563"
-        stroke-width="2"
+        stroke={theme === "light " ? "#4B5563" : "#D1D5DB"}
+        stroke-width="3"
         stroke-linecap="round"
         stroke-linejoin="round"
       />
       <path
         d="M4 18H20"
-        stroke="#4B5563"
-        stroke-width="2"
+        stroke={theme === "light " ? "#4B5563" : "#D1D5DB"}
+        stroke-width="3"
         stroke-linecap="round"
         stroke-linejoin="round"
       />
