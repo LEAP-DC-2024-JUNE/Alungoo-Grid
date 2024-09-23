@@ -5,8 +5,13 @@ import Location from "@/icons/Location";
 import Twitterlogo from "@/icons/Twitterlogo";
 import Pic1 from "../../public/Pic.png";
 import Image from "next/image";
+import DarkGitlogo from "@/icons/DarkGitlogo";
+import { useTheme } from "next-themes";
+import DarkTwitterlogo from "@/icons/DarkTwitterlogo";
+import DarkFigma from "@/icons/DarkFigmalogo";
 
 export default function Intro() {
+  const { theme } = useTheme();
   return (
     <div className="xl:flex font-serif xl: text-gray-600 xl:justify-between w-full xl:flex-row flex flex-col-reverse  dark:bg-gray-950 dark:text-gray-150 p-5">
       <div className="xl:ml-20">
@@ -30,9 +35,9 @@ export default function Intro() {
           <p>Available for new projects</p>
         </div>
         <div className="flex pt-1 size-16 mt-5">
-          <Gitlogo />
-          <Twitterlogo />
-          <Figma />
+          {theme == "light" ? <Gitlogo /> : <DarkGitlogo />}
+          {theme == "light" ? <Twitterlogo /> : <DarkTwitterlogo />}
+          {theme == "light" ? <Figma /> : <DarkFigma />}
         </div>
       </div>
       <div className=" xl:w-[700px] ml-12">

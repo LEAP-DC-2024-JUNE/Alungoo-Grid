@@ -5,6 +5,7 @@ import { useTheme } from "next-themes";
 import HamburgerIcon from "@/icons/HamburgerIcon";
 import HamburgerMenu from "./HamburgerMenu";
 import { useState } from "react";
+import DarkLogo from "@/icons/DarkLogo";
 
 export const Navbar = () => {
   const { theme, setTheme } = useTheme();
@@ -19,11 +20,9 @@ export const Navbar = () => {
   };
 
   return (
-    <div className="xl:w-full xl:flex xl:gap-60 xl:justify-between  dark:bg-gray-950 dark:border-gray-950 flex flex-row  w-screen item-center">
-      <div className=" flex justify-between xl:mx-10 ">
-        <div className="  xl:py-4 xl:mr-20 ">
-          <Logo />
-        </div>
+    <div className="xl:w-full xl:flex xl:gap-60 xl:justify-between  dark:bg-gray-950 dark:border-gray-950   w-screen item-center">
+      <div className=" flex justify-between xl:mx-10 p-10">
+        <div className=" ">{theme == "light" ? <Logo /> : <DarkLogo />}</div>
         <div className="xl:invisible ">
           <button onClick={() => setIsVisible(!isVisible)}>
             <HamburgerIcon />
@@ -46,7 +45,7 @@ export const Navbar = () => {
           <div onClick={toggleTheme} className=" flex mt-3">
             {theme === "dark" ? <Moon /> : <Sun />}
           </div>
-          <div className=" dark:bg-gray-50 dark:text-gray-900 xl:mt-3 px-[16px] py-[8px] bg-gray-950 text-gray-50 rounded-2xl">
+          <div className="">
             <button>Download CV</button>
           </div>
         </div>
