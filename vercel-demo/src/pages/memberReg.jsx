@@ -1,4 +1,10 @@
+import { useState } from "react";
+
 const Register = () => {
+  const [membership, setMembership] = useState("");
+  const handleRadioInput = (param1) => {
+    setMembership(param1);
+  };
   return (
     <div>
       <div className=" xl:text-2xl text-blue-600 font-bold ">
@@ -105,19 +111,34 @@ const Register = () => {
             <input
               class="mt-1 px-3 py-2 bg-white border  border-slate-300 placeholder-slate-400 focus:outline-none focus:border-sky-500 focus:ring-sky-500 block  rounded-md sm:text-sm focus:ring-1 text-sm font-medium text-slate-700"
               type="radio"
+              value={"Standard"}
+              name="membershipType"
+              onChange={(event) => handleRadioInput(event.target.value)}
             />
             <label class=" text-sm font-medium text-slate-700">Standard </label>
             <input
               class="mt-1 px-3 py-2 bg-white border  border-slate-300 placeholder-slate-400 focus:outline-none focus:border-sky-500 focus:ring-sky-500 block rounded-md sm:text-sm focus:ring-1 text-sm font-medium text-slate-700"
               type="radio"
+              value={"Premium"}
+              name="membershipType"
+              onChange={(event) => handleRadioInput(event.target.value)}
             />
             <label class=" text-sm font-medium text-slate-700">Premium</label>
             <input
               class="mt-1 px-3 py-2 bg-white border  border-slate-300 placeholder-slate-400 focus:outline-none focus:border-sky-500 focus:ring-sky-500 block rounded-md sm:text-sm focus:ring-1 text-sm font-medium text-slate-700"
               type="radio"
+              value={"Ultimate"}
+              name="membershipType"
+              onChange={(event) => handleRadioInput(event.target.value)}
             />
             <label class=" text-sm font-medium text-slate-700">Ultimate</label>
           </div>
+          <button
+            className="border-2 mt-10"
+            onClick={() => console.log(membership)}
+          >
+            Submit
+          </button>
         </div>
       </div>
     </div>
