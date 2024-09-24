@@ -1,18 +1,15 @@
-// import Logo from "@/icons/Logo";
-// import Toggle from "@/icons/toggle";
-
-import Intro from "./intro";
-import About from "./about";
-import Experience from "./experience";
-import Skills from "./skills";
-import Work from "./work";
+import Experience from "@/components/Experience";
+import Work from "@/components/Work";
 import { Footer } from "@/components/Footer";
 import { Navbar } from "@/components/Navbar";
+import About from "@/components/About";
+import Intro from "@/components/Intro";
+import Skills from "@/components/Skills";
 
 const Home = () => {
   return (
     <div>
-      {/* <Navbar /> */}
+      <Navbar />
       <Intro />
       <About />
       <Skills />

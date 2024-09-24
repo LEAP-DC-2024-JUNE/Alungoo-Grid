@@ -1,9 +1,11 @@
 import Logo from "@/icons/Logo";
-import Close from "@/icons/X-icon";
+import CloseIcon from "@/icons/CloseIcon";
 import { useTheme } from "next-themes";
 import Sun from "@/icons/Sun";
 import { Moon } from "@/icons/Moon";
 import { useState } from "react";
+import DarkLogo from "@/icons/DarkLogo";
+import DarkClose from "@/icons/DarkClose";
 
 const HamburgerMenu = ({ isVisible, setIsVisible }) => {
   const { theme, setTheme } = useTheme();
@@ -18,14 +20,12 @@ const HamburgerMenu = ({ isVisible, setIsVisible }) => {
 
   return (
     <div className="visible bg-gray-900 bg-opacity-100 fixed top-0 left-0 w-screen h-screen">
-      <div className=" w-[420px] dark:bg-gray-950 bg-white m-5">
+      <div className=" dark:bg-gray-950 bg-white m-5">
         <div className=" p-5 border-gray-100 flex justify-between item-center border-b-[1px] dark:border-gray-800 ">
-          <div>
-            <Logo />
-          </div>
+          <div>{theme == "light" ? <Logo /> : <DarkLogo />}</div>
           <div>
             <button onClick={() => setIsVisible(!isVisible)}>
-              <Close />
+              <div>{theme == "light" ? <CloseIcon /> : <DarkClose />}</div>
             </button>
           </div>
         </div>

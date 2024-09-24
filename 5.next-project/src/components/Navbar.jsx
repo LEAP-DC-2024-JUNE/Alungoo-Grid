@@ -4,12 +4,20 @@ import { Moon } from "@/icons/Moon";
 import { useTheme } from "next-themes";
 import HamburgerIcon from "@/icons/HamburgerIcon";
 import HamburgerMenu from "./HamburgerMenu";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import DarkLogo from "@/icons/DarkLogo";
+import DarkHamburgerIcon from "@/icons/DarkHamburgerIcon";
 
 export const Navbar = () => {
   const { theme, setTheme } = useTheme();
   const [isVisible, setIsVisible] = useState(false);
+  const [mounted, setMounted] = useState(false);
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+  if (!mounted) {
+    return null;
+  }
 
   let toggleTheme = () => {
     if (theme == "dark") {
@@ -20,12 +28,12 @@ export const Navbar = () => {
   };
 
   return (
-    <div className="xl:w-full xl:flex xl:gap-60 xl:justify-between  dark:bg-gray-950 dark:border-gray-950   w-screen item-center">
+    <div className="w-full xl:flex xl:gap-60 xl:justify-between  dark:bg-gray-950 dark:border-gray-950  xl:items-center">
       <div className=" flex justify-between xl:mx-10 p-10">
         <div className=" ">{theme == "light" ? <Logo /> : <DarkLogo />}</div>
         <div className="xl:invisible ">
           <button onClick={() => setIsVisible(!isVisible)}>
-            <HamburgerIcon />
+            {theme == "light" ? <HamburgerIcon /> : <DarkHamburgerIcon />}
           </button>
           {isVisible && (
             <HamburgerMenu isVisible={isVisible} setIsVisible={setIsVisible} />
@@ -41,11 +49,11 @@ export const Navbar = () => {
             <li className="hover:shadow-xl sm: m-5">Contact</li>
           </ul>
         </div>
-        <div className="xl:flex xl:flex-row xl:visible xl:gap-4 xl:ml-28 xl:mx-10">
-          <div onClick={toggleTheme} className=" flex mt-3">
+        <div className="xl:flex xl:flex-row xl:visible xl:gap-4  xl:mx-10 xl:items-center">
+          <div onClick={toggleTheme} className=" flex ">
             {theme === "dark" ? <Moon /> : <Sun />}
           </div>
-          <div className="">
+          <div className=" py-[6px] px-[14px] bg-gray-900 text-white rounded-2xl dark:bg-gray-50 dark:text-gray-900 ">
             <button>Download CV</button>
           </div>
         </div>

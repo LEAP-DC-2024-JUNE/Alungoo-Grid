@@ -13,12 +13,12 @@ import DarkFigma from "@/icons/DarkFigmalogo";
 export default function Intro() {
   const { theme } = useTheme();
   return (
-    <div className="xl:flex font-serif xl: text-gray-600 xl:justify-between w-full xl:flex-row flex flex-col-reverse  dark:bg-gray-950 dark:text-gray-150 p-5">
-      <div className="xl:ml-20">
-        <p className=" font-bold text-3xl text-gray-900 dark:text-gray-300 mt-10">
-          Hi, I'm Alungoo 👩‍💻
+    <div className="xl:flex font-serif xl: text-gray-600  w-full xl:flex-row xl:items-center xl:gap-28 flex flex-col-reverse  dark:bg-gray-950 dark:text-gray-150 xl:p-16">
+      <div className="xl:ml-20 px-6">
+        <p className=" font-bold text-3xl text-gray-900 dark:text-gray-300 mt-10 ">
+          Hi, I'm Tom 🙋‍♂️
         </p>
-        <p className=" xl:mt-5 xl:w-[700px] mt-5">
+        <p className=" xl:mt-5 xl:w-[650px] mt-5">
           I specialize in full stack development, particularly with React.js and
           Node.js. My main goal is to create exceptional digital experiences
           that are fast, visually appealing, and accessible to everyone. With
@@ -40,7 +40,7 @@ export default function Intro() {
           {theme == "light" ? <Figma /> : <DarkFigma />}
         </div>
       </div>
-      <div className=" xl:w-[700px] ml-12">
+      <div className=" xl:w-[650px] ml-12">
         <Image src={Pic1} />
       </div>
     </div>

@@ -12,10 +12,12 @@ export const Footer = () => {
   const { theme } = useTheme();
   return (
     <div className="flex flex-col justify-center text-center w-full dark:bg-gray-950 ">
-      <div className=" text-sm  text-gray-800 font-medium mt-5">
-        <button>Get in touch</button>
+      <div className=" text-sm  text-gray-800 font-medium mt-10">
+        <button className=" py-[4px] px-[12px] bg-slate-500 text-white rounded-2xl">
+          Get in touch
+        </button>
       </div>
-      <p>
+      <p className=" mt-5">
         What’s next? Feel free to reach out to me if you're looking for <br /> a
         developer, have a query, or simply want to connect.
       </p>

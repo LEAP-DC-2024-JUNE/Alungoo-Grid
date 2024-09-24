@@ -1,4 +1,4 @@
-import { WorkCard } from "@/components/WorkCard";
+import { WorkCard } from "@/components/Workcard";
 import Ubcab from "../../public/Ubcab.png";
 import Mentor from "../../public/Mentor.png";
 import Itoim from "../../public/itoim.png";
@@ -63,7 +63,7 @@ const Work = () => {
     },
   ];
   return (
-    <div className=" bg-white  xl:w-full text-center dark:bg-gray-950">
+    <div className=" bg-white  w-full text-center dark:bg-gray-950">
       <button className=" text-sm px-4 py-2 bg-gradient-to-r from-slate-200 to-slate-500 rounded-2xl mt-10 xl:mx-96 text-gray-800 font-medium">
         Works
       </button>

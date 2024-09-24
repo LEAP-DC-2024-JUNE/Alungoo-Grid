@@ -1,4 +1,4 @@
-const HamburgerIcon = () => {
+const DarkHamburgerIcon = () => {
   return (
     <svg
       width="24"
@@ -9,21 +9,21 @@ const HamburgerIcon = () => {
     >
       <path
         d="M4 12H20"
-        stroke="#4B5563"
+        stroke="#D1D5DB"
         stroke-width="3"
         stroke-linecap="round"
         stroke-linejoin="round"
       />
       <path
         d="M4 6H20"
-        stroke="#4B5563"
+        stroke="#D1D5DB"
         stroke-width="3"
         stroke-linecap="round"
         stroke-linejoin="round"
       />
       <path
         d="M4 18H20"
-        stroke="#4B5563"
+        stroke="#D1D5DB"
         stroke-width="3"
         stroke-linecap="round"
         stroke-linejoin="round"
@@ -31,4 +31,4 @@ const HamburgerIcon = () => {
     </svg>
   );
 };
-export default HamburgerIcon;
+export default DarkHamburgerIcon;

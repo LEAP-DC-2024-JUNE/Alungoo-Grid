@@ -23,31 +23,26 @@ export default function Skills() {
       <button className=" text-sm px-4 py-2 bg-gradient-to-r from-slate-200 to-slate-500 rounded-2xl mt-10 xl:mx-96 text-gray-800 font-medium">
         Skills
       </button>
-      <p className=" mt-5 text-center">
+      <p className=" mt-5 text-center p-5">
         The skills, tools and technologies I am really good at:
       </p>
-      <div>
-        <div className=" xl: flex xl: flex-row xl:gap-32 py-10  xl:justify-center  flex-wrap  gap-24 ">
-          <JS />
-          <TS />
-          <Image src={Reactlogo} />
-          <Image src={Tailwind} />
-          <Node />
-          <Express />
-          <Nest />
-          <Socket />
-        </div>
-        <div className="xl: flex xl: flex-row xl:gap-32 py-10 xl:justify-center  flex-wrap  gap-24 ">
-          <Image src={Tech} />
-          <Image src={Next} />
-
-          <Mongo />
-          <Sass />
-          <FigmaPort />
-          <Cypress />
-          <Storybook />
-          <GitPort />
-        </div>
+      <div className=" flex flex-row justify-between flex-wrap p-10 xl: gap-20  ">
+        <JS />
+        <TS />
+        <Image src={Reactlogo} />
+        <Image src={Tailwind} />
+        <Node />
+        <Express />
+        <Nest />
+        <Socket />
+        <Image src={Tech} />
+        <Image src={Next} />
+        <Mongo />
+        <Sass />
+        <FigmaPort />
+        <Cypress />
+        <Storybook />
+        <GitPort />
       </div>
     </div>
   );

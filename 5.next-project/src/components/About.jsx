@@ -2,7 +2,7 @@ import Pic2 from "../../public/Pic2.png";
 import Image from "next/image";
 export default function About() {
   return (
-    <div className="xl:bg-gray-50 w-full text-center  bg-gray-50 dark:bg-gray-900 p-5 xl:py-25 ">
+    <div className="xl:bg-gray-50 min-w-full text-center  bg-gray-50 dark:bg-gray-900 p-5 xl:py-25 xl:p-20">
       <button className=" xl:text-sm px-4 py-2 bg-gradient-to-r from-slate-200 to-slate-500 rounded-2xl mt-10 xl:mx-96 text-gray-800 xl:font-medium">
         About me
       </button>
@@ -32,7 +32,9 @@ export default function About() {
               Twitter, tracking startup journeys, or unwinding. Follow me for
               tech insights and public project updates on Twitter or GitHub.
             </p>
-            <p className="text-gray-600">Finally, some quick bits about me.</p>
+            <p className="text-gray-600  dark:text-gray-300">
+              Finally, some quick bits about me.
+            </p>
             <ul className=" my-5 list-disc mx-10 text-gray-600 dark:text-gray-300">
               <li>B.E. in Computer Engineering</li>
               <li>Full time freelancer</li>
