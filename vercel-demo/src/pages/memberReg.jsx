@@ -2,9 +2,35 @@ import { useState } from "react";
 
 const Register = () => {
   const [membership, setMembership] = useState("");
+  const [firstName, setFirstName] = useState("");
+  const [lastName, setLastName] = useState("");
+  const [address, setAddress] = useState("");
+  const [city, setCity] = useState("");
+  const [zip, setZip] = useState("");
+  const [email, setEmail] = useState("");
+
+  const handleFirstName = (parameter1) => {
+    setFirstName(parameter1);
+  };
+  const handleLastName = (parameter1) => {
+    setLastName(parameter1);
+  };
+  const handleAddress = (parameter1) => {
+    setAddress(parameter1);
+  };
+  const handleCity = (parameter1) => {
+    setCity(parameter1);
+  };
+  const handleZip = (parameter1) => {
+    setZip(parameter1);
+  };
+  const handleEmail = (parameter1) => {
+    setEmail(parameter1);
+  };
   const handleRadioInput = (param1) => {
     setMembership(param1);
   };
+
   return (
     <div>
       <div className=" xl:text-2xl text-blue-600 font-bold ">
@@ -19,6 +45,9 @@ const Register = () => {
             <input
               class="mt-1 px-3 py-2 bg-white border shadow-sm border-slate-300 placeholder-slate-400 focus:outline-none focus:border-sky-500 focus:ring-sky-500 block rounded-md sm:text-sm focus:ring-1"
               type="text"
+              onChange={(event) => {
+                handleFirstName(event.target.value);
+              }}
             />
           </div>
           <div>
@@ -28,6 +57,9 @@ const Register = () => {
             <input
               class="mt-1 px-3 py-2 bg-white border shadow-sm border-slate-300 placeholder-slate-400 focus:outline-none focus:border-sky-500 focus:ring-sky-500 block rounded-md sm:text-sm focus:ring-1"
               type="text"
+              onChange={(e) => {
+                handleLastName(e.target.value);
+              }}
             />
           </div>
         </div>
@@ -40,6 +72,9 @@ const Register = () => {
             <input
               class="mt-1 px-3 py-2 bg-white border shadow-sm border-slate-300 placeholder-slate-400 focus:outline-none focus:border-sky-500 focus:ring-sky-500 block  rounded-md sm:text-sm focus:ring-1"
               type="text"
+              onChange={(event) => {
+                handleAddress(event.target.value);
+              }}
             />
           </div>
           <div>
@@ -61,6 +96,9 @@ const Register = () => {
           <input
             class="mt-1 px-3 py-2 bg-white border shadow-sm border-slate-300 placeholder-slate-400 focus:outline-none focus:border-sky-500 focus:ring-sky-500 block rounded-md sm:text-sm focus:ring-1"
             type="text"
+            onChange={(e) => {
+              handleCity(e.target.event);
+            }}
           />
         </div>
         <div className="flex gap-[181px]">
@@ -79,6 +117,9 @@ const Register = () => {
             <input
               class="mt-1 px-3 py-2 bg-white border shadow-sm border-slate-300 placeholder-slate-400 focus:outline-none focus:border-sky-500 focus:ring-sky-500  rounded-md sm:text-sm focus:ring-1"
               type="number"
+              onChange={(e) => {
+                handleZip(e.target.value);
+              }}
             />
           </div>
         </div>
@@ -100,6 +141,9 @@ const Register = () => {
           <input
             class="mt-1 px-3 py-2 bg-white border shadow-sm border-slate-300 placeholder-slate-400 focus:outline-none focus:border-sky-500 focus:ring-sky-500 rounded-md sm:text-sm focus:ring-1"
             type="email"
+            onChange={(e) => {
+              handleEmail(e.target.value);
+            }}
           />
         </div>
         <div className="">
@@ -135,7 +179,17 @@ const Register = () => {
           </div>
           <button
             className="border-2 mt-10"
-            onClick={() => console.log(membership)}
+            onClick={() =>
+              console.log(
+                membership,
+                firstName,
+                lastName,
+                address,
+                city,
+                zip,
+                email
+              )
+            }
           >
             Submit
           </button>

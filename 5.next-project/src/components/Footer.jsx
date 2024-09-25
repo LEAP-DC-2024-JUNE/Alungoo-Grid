@@ -18,8 +18,8 @@ export const Footer = () => {
         </button>
       </div>
       <p className=" mt-5">
-        What’s next? Feel free to reach out to me if you're looking for <br /> a
-        developer, have a query, or simply want to connect.
+        What’s next? Feel free to reach out to me if you're looking <br />
+        for a developer, have a query, or simply want to connect.
       </p>
       <div className=" mt-5">
         <div className="flex justify-center text-center gap-3">
@@ -31,7 +31,7 @@ export const Footer = () => {
           <button>{theme == "light" ? <Clip /> : <DarkClip />}</button>
         </div>
       </div>
-      <p className=" text-xs text-gray-500 mt-5">
+      <p className=" text-xs text-gray-500 mt-5 dark:text-gray-50">
         You may also find me on these platforms!
       </p>
       <div className="flex gap-3 text-center justify-center">

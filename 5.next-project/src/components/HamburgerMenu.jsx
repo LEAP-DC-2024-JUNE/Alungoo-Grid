@@ -19,12 +19,15 @@ const HamburgerMenu = ({ isVisible, setIsVisible }) => {
   };
 
   return (
-    <div className="visible bg-gray-900 bg-opacity-100 fixed top-0 left-0 w-screen h-screen">
-      <div className=" dark:bg-gray-950 bg-white m-5">
+    <div className=" bg-gray-900 bg-opacity-80  top-0 left-0 w-screen h-screen fixed">
+      <div className=" dark:bg-gray-950 bg-white w-[390px] fixed m-5  h-screen">
         <div className=" p-5 border-gray-100 flex justify-between item-center border-b-[1px] dark:border-gray-800 ">
           <div>{theme == "light" ? <Logo /> : <DarkLogo />}</div>
           <div>
-            <button onClick={() => setIsVisible(!isVisible)}>
+            <button
+              className=" cursor-pointer"
+              onClick={() => setIsVisible(!isVisible)}
+            >
               <div>{theme == "light" ? <CloseIcon /> : <DarkClose />}</div>
             </button>
           </div>

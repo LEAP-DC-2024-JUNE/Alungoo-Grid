@@ -18,19 +18,19 @@ export default function Intro() {
         <p className=" font-bold text-3xl text-gray-900 dark:text-gray-300 mt-10 ">
           Hi, I'm Tom 🙋‍♂️
         </p>
-        <p className=" xl:mt-5 xl:w-[650px] mt-5">
+        <p className=" xl:mt-5 xl:w-[650px] mt-5 dark:text-gray-300 text-gray-600">
           I specialize in full stack development, particularly with React.js and
           Node.js. My main goal is to create exceptional digital experiences
           that are fast, visually appealing, and accessible to everyone. With
           over 7 years of experience in web development, I continue to find joy
           in crafting innovative solutions and designs.
         </p>
-        <div className="flex mt-10 gap-2">
+        <div className="flex mt-10 gap-2 dark:text-gray-300 text-gray-600">
           <Location />
           <p>Ulaanbaatar, Mongolia</p>
         </div>
 
-        <div className="flex gap-2">
+        <div className="flex gap-2 dark:text-gray-300 text-gray-600">
           <Active />
           <p>Available for new projects</p>
         </div>
