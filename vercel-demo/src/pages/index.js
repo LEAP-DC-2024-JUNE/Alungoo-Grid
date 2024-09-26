@@ -10,6 +10,7 @@ import Assignment5 from "./assignment5";
 import Assignment2New from "./assignment2New";
 import InputForm from "../pages/inputForm";
 import MemberReg from "../pages/memberReg";
+import Search from "./searchInput";
 
 export default function Home() {
   return (
@@ -21,12 +22,12 @@ export default function Home() {
       </div>
       <div style={{ border: "2px solid purple", margin: "10px" }}>
         September/18/2024
-        <FilterFunction />
+        {/* <FilterFunction />
         <Assignment1 />
         <Assignment2 />
         <Assignment3 />
         <Assignment4 />
-        <Assignment5 />
+        <Assignment5 /> */}
       </div>
       <div style={{ border: "2px solid purple", margin: "10px" }}>
         September/19/2024
@@ -35,6 +36,10 @@ export default function Home() {
       </div>
       <div>
         <MemberReg />
+      </div>
+      <div style={{ border: "2px solid purple", margin: "10px" }}>
+        <p className=" bg-lime-200">September 26</p>
+        <Search />
       </div>
       <div>
         {/* <Products />
