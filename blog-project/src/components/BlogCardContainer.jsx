@@ -1,14 +1,14 @@
 import { BlogCard } from "./BlogCard";
-import { Header } from "./Header";
+import Footer from "./Footer";
 
 export const BlogCardContainer = ({ articles, inputValue }) => {
   const filteredArticles = articles.filter((article) => {
     let inputValueUpper = inputValue.toUpperCase();
     let articleTitle = article.title.toUpperCase();
     return articleTitle.includes(inputValueUpper);
-
     // article.title == inputValue
   });
+  console.log(articles);
   return (
     <div className=" w-full ">
       <div className=" font-bold">All Blog Post</div>
@@ -32,6 +32,7 @@ export const BlogCardContainer = ({ articles, inputValue }) => {
       <div>
         <button className="border-2 ml-40">Load More</button>
       </div>
+      <Footer />
     </div>
   );
 };

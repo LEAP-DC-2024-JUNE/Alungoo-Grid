@@ -7,7 +7,7 @@ const BlogLists = () => {
   const [inputValue, setInputValue] = useState("");
 
   const fetchData = () => {
-    fetch("https://dev.to/api/articles?per_page=9")
+    fetch(" https://dev.to/api/articles?per_page=9")
       .then((response) => response.json())
       .then((data) => setArticles(data));
   };
@@ -15,7 +15,9 @@ const BlogLists = () => {
   useEffect(() => {
     fetchData();
   }, []);
+
   console.log(articles);
+
   return (
     <div>
       <div>
