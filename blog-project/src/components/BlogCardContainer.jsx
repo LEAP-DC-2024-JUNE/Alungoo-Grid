@@ -1,5 +1,4 @@
 import { BlogCard } from "./BlogCard";
-import Footer from "./Footer";
 
 export const BlogCardContainer = ({ articles, inputValue }) => {
   const filteredArticles = articles.filter((article) => {
@@ -13,14 +12,16 @@ export const BlogCardContainer = ({ articles, inputValue }) => {
     <div className=" w-full ">
       <div className=" font-bold px-40 py-10 text-xl">All Blog Post</div>
       <div className="grid grid-cols-3 gap-5 px-40 py-5">
-        {filteredArticles?.map((article, index) => {
+        {filteredArticles.map((article, index) => {
           return (
             <>
               <BlogCard
                 img={article.social_image}
                 tag={article.tags}
                 title={article.title}
-                user={article.user.username}
+                // profilePic={article.user.profile_image_90}
+                user={article.user.name}
+                publishDate={article.readable_publish_date}
                 key={index}
               />
             </>
@@ -30,7 +31,6 @@ export const BlogCardContainer = ({ articles, inputValue }) => {
       <div className=" py-10 text-center">
         <button className="border-2  px-3 py-1">Load More</button>
       </div>
-      <Footer />
     </div>
   );
 };

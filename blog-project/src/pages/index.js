@@ -1,21 +1,29 @@
 import {
   Header,
   Footer,
-  BlogCard,
   CarouselCard,
-  TrendinCard,
+  TrendingCard,
+  AllBlogPost,
 } from "@/components";
-import { BlogCardContainer } from "@/components/BlogCardContainer";
+import { useState, useEffect } from "react";
 
 export default function Home() {
+  const [articles, setArticles] = useState([]);
+  const fetchData = () => {
+    fetch(" https://dev.to/api/articles?per_page=9")
+      .then((response) => response.json())
+      .then((data) => setArticles(data));
+  };
+  useEffect(() => {
+    fetchData();
+  }, []);
   return (
-    <div className=" bg-slate-800 text-white text-2xl text-center mt-5">
-      Hello New Project
+    <div>
       <Header />
-      <BlogCard />
-      <BlogCardContainer />
-      <CarouselCard />
-      <TrendinCard />
+
+      {/* <CarouselCard /> */}
+      {/* <TrendingCard /> */}
+      <AllBlogPost articles={articles} />
       <Footer />
     </div>
   );

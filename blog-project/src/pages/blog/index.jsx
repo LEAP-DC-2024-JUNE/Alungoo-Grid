@@ -1,5 +1,6 @@
 import { Header } from "@/components";
 import { BlogCardContainer } from "@/components/BlogCardContainer";
+import Footer from "@/components/Footer";
 import { useState, useEffect } from "react";
 
 const BlogLists = () => {
@@ -7,7 +8,7 @@ const BlogLists = () => {
   const [inputValue, setInputValue] = useState("");
 
   const fetchData = () => {
-    fetch(" https://dev.to/api/articles?per_page=9")
+    fetch(" https://dev.to/api/articles?per_page=12")
       .then((response) => response.json())
       .then((data) => setArticles(data));
   };
@@ -24,6 +25,7 @@ const BlogLists = () => {
         <Header setInputValue={setInputValue} />
       </div>
       <BlogCardContainer articles={articles} inputValue={inputValue} />
+      <Footer />
     </div>
   );
 };

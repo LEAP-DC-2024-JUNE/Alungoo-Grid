@@ -23,7 +23,7 @@ const Search = () => {
   const filteredValue = people.filter((person) => {
     let inputValueUpper = inputValue.toUpperCase();
     let personNameUpper = person.name.toUpperCase();
-    return personNameUpper.includes(inputValueUpper);
+    return inputValueUpper && personNameUpper.includes(inputValueUpper);
   });
 
   // person.name.toUpperCase() == inputValue.toUpperCase()

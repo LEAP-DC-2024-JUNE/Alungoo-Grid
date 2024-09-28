@@ -20,13 +20,14 @@ export const Header = ({ setInputValue }) => {
           <Link href="/">Contact</Link>
         </div>
       </div>
-
-      <input
-        type="text"
-        className=" bg-slate-100 border-2 border-black"
-        onChange={(e) => setInputValue(e.target.value)}
-        placeholder="Search"
-      ></input>
+      <div>
+        <input
+          type="text"
+          className=" bg-slate-100 border-2 border-black"
+          onChange={(e) => setInputValue(e.target.value)}
+          placeholder="Search"
+        ></input>
+      </div>
     </div>
   );
 };

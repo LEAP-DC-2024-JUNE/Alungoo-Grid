@@ -5,7 +5,7 @@ import MainLogo from "@/icons/MainLogo";
 import Twitter from "@/icons/Twitter";
 import Link from "next/link";
 
-const Footer = () => {
+export const Footer = () => {
   return (
     <div class=" bg-[#E8E8EA] w-full mt-20 ">
       <div className=" p-16 px-40">
@@ -62,4 +62,3 @@ const Footer = () => {
     </div>
   );
 };
-export default Footer;
