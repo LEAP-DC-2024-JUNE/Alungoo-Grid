@@ -11,26 +11,24 @@ export const BlogCardContainer = ({ articles, inputValue }) => {
   console.log(articles);
   return (
     <div className=" w-full ">
-      <div className=" font-bold">All Blog Post</div>
-      <div className="flex flex-wrap gap-5 justify-center items-center">
+      <div className=" font-bold px-40 py-10 text-xl">All Blog Post</div>
+      <div className="grid grid-cols-3 gap-5 px-40 py-5">
         {filteredArticles?.map((article, index) => {
           return (
-            <div className="ml-10">
-              <div>
-                <BlogCard
-                  img={article.social_image}
-                  tag={article.tags}
-                  title={article.title}
-                  user={article.user.username}
-                  key={index}
-                />
-              </div>
-            </div>
+            <>
+              <BlogCard
+                img={article.social_image}
+                tag={article.tags}
+                title={article.title}
+                user={article.user.username}
+                key={index}
+              />
+            </>
           );
         })}
       </div>
-      <div>
-        <button className="border-2 ml-40">Load More</button>
+      <div className=" py-10 text-center">
+        <button className="border-2  px-3 py-1">Load More</button>
       </div>
       <Footer />
     </div>
