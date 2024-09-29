@@ -2,13 +2,14 @@ import {
   Header,
   Footer,
   CarouselCard,
-  TrendingCard,
   AllBlogPost,
+  TrendingCard,
 } from "@/components";
 import { useState, useEffect } from "react";
 
 export default function Home() {
   const [articles, setArticles] = useState([]);
+  const [inputValue, setInputValue] = useState("");
   const fetchData = () => {
     fetch(" https://dev.to/api/articles?per_page=9")
       .then((response) => response.json())
@@ -19,11 +20,11 @@ export default function Home() {
   }, []);
   return (
     <div>
-      <Header />
+      <Header setInputValue={setInputValue} />
 
-      {/* <CarouselCard /> */}
-      {/* <TrendingCard /> */}
-      <AllBlogPost articles={articles} />
+      <CarouselCard />
+      <TrendingCard />
+      <AllBlogPost articles={articles} inputValue={inputValue} />
       <Footer />
     </div>
   );

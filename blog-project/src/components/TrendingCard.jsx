@@ -1,3 +1,3 @@
-export const TrendinCard = () => {
+export const TrendingCard = () => {
   return <div>TrendinCard</div>;
 };

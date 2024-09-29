@@ -1,6 +1,6 @@
 import { Header } from "@/components";
 import { BlogCardContainer } from "@/components/BlogCardContainer";
-import Footer from "@/components/Footer";
+import { Footer } from "@/components/Footer";
 import { useState, useEffect } from "react";
 
 const BlogLists = () => {

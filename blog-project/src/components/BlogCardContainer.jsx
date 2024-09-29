@@ -19,10 +19,10 @@ export const BlogCardContainer = ({ articles, inputValue }) => {
                 img={article.social_image}
                 tag={article.tags}
                 title={article.title}
-                // profilePic={article.user.profile_image_90}
                 user={article.user.name}
                 publishDate={article.readable_publish_date}
                 key={index}
+                withPic={true}
               />
             </>
           );
