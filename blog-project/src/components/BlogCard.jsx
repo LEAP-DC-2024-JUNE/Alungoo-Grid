@@ -22,14 +22,14 @@ export const BlogCard = ({
       <div className=" font-bold mt-5">{title}</div>
       <div className=" flex flex-row items-center justify-between">
         <div>
-          {withPic ? (
+          {withPic && (
             <img
               src="https://images.pexels.com/photos/1130626/pexels-photo-1130626.jpeg"
               width={25}
               height={25}
               className=" rounded-full"
             />
-          ) : null}
+          )}
         </div>
         <div className="mt-5 text-sm text-slate-500"> {user}</div>
         <div className="mt-5 text-sm text-slate-500"> {publishDate}</div>
