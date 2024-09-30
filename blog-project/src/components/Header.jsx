@@ -14,7 +14,7 @@ export const Header = ({ setInputValue }) => {
           <Link href="/">Home</Link>
         </div>
         <div>
-          <Link href="/">Blog</Link>
+          <Link href="/blog">Blog</Link>
         </div>
         <div>
           <Link href="/">Contact</Link>

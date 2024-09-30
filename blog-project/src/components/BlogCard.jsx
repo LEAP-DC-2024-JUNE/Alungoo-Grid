@@ -20,7 +20,7 @@ export const BlogCard = ({
         {tag}
       </div>
       <div className=" font-bold">{title}</div>
-      <div className=" flex flex-row justify-evenly">
+      <div className=" flex flex-row gap-5 bg-orange-400 ">
         <div>
           {withPic && (
             <img
