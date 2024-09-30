@@ -1,12 +1,21 @@
 import { BlogCard } from "./BlogCard";
 
-export const BlogCardContainer = ({ articles, inputValue }) => {
+export const BlogCardContainer = ({
+  articles,
+  inputValue,
+  setCount,
+  count,
+}) => {
   const filteredArticles = articles.filter((article) => {
     let inputValueUpper = inputValue.toUpperCase();
     let articleTitle = article.title.toUpperCase();
     return articleTitle.includes(inputValueUpper);
     // article.title == inputValue
   });
+
+  const loadMore = () => {
+    setCount(count + 3);
+  };
   console.log(articles);
   return (
     <div className=" w-full ">
@@ -29,7 +38,9 @@ export const BlogCardContainer = ({ articles, inputValue }) => {
         })}
       </div>
       <div className=" py-10 text-center">
-        <button className="border-2  px-3 py-1">Load More</button>
+        <button className="border-2  px-3 py-1" onClick={loadMore}>
+          Load More
+        </button>
       </div>
     </div>
   );

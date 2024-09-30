@@ -6,16 +6,17 @@ import { useState, useEffect } from "react";
 const BlogLists = () => {
   const [articles, setArticles] = useState([]);
   const [inputValue, setInputValue] = useState("");
+  const [count, setCount] = useState(12);
 
   const fetchData = () => {
-    fetch(" https://dev.to/api/articles?per_page=12")
+    fetch(` https://dev.to/api/articles?per_page=${count}`)
       .then((response) => response.json())
       .then((data) => setArticles(data));
   };
 
   useEffect(() => {
     fetchData();
-  }, []);
+  }, [count]);
 
   console.log(articles);
 
@@ -24,7 +25,12 @@ const BlogLists = () => {
       <div>
         <Header setInputValue={setInputValue} />
       </div>
-      <BlogCardContainer articles={articles} inputValue={inputValue} />
+      <BlogCardContainer
+        articles={articles}
+        inputValue={inputValue}
+        setCount={setCount}
+        count={count}
+      />
       <Footer />
     </div>
   );
