@@ -11,7 +11,7 @@ export const BlogCardContainer = ({ articles, inputValue }) => {
   return (
     <div className=" w-full ">
       <div className=" font-bold px-40 py-10 text-xl">All Blog Post</div>
-      <div className="grid grid-cols-3 gap-5 px-40 py-5">
+      <div className="grid grid-cols-3 grid-rows-4 gap-5 px-40 py-5">
         {filteredArticles.map((article, index) => {
           return (
             <>

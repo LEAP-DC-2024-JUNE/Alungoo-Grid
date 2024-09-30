@@ -23,9 +23,9 @@ export const Header = ({ setInputValue }) => {
       <div>
         <input
           type="text"
-          className=" bg-slate-100 border-2 border-black"
+          className=" bg-slate-100 border-2 border-gray"
           onChange={(e) => setInputValue(e.target.value)}
-          placeholder="Search"
+          placeholder="Search ... "
         ></input>
       </div>
     </div>
