@@ -18,7 +18,7 @@ export const BlogCard = ({
       />
 
       <div className=" text-blue-600 bg-blue-50 rounded-xl text-sm text-center">
-        {tags[0]}
+        {tags}
       </div>
 
       <div className=" font-bold">{title}</div>
