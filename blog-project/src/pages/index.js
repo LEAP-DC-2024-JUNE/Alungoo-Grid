@@ -11,13 +11,14 @@ export default function Home() {
   const [articles, setArticles] = useState([]);
   const [inputValue, setInputValue] = useState("");
   const fetchData = () => {
-    fetch(" https://dev.to/api/articles?per_page=9")
+    fetch(` https://dev.to/api/articles?per_page=${count}`)
       .then((response) => response.json())
       .then((data) => setArticles(data));
   };
+  const [count, setCount] = useState(9);
   useEffect(() => {
     fetchData();
-  }, []);
+  }, [count]);
 
   return (
     <div>
@@ -25,7 +26,12 @@ export default function Home() {
 
       <CarouselCard />
       <TrendingCard />
-      <AllBlogPost articles={articles} inputValue={inputValue} />
+      <AllBlogPost
+        articles={articles}
+        inputValue={inputValue}
+        count={count}
+        setCount={setCount}
+      />
       <Footer />
     </div>
   );

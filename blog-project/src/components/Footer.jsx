@@ -7,12 +7,12 @@ import Link from "next/link";
 
 export const Footer = () => {
   return (
-    <div class=" bg-[#E8E8EA] w-full mt-20 ">
-      <div className=" p-16 px-40">
-        <div className=" flex justify-between border-b-[1px] border-gray-300 pr-40">
+    <div class=" bg-[#E8E8EA] w-full h-[495px] ">
+      <div className=" w-[1220px]">
+        <div className=" flex justify-between justify-items-center border-b-[1px] border-gray-300 ">
           <div>
             <p className=" font-bold">About</p>
-            <p className=" w-[300px] py-5">
+            <p className=" w-[300px] py-10">
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque
               quia, veniam officia incidunt neque adipisci iste perspiciatis
               illo? Non cumque doloremque quisquam quibusdam nemo praesentium
@@ -32,14 +32,14 @@ export const Footer = () => {
             <Link href="/">Blog</Link>
             <Link href="/">Contact</Link>
           </div>
-          <div className=" flex gap-5 pr-40">
+          <div className=" flex gap-10 pr-40">
             <Facebook />
             <Twitter />
             <Instagram />
             <LinkedIn />
           </div>
         </div>
-        <div className=" flex justify-between items-center mt-10 pr-20">
+        <div className="">
           <div className=" flex gap-2">
             <div>
               <MainLogo />
@@ -52,10 +52,10 @@ export const Footer = () => {
               <p>© All Rights Reserved.</p>
             </div>
           </div>
-          <div className=" flex gap-10 border-r-[1px] border-gray-300">
-            <p class="border-r-[1px] border-gray-300">Term of Use</p>
-            <p class="border-r-[1px] border-gray-300">Privacy Policy</p>
-            <p class="border-r-[1px] border-gray-300">Cookie Policy</p>
+          <div className=" flex border-r-[1px] border-gray-300">
+            <p class="border-r-[1px] border-gray-300 px-10">Term of Use</p>
+            <p class="border-r-[1px] border-gray-300 px-10">Privacy Policy</p>
+            <p class="border-r-[1px] border-gray-300 px-10">Cookie Policy</p>
           </div>
         </div>
       </div>
