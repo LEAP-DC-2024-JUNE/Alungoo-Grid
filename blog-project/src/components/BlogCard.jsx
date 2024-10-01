@@ -1,6 +1,6 @@
 export const BlogCard = ({
   img,
-  tag,
+  tags,
   title,
   user,
   publishDate,
@@ -16,9 +16,11 @@ export const BlogCard = ({
         className=" w-[360px] h-[240px] rounded-t-lg rounded-b-lg "
         src={img}
       />
+
       <div className=" text-blue-600 bg-blue-50 rounded-xl text-sm text-center">
-        {tag}
+        {tags[0]}
       </div>
+
       <div className=" font-bold">{title}</div>
       <div className=" flex flex-row gap-5 ">
         <div>

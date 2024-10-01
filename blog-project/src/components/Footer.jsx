@@ -8,8 +8,8 @@ import Link from "next/link";
 export const Footer = () => {
   return (
     <div class=" bg-[#E8E8EA] w-full h-[495px] ">
-      <div className=" w-[1220px]">
-        <div className=" flex justify-between justify-items-center border-b-[1px] border-gray-300 ">
+      <div className="w=[1220px] px-60 py-10">
+        <div className=" flex justify-between  border-b-[1px] border-gray-300 ">
           <div>
             <p className=" font-bold">About</p>
             <p className=" w-[300px] py-10">
@@ -39,7 +39,7 @@ export const Footer = () => {
             <LinkedIn />
           </div>
         </div>
-        <div className="">
+        <div className=" flex justify-between items-center py-5">
           <div className=" flex gap-2">
             <div>
               <MainLogo />
