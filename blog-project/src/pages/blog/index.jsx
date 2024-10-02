@@ -18,8 +18,6 @@ const BlogLists = () => {
     fetchData();
   }, [count]);
 
-  console.log(articles);
-
   return (
     <div>
       <div>

@@ -24,7 +24,7 @@ export const AllBlogPost = ({
       <p className=" font-bold px-44 py-10 text-xl text-center">
         All Blog Post
       </p>
-      <div className=" flex gap-10 font-bold px-40 py-10">
+      <div className=" flex gap-10 font-bold px-40 py-10 text-sm justify-center">
         <button>All</button>
         <button onClick={() => filteredCategory("javascript")}>
           Javascript
@@ -33,7 +33,7 @@ export const AllBlogPost = ({
         <button onClick={() => filteredCategory("nextjs")}>NextJS</button>
       </div>
       <div className=" flex flex-col items-center">
-        <div className=" grid grid-cols-3 gird-row-3 gap-2 px-40 py-5">
+        <div className=" grid grid-cols-3 gap-2 px-40 py-5">
           {filteredArticles.map((article, index) => {
             return (
               <div>

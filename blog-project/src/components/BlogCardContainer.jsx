@@ -27,6 +27,7 @@ export const BlogCardContainer = ({
               return (
                 <>
                   <BlogCard
+                    id={article.id}
                     img={article.social_image}
                     tags={article.tag_list}
                     title={article.title}

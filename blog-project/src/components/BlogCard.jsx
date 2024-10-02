@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export const BlogCard = ({
   img,
   tags,
@@ -6,35 +8,38 @@ export const BlogCard = ({
   publishDate,
   key,
   withPic,
+  id,
 }) => {
   return (
-    <div
-      key={key}
-      className=" border-[1px] w-[392px] h-[488px] p-4 rounded-t-lg rounded-b-lg flex flex-col justify-center items-center gap-5"
-    >
-      <img
-        className=" w-[360px] h-[240px] rounded-t-lg rounded-b-lg "
-        src={img}
-      />
+    <Link href={{ pathname: "/blog/singlePost", query: { selectedId: id } }}>
+      <div
+        key={key}
+        className=" border-[1px] w-[392px] h-[476px] rounded-t-lg rounded-b-lg flex flex-col items-center justify-evenly"
+      >
+        <img
+          className=" w-[360px] h-[240px] rounded-t-lg rounded-b-lg"
+          src={img}
+        />
 
-      <div className=" text-blue-600 bg-blue-50 rounded-xl text-sm text-center">
-        {tags}
-      </div>
-
-      <div className=" font-bold">{title}</div>
-      <div className=" flex flex-row gap-5 ">
-        <div>
-          {withPic && (
-            <img
-              src="https://images.pexels.com/photos/1130626/pexels-photo-1130626.jpeg"
-              width={20}
-              className=" rounded-full"
-            />
-          )}
+        <div className=" text-blue-600 bg-blue-50 rounded-xl text-sm text-center">
+          {tags}
         </div>
-        <div className=" text-sm text-slate-500"> {user}</div>
-        <div className="text-sm text-slate-500"> {publishDate}</div>
+
+        <div className=" font-bold">{title}</div>
+        <div className=" flex flex-row gap-5 ">
+          <div>
+            {withPic && (
+              <img
+                src="https://images.pexels.com/photos/1130626/pexels-photo-1130626.jpeg"
+                width={20}
+                className=" rounded-full"
+              />
+            )}
+          </div>
+          <div className=" text-sm text-slate-500"> {user}</div>
+          <div className="text-sm text-slate-500"> {publishDate}</div>
+        </div>
       </div>
-    </div>
+    </Link>
   );
 };

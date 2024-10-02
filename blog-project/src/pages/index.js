@@ -1,9 +1,9 @@
 import {
   Header,
   Footer,
-  CarouselCard,
+  CarouselContainer,
   AllBlogPost,
-  TrendingCard,
+  TrendingCardContainer,
 } from "@/components";
 import { useState, useEffect } from "react";
 
@@ -12,16 +12,13 @@ export default function Home() {
   const [inputValue, setInputValue] = useState("");
   const [count, setCount] = useState(9);
   const [category, setCategory] = useState("");
-  const [trendingArticle, setTrendingArticle] = useState("");
 
   const fetchData = () => {
-    fetch(
-      `https://dev.to/api/articles?per_page=${count}&tag=${category}&tag=${trendingArticle}&per_page=4`
-    )
+    fetch(`https://dev.to/api/articles?per_page=${count}&tag=${category}`)
       .then((response) => response.json())
       .then((data) => setArticles(data));
   };
-
+  console.log(category);
   // const fetchingDataInUseEffect = ()=> {
   // fetchData();}
   // useEffect [fetchingDataInUseEffect,[]]
@@ -33,13 +30,8 @@ export default function Home() {
   return (
     <div>
       <Header setInputValue={setInputValue} />
-
-      <CarouselCard />
-      <TrendingCard
-        trendginArticle={trendingArticle}
-        setTrendingArticle={setTrendingArticle}
-        articles={articles}
-      />
+      <CarouselContainer />
+      {/* <TrendingCardContainer /> */}
       <AllBlogPost
         articles={articles}
         inputValue={inputValue}
