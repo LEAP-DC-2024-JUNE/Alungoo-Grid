@@ -7,7 +7,7 @@ export const BlogCard = ({
   user,
   publishDate,
   key,
-  withPic,
+  profImg,
   id,
 }) => {
   return (
@@ -22,20 +22,12 @@ export const BlogCard = ({
         />
 
         <div className=" text-blue-600 bg-blue-50 rounded-xl text-sm text-center">
-          {tags}
+          {tags && tags[0]}
         </div>
 
         <div className=" font-bold">{title}</div>
         <div className=" flex flex-row gap-5 ">
-          <div>
-            {withPic && (
-              <img
-                src="https://images.pexels.com/photos/1130626/pexels-photo-1130626.jpeg"
-                width={20}
-                className=" rounded-full"
-              />
-            )}
-          </div>
+          <div>{<img src={profImg} className=" rounded-full" />}</div>
           <div className=" text-sm text-slate-500"> {user}</div>
           <div className="text-sm text-slate-500"> {publishDate}</div>
         </div>

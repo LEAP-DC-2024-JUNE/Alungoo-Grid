@@ -29,12 +29,12 @@ export const BlogCardContainer = ({
                   <BlogCard
                     id={article.id}
                     img={article.social_image}
+                    profImg={article.profile_image_90}
                     tags={article.tag_list}
                     title={article.title}
                     user={article.user.name}
                     publishDate={article.readable_publish_date}
                     key={index}
-                    withPic={true}
                   />
                 </>
               );

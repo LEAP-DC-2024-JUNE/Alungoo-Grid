@@ -1,38 +1,23 @@
-import { Next } from "@/icons/Next";
-import { Prev } from "@/icons/Prev";
-import { useState } from "react";
-export const CarouselCard = ({ img, tags, title, publishDate }) => {
-  const [current, setCurrent] = useState(0);
-  const prev = () => {
-    setCurrent((current) => (current == 0 ? img.length - 1 : current - 1));
-  };
-  const next = () => {
-    setCurrent((current) => (current == img.length - 1 ? 0 : current + 1));
-  };
+export const CarouselCard = ({ article }) => {
+  if (!article) {
+    return null;
+  }
   return (
-    <div className=" relative w-[1220px] overflow-hidden">
-      <div
-        className="transition-transform ease-out duration-500 "
-        style={{ transform: `translateX(-${current * 100}%)` }}
-      >
-        <img src={img} width={1000} height={450} className=" flex" />
+    <div className="relative">
+      <div className=" rounded-lg">
+        <img
+          width={1100}
+          src={article.social_image}
+          className=" rounded-xl  h-[500px] brightness-50"
+        />
       </div>
 
-      <div className="flex flex-col items-start pl-10 gap-3 bg-gray-50 w-[600px] h-[250px] absolute bottom-16 left-5 flex flex-col justify-center">
-        <span className="absolute bottom-44 bg-blue-100 text-blue-500 text-sm ">
-          {tags}
+      <div className=" items-start pl-10 gap-6 bg-gray-50 w-[580px] h-[250px] absolute bottom-2 left-3 flex flex-col justify-center shadow-xl rounded-xl ">
+        <span className="bottom-44 bg-blue-100 text-indigo-500 text-sm rounded-[6px] w-[100px py-1]">
+          technology
         </span>
-        <span className="absolute bottom-20 font-bold text-2xl ">{title}</span>
-        <span className="absolute bottom-10">{publishDate}</span>
-      </div>
-
-      <div className=" flex">
-        <button onClick={prev} className=" hover:bg-white p-2">
-          <Prev />
-        </button>
-        <button onClick={next} className=" hover:bg-white p-2">
-          <Next />
-        </button>
+        <span className="bottom-20 font-bold text-4xl ">{article.title}</span>
+        <span className="bottom-10 text-gray-600">{article.publishDate}</span>
       </div>
     </div>
   );

@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
-import TrendingSingleCard from "./TrendingSingleCard";
+import { TrendingSingleCard } from "./TrendingSingleCard";
 
-export const TrendingCard = () => {
+export const TrendingCardContainer = () => {
   const [articles, setArticles] = useState([]);
   const fetchData = () => {
     fetch(`https://dev.to/api/articles?tag=trending&per_page=4`)
@@ -14,10 +14,10 @@ export const TrendingCard = () => {
     fetchData();
   }, []);
   return (
-    <div className=" w-full">
-      <p className="  font-bold text-xl text-center py-10">Trending</p>
+    <div className="">
+      <p className="  font-bold text-xl px-[550px] py-10">Trending</p>
       <div className=" flex flex-col items-center">
-        <div className="flex w-[1220px] gap-3">
+        <div className="flex w-[1216px] gap-3">
           {articles.map((article, index) => {
             return (
               <>

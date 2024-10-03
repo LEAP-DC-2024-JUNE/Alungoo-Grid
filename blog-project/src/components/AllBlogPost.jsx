@@ -6,7 +6,6 @@ export const AllBlogPost = ({
   count,
   setCount,
   setCategory,
-  category,
 }) => {
   const filteredArticles = articles.filter((article) => {
     return article.title.toUpperCase().includes(inputValue.toUpperCase());
@@ -21,11 +20,8 @@ export const AllBlogPost = ({
 
   return (
     <>
-      <p className=" font-bold px-44 py-10 text-xl text-center">
-        All Blog Post
-      </p>
-      <div className=" flex gap-10 font-bold px-40 py-10 text-sm justify-center">
-        <button>All</button>
+      <p className=" font-bold py-10 text-xl px-[550px]">All Blog Post</p>
+      <div className=" flex gap-10 font-bold px-[550px] py-5 text-sm justify-start">
         <button onClick={() => filteredCategory("javascript")}>
           Javascript
         </button>
