@@ -21,7 +21,7 @@ export const Header = ({ setInputValue }) => {
             <Link href="/blog">Blog</Link>
           </div>
           <div>
-            <Link href="/">Contact</Link>
+            <Link href="/contactUs">Contact</Link>
           </div>
         </div>
         <div className=" relative">
