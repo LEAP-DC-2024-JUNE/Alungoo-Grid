@@ -21,7 +21,7 @@ export const BlogCardContainer = ({
   if (filteredArticles.length == 0) {
     return (
       <div className=" font-bold flex items-center justify-center py-40">
-        Oops, No Results found
+        <img src="https://i.pinimg.com/736x/37/b3/98/37b39834414977701d0b9094a4ed81bb.jpg" />
       </div>
     );
   } else

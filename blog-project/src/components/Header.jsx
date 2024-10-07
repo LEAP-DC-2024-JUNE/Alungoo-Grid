@@ -7,13 +7,13 @@ export const Header = ({ setInputValue }) => {
   const router = useRouter();
   return (
     <div className="">
-      <div className="flex items-center justify-center gap-60 h-[120px]">
+      <div className="flex items-center justify-evenly  h-[120px]">
         <div className="flex items-center">
           <MainLogo />
-          <p className=" text-2xl">Meta</p>
+          <p className=" text-2xl ml-1">Meta</p>
           <p className=" font-semibold text-2xl">Blog</p>
         </div>
-        <div className=" flex gap-20 text-[ #3B3C4A]">
+        <div className=" flex gap-20 text-[ #3B3C4A] w-[672px]">
           <div class="text-[#3B3C4A]">
             <Link href="/">Home</Link>
           </div>
