@@ -1,20 +1,23 @@
 import { useState, useEffect } from "react";
 import { useSearchParams } from "next/navigation";
 import { Footer, Header } from "@/components";
+import { useRouter } from "next/router";
 
 const singlePost = () => {
   const [singleArticle, setSingleArticle] = useState({});
-  const searchParam = useSearchParams();
-  const value = searchParam.get("selectedId");
+  // const searchParam = useSearchParams();
+  // const value = searchParam.get("selectedId");
 
-  const fetchData = () => {
-    fetch(` https://dev.to/api/articles/${value}`)
+  const router = useRouter();
+
+  const fetchData = async () => {
+    await fetch(` https://dev.to/api/articles/${router.query.slug}`)
       .then((response) => response.json())
       .then((data) => setSingleArticle(data));
   };
   useEffect(() => {
     fetchData();
-  }, [value]);
+  }, [router.query.slug]);
 
   return (
     <div>
