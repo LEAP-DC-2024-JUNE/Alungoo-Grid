@@ -49,11 +49,10 @@ const ContactUs = () => {
                 placeholder="Subject"
                 className=" br-2  p-2 shadow-sm rounded"
               />{" "}
-              <input
-                type="text"
+              <textarea
                 placeholder="Write a message"
                 className=" br-2 w-[478px] h-[134px] bg-white shadow-sm rounded p-1"
-              />{" "}
+              ></textarea>
               <button className=" bg-[#4B6BFB] px-[16px] py-[10px] text-white font-sans rounded-md">
                 {" "}
                 Send a message

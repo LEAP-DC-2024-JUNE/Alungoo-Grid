@@ -6,41 +6,49 @@ import { useRouter } from "next/router";
 export const Header = ({ setInputValue }) => {
   const router = useRouter();
   return (
-    <div className="">
-      <div className="flex items-center justify-evenly  h-[120px]">
+    <div className="w-full h-[100px] flex gap-20 flex-row justify-evenly px-[340px]">
+      <div className=" flex max-w-[1130px]">
         <div className="flex items-center">
-          <MainLogo />
-          <p className=" text-2xl ml-1">Meta</p>
-          <p className=" font-semibold text-2xl">Blog</p>
+          <button>
+            <Link href="/">
+              <MainLogo />
+            </Link>
+          </button>
+          <button className=" text-2xl ml-1">
+            <Link href="/">Meta</Link>
+          </button>
+          <button className=" font-semibold text-2xl">
+            <Link href="/">Blog</Link>
+          </button>
         </div>
-        <div className=" flex gap-20 text-[ #3B3C4A] w-[672px]">
-          <div class="text-[#3B3C4A]">
-            <Link href="/">Home</Link>
-          </div>
+      </div>
+      <div className=" flex gap-20 text-[ #3B3C4A] items-center">
+        <div class="text-[#3B3C4A]">
+          <Link href="/">Home</Link>
+        </div>
+        <div>
+          <Link href="/blog">Blog</Link>
+        </div>
+        <div>
+          <Link href="/contactUs">Contact</Link>
+        </div>
+      </div>
+      <div className=" relative items-center flex">
+        {router.pathname == "/blog" ? (
           <div>
-            <Link href="/blog">Blog</Link>
+            <input
+              type="text"
+              className=" bg-slate-100 border-2 border-gray"
+              onChange={(e) => setInputValue(e.target.value)}
+              placeholder="  Search"
+            />
+            <span className=" absolute top-[42px] right-3">
+              <SearchIcon />
+            </span>
           </div>
-          <div>
-            <Link href="/contactUs">Contact</Link>
-          </div>
-        </div>
-        <div className=" relative">
-          {router.pathname == "/blog" ? (
-            <div>
-              <input
-                type="text"
-                className=" bg-slate-100 border-2 border-gray"
-                onChange={(e) => setInputValue(e.target.value)}
-                placeholder="  Search"
-              />
-              <span className=" absolute top-[6px] right-3">
-                <SearchIcon />
-              </span>
-            </div>
-          ) : (
-            <></>
-          )}
-        </div>
+        ) : (
+          <div className=" w-[199.5px]"></div>
+        )}
       </div>
     </div>
   );

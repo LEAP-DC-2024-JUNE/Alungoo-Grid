@@ -15,7 +15,7 @@ export const TrendingCardContainer = () => {
   }, []);
   return (
     <div className="">
-      <p className="  font-bold text-2xl px-[550px] py-10">Trending</p>
+      <p className="  font-bold text-2xl pl-[750px] py-10">Trending</p>
       <div className=" flex flex-col items-center">
         <div className="flex w-[1216px] gap-5">
           {articles.map((article, index) => {

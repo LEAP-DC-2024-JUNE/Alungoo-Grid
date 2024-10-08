@@ -8,7 +8,7 @@ import Link from "next/link";
 export const Footer = () => {
   return (
     <div class=" bg-[#E8E8EA] w-full h-[495px] ">
-      <div className="w=[1220px] px-60 py-10">
+      <div className="w=[1220px] px-[650px] py-10">
         <div className=" flex justify-between  border-b-[1px] border-gray-300 ">
           <div>
             <p className=" font-bold">About</p>

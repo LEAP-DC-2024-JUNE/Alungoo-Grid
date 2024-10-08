@@ -19,9 +19,11 @@ export const AllBlogPost = ({
   };
 
   return (
-    <>
-      <p className=" font-bold py-10 text-xl px-[550px]">All Blog Post</p>
-      <div className=" flex gap-10 font-bold px-[550px] py-5 text-sm justify-start">
+    <div className=" maw-w-[1216px] flex flex-col gap-5">
+      <p className=" font-bold py-10 text-xl text-start pl-[750px]">
+        All Blog Post
+      </p>
+      <div className=" flex gap-10 font-bold py-5 text-sm pl-[750px]">
         <button onClick={() => filteredCategory("javascript")}>
           Javascript
         </button>
@@ -40,6 +42,7 @@ export const AllBlogPost = ({
                   user={article.user.name}
                   publishDate={article.readable_publish_date}
                   key={index}
+                  id={article.id}
                 />
               </div>
             );
@@ -51,6 +54,6 @@ export const AllBlogPost = ({
           </button>
         </div>
       </div>
-    </>
+    </div>
   );
 };
