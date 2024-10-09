@@ -19,19 +19,17 @@ export const AllBlogPost = ({
   };
 
   return (
-    <div className=" maw-w-[1216px] flex flex-col gap-5">
-      <p className=" font-bold py-10 text-xl text-start pl-[750px]">
-        All Blog Post
-      </p>
-      <div className=" flex gap-10 font-bold py-5 text-sm pl-[750px]">
+    <div className=" maw-[1220px] flex flex-col gap-5 px-[452px]">
+      <p className=" font-bold py-10 text-xl text-start ">All Blog Post</p>
+      <div className=" flex gap-10 font-bold py-5 text-sm ">
         <button onClick={() => filteredCategory("javascript")}>
           Javascript
         </button>
         <button onClick={() => filteredCategory("css")}>CSS</button>
         <button onClick={() => filteredCategory("nextjs")}>NextJS</button>
       </div>
-      <div className=" flex flex-col items-center">
-        <div className=" grid grid-cols-3 gap-2 px-40 py-5">
+      <div className=" flex flex-col">
+        <div className=" grid grid-cols-3 gap-2  py-2">
           {filteredArticles.map((article, index) => {
             return (
               <div>

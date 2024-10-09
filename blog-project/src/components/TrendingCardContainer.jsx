@@ -3,6 +3,7 @@ import { TrendingSingleCard } from "./TrendingSingleCard";
 
 export const TrendingCardContainer = () => {
   const [articles, setArticles] = useState([]);
+
   const fetchData = () => {
     fetch(`https://dev.to/api/articles?tag=trending&per_page=4`)
       .then((response) => response.json())
@@ -14,10 +15,10 @@ export const TrendingCardContainer = () => {
     fetchData();
   }, []);
   return (
-    <div className="">
-      <p className="  font-bold text-2xl pl-[750px] py-10">Trending</p>
-      <div className=" flex flex-col items-center">
-        <div className="flex w-[1216px] gap-5">
+    <div className=" flex flex-col gap-3 px-[452px] max-[1220px]">
+      <p className="  font-bold text-2xl   py-10 ">Trending</p>
+      <div className=" flex flex-col ">
+        <div className="flex gap-5">
           {articles.map((article, index) => {
             return (
               <>
@@ -26,6 +27,7 @@ export const TrendingCardContainer = () => {
                   tags={article.type_of}
                   title={article.title}
                   key={index}
+                  id={article.id}
                 />
               </>
             );

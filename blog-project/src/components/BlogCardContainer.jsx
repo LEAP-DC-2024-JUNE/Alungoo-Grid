@@ -1,12 +1,11 @@
+import { MyContext } from "@/utils/context";
 import { BlogCard } from "./BlogCard";
+import { useContext } from "react";
 
-export const BlogCardContainer = ({
-  articles,
-  inputValue,
-  setCount,
-  count,
-}) => {
-  const filteredArticles = articles.filter((article) => {
+export const BlogCardContainer = () => {
+  const { articlesBlogList, count, setCount, inputValue } =
+    useContext(MyContext);
+  const filteredArticles = articlesBlogList.filter((article) => {
     let inputValueUpper = inputValue.toUpperCase();
     let articleTitle = article.title.toUpperCase();
     return articleTitle.includes(inputValueUpper);
@@ -16,7 +15,6 @@ export const BlogCardContainer = ({
   const loadMore = () => {
     setCount(count + 3);
   };
-  console.log(articles);
 
   if (filteredArticles.length == 0) {
     return (

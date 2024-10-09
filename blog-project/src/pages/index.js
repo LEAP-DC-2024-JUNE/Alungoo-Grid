@@ -9,12 +9,14 @@ import {
 import { useState, useEffect } from "react";
 import { Prev } from "@/icons/Prev";
 import { Next } from "@/icons/Next";
+import { MyContext } from "@/utils/context";
 
 export default function Home() {
   const [articles, setArticles] = useState([]);
   const [carouselArticles, setCarouselArticles] = useState([]);
   const [inputValue, setInputValue] = useState("");
   const [count, setCount] = useState(9);
+
   const [category, setCategory] = useState("");
   const [index, setIndex] = useState(0);
 
@@ -60,10 +62,11 @@ export default function Home() {
   return (
     <div>
       <Header setInputValue={setInputValue} />
+
       <div className="  flex flex-col items-center">
         <CarouselCard article={carouselArticles[index]} />
       </div>
-      <div className=" flex justify-end px-[600px] ">
+      <div className=" flex justify-end px-[500px] flex-row  ">
         <button onClick={prevPic}>
           <Prev />
         </button>
@@ -80,6 +83,7 @@ export default function Home() {
         category={category}
         setCategory={setCategory}
       />
+
       <Footer />
     </div>
   );

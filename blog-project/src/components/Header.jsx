@@ -2,9 +2,12 @@ import MainLogo from "@/icons/MainLogo";
 import Link from "next/link";
 import SearchIcon from "@/icons/SearchIcon";
 import { useRouter } from "next/router";
+import { useContext } from "react";
+import { MyContext } from "@/utils/context";
 
-export const Header = ({ setInputValue }) => {
+export const Header = () => {
   const router = useRouter();
+  const { setInputValue } = useContext(MyContext);
   return (
     <div className="w-full h-[100px] flex gap-20 flex-row justify-evenly px-[340px]">
       <div className=" flex max-w-[1130px]">

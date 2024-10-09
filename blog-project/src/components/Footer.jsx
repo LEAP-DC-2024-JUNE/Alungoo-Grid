@@ -7,8 +7,8 @@ import Link from "next/link";
 
 export const Footer = () => {
   return (
-    <div class=" bg-[#E8E8EA] w-full h-[495px] ">
-      <div className="w=[1220px] px-[650px] py-10">
+    <div class=" bg-[#E8E8EA]  h-[495px] ">
+      <div className=" max-[1220px] px-[450px] py-10 flex flex-col gap-2">
         <div className=" flex justify-between  border-b-[1px] border-gray-300 ">
           <div>
             <p className=" font-bold">About</p>
@@ -29,8 +29,8 @@ export const Footer = () => {
           </div>
           <div className=" flex flex-col gap-3">
             <Link href="/">Home</Link>
-            <Link href="/">Blog</Link>
-            <Link href="/">Contact</Link>
+            <Link href="/blog">Blog</Link>
+            <Link href="/contactUs">Contact</Link>
           </div>
           <div className=" flex gap-10 pr-40">
             <Facebook />
@@ -53,9 +53,15 @@ export const Footer = () => {
             </div>
           </div>
           <div className=" flex border-r-[1px] border-gray-300">
-            <p class="border-r-[1px] border-gray-300 px-10">Term of Use</p>
-            <p class="border-r-[1px] border-gray-300 px-10">Privacy Policy</p>
-            <p class="border-r-[1px] border-gray-300 px-10">Cookie Policy</p>
+            <p class="border-r-[1px] border-gray-300 px-10 hover: underline">
+              Term of Use
+            </p>
+            <p class="border-r-[1px] border-gray-300 px-10 hover: underline">
+              Privacy Policy
+            </p>
+            <p class="border-r-[1px] border-gray-300 px-10 hover: underline">
+              Cookie Policy
+            </p>
           </div>
         </div>
       </div>

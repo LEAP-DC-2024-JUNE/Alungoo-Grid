@@ -1,19 +1,25 @@
-export const TrendingSingleCard = ({ image, tags, title, key }) => {
+import Link from "next/link";
+
+export const TrendingSingleCard = ({ image, tags, title, key, id }) => {
   return (
-    <div
-      key={key}
-      className="  rounded-t-lg rounded-b-lg flex flex-col justify-center items-start"
-    >
-      <img
-        src={image}
-        className="relative w-[280px] h-[358px] rounded-t-lg rounded-b-lg  brightness-50  "
-      />
-      <p className=" px-4 absolute bottom-48 text-blue-600 bg-blue-50 rounded-xl text-sm text-center font-bold ">
-        {tags}
-      </p>
-      <p className=" absolute bottom-40 bg-slate-500 font-bold  text-white pl-3">
-        {title.slice(0, 30) + "..."}
-      </p>
-    </div>
+    <Link href={`/blog/${id}`}>
+      <div
+        key={key}
+        className="  rounded-t-lg rounded-b-lg flex flex-col justify-center items-start"
+      >
+        <img
+          src={image}
+          className="relative w-[280px] h-[358px] rounded-t-lg rounded-b-lg  brightness-50  "
+        />
+        <div className=" absolute bottom-8 flex flex-col gap-2">
+          <p className="  text-blue-600 bg-blue-100 rounded-xl text-sm text-center font-bold ">
+            {tags}
+          </p>
+          <p className="  bg-slate-500 font-bold  text-white ">
+            {title.length > 20 ? title.slice(0, 30) : "..."}
+          </p>
+        </div>
+      </div>
+    </Link>
   );
 };
