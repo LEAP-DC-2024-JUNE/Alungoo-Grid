@@ -11,6 +11,7 @@ import Assignment2New from "./assignment2New";
 import InputForm from "../pages/inputForm";
 import MemberReg from "../pages/memberReg";
 import Search from "./searchInput";
+// import Promise from "../components";
 
 export default function Home() {
   return (
@@ -44,6 +45,7 @@ export default function Home() {
       <div>
         {/* <Products />
         <ResponsiveDemo /> */}
+        {/* <Promise /> */}
       </div>
     </div>
   );
