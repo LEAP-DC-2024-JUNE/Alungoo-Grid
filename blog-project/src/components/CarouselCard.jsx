@@ -7,7 +7,7 @@ export const CarouselCard = ({ article }) => {
 
   return (
     <Link href={`/blog/${article.id}`}>
-      <div className="relative max-[1220px]">
+      <div className="relative ">
         <div className=" rounded-lg">
           <img
             width={1180}

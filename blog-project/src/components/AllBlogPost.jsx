@@ -19,8 +19,8 @@ export const AllBlogPost = ({
   };
 
   return (
-    <div className=" maw-[1220px] flex flex-col gap-5 px-[452px]">
-      <p className=" font-bold py-10 text-xl text-start ">All Blog Post</p>
+    <div className=" max-[1220px] flex flex-col gap-10 pt-14 px-[452px]">
+      <p className=" font-bold  text-xl text-start ">All Blog Post</p>
       <div className=" flex gap-10 font-bold py-5 text-sm ">
         <button onClick={() => filteredCategory("javascript")}>
           Javascript

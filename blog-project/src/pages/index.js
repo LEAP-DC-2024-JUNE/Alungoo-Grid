@@ -60,19 +60,20 @@ export default function Home() {
   };
 
   return (
-    <div>
+    <div className=" flex flex-col gap-8">
       <Header setInputValue={setInputValue} />
-
-      <div className="  flex flex-col items-center">
-        <CarouselCard article={carouselArticles[index]} />
-      </div>
-      <div className=" flex justify-end px-[500px] flex-row  ">
-        <button onClick={prevPic}>
-          <Prev />
-        </button>
-        <button onClick={nextPic}>
-          <Next />
-        </button>
+      <div className=" flex flex-col px-[452px]">
+        <div className=" max-[1220px]">
+          <CarouselCard article={carouselArticles[index]} />
+        </div>
+        <div className=" flex justify-end flex-row  ">
+          <button onClick={prevPic}>
+            <Prev />
+          </button>
+          <button onClick={nextPic}>
+            <Next />
+          </button>
+        </div>
       </div>
       <TrendingCardContainer />
       <AllBlogPost

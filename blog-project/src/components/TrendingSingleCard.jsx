@@ -11,14 +11,14 @@ export const TrendingSingleCard = ({ image, tags, title, key, id }) => {
           src={image}
           className="relative w-[280px] h-[358px] rounded-t-lg rounded-b-lg  brightness-50  "
         />
-        <div className=" absolute bottom-8 flex flex-col gap-2">
+        {/* <div className=" absolute bottom-8 flex flex-col gap-2">
           <p className="  text-blue-600 bg-blue-100 rounded-xl text-sm text-center font-bold ">
             {tags}
           </p>
           <p className="  bg-slate-500 font-bold  text-white ">
             {title.length > 20 ? title.slice(0, 30) : "..."}
           </p>
-        </div>
+        </div> */}
       </div>
     </Link>
   );

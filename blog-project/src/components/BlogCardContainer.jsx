@@ -24,13 +24,11 @@ export const BlogCardContainer = () => {
     );
   } else
     return (
-      <>
-        <div className=" font-bold py-10 text-xl text-center">
-          All Blog Post
-        </div>
-        <div className=" flex flex-col items-center ">
-          <div className=" w-[1220px]">
-            <div className="grid grid-cols-3 grid-rows-4 gap-4 ">
+      <div className=" flex flex-col gap-1 max-[1220px] px-[452px]">
+        <div className=" font-bold py-10 text-xl ">All Blog Post</div>
+        <div>
+          <div>
+            <div className="grid grid-cols-3 grid-rows-4 gap-8 ">
               {filteredArticles.map((article, index) => {
                 return (
                   <>
@@ -55,6 +53,6 @@ export const BlogCardContainer = () => {
             </div>
           </div>
         </div>
-      </>
+      </div>
     );
 };

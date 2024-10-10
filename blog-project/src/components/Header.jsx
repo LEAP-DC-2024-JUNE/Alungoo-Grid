@@ -9,8 +9,8 @@ export const Header = () => {
   const router = useRouter();
   const { setInputValue } = useContext(MyContext);
   return (
-    <div className="w-full h-[100px] flex gap-20 flex-row justify-evenly px-[340px]">
-      <div className=" flex max-w-[1130px]">
+    <div className="max-[1220px] h-[100px] flex gap-20 flex-row justify-evenly px-[250px]">
+      <div className=" flex ">
         <div className="flex items-center">
           <button>
             <Link href="/">
@@ -26,14 +26,29 @@ export const Header = () => {
         </div>
       </div>
       <div className=" flex gap-20 text-[ #3B3C4A] items-center">
-        <div class="text-[#3B3C4A]">
-          <Link href="/">Home</Link>
+        <div>
+          <Link
+            href="/"
+            className="  hover: text-black hover:bg-slate-100 hover: rounded-md"
+          >
+            Home
+          </Link>
         </div>
         <div>
-          <Link href="/blog">Blog</Link>
+          <Link
+            href="/blog"
+            className="  hover: text-black hover:bg-slate-100 hover: rounded-md"
+          >
+            Blog
+          </Link>
         </div>
         <div>
-          <Link href="/contactUs">Contact</Link>
+          <Link
+            href="/contactUs"
+            className="  hover: text-black hover:bg-slate-100 hover: rounded-md"
+          >
+            Contact
+          </Link>
         </div>
       </div>
       <div className=" relative items-center flex">
@@ -50,7 +65,7 @@ export const Header = () => {
             </span>
           </div>
         ) : (
-          <div className=" w-[199.5px]"></div>
+          <div className=" w-[210px]"></div>
         )}
       </div>
     </div>
