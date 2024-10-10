@@ -16,7 +16,7 @@ export const BlogCard = ({
     <Link href={`/blog/${id}`}>
       <div
         key={key}
-        className=" border-[1px] w-[392px] h-[476px] rounded-t-lg rounded-b-lg flex flex-col items-start justify-evenly px-[10px]"
+        className=" border-[1px] w-[372px] h-[476px] rounded-t-lg rounded-b-lg flex flex-col items-start justify-evenly px-[10px]"
       >
         <img
           className=" w-[360px] h-[240px] rounded-t-lg rounded-b-lg"

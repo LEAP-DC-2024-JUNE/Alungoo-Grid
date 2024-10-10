@@ -29,7 +29,11 @@ export const Header = () => {
         <div>
           <Link
             href="/"
-            className="  hover: text-black hover:bg-slate-100 hover: rounded-md"
+            className={`hover:text-white hover:bg-black hover: rounded-md ${
+              router.pathname == "/"
+                ? ` text-white bg-black rounded-md`
+                : `text-black`
+            }`}
           >
             Home
           </Link>
@@ -37,7 +41,11 @@ export const Header = () => {
         <div>
           <Link
             href="/blog"
-            className="  hover: text-black hover:bg-slate-100 hover: rounded-md"
+            className={` hover:text-white hover:bg-black hover: rounded-md ${
+              router.pathname == "/blog"
+                ? ` text-white bg-black rounded-md`
+                : `text-black`
+            }`}
           >
             Blog
           </Link>
@@ -45,7 +53,11 @@ export const Header = () => {
         <div>
           <Link
             href="/contactUs"
-            className="  hover: text-black hover:bg-slate-100 hover: rounded-md"
+            className={` hover:text-white hover:bg-black hover: rounded-md ${
+              router.pathname == "/contactUs"
+                ? ` text-white bg-black rounded-md`
+                : `text-black`
+            }`}
           >
             Contact
           </Link>
