@@ -10,7 +10,7 @@ export const CarouselCard = ({ article }) => {
       <div className="relative ">
         <div className=" rounded-lg">
           <img
-            width={1180}
+            width={1135}
             height={640}
             src={article.social_image}
             className=" rounded-xl  h-[500px] brightness-50"

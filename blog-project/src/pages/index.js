@@ -62,11 +62,10 @@ export default function Home() {
   return (
     <div className=" flex flex-col gap-8">
       <Header setInputValue={setInputValue} />
-      <div className=" flex flex-col px-[452px]">
-        <div className=" max-[1220px]">
-          <CarouselCard article={carouselArticles[index]} />
-        </div>
-        <div className=" flex justify-end flex-row  ">
+      <div className=" flex flex-col items-center">
+        <CarouselCard article={carouselArticles[index]} />
+
+        <div className=" flex justify-end flex-row w-[1130px] ">
           <button onClick={prevPic}>
             <Prev />
           </button>

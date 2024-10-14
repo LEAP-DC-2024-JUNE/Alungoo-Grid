@@ -24,32 +24,30 @@ const singlePost = ({ name, data }) => {
   return (
     <>
       <Header />
-      <div className=" flex flex-col items-start  py-5 px-[700px] pb-10">
+      <div className=" flex flex-col gap-5 items-start pl-[280px] max-[1220px] p-10">
         <p className=" font-bold text-3xl">{data.title}</p>
-        <p className=" font-bold text-3xl">{name}</p>
+        {/* <p className=" font-bold text-3xl">{name}</p> */}
 
-        <div className=" flex gap-9 py-5 items-center">
-          <div className=" flex gap-9 py-5 items-center">
-            <img
-              src={data?.user?.profile_image}
-              width={40}
-              className=" rounded-full"
-            />
-            <p className=" text-sm text-[#696A75] font-medium">
-              {data?.user?.name}
-            </p>
-            <p className=" text-sm text-[#696A75] font-medium">
-              {moment(data.readable_publish_date).format("MMM Do YYYY")}
-            </p>
-          </div>
+        <div className=" flex gap-9 py-5">
+          <img
+            src={data?.user?.profile_image}
+            width={40}
+            className=" rounded-full"
+          />
+          <p className=" text-sm text-[#696A75] font-medium">
+            {data?.user?.name}
+          </p>
+          <p className=" text-sm text-[#696A75] font-medium">
+            {moment(data.readable_publish_date).format("MMM Do YYYY")}
+          </p>
         </div>
         <div>
-          <img src={data.social_image} className=" rounded-lg" />
+          <img src={data.social_image} width={900} className=" rounded-lg" />
         </div>
 
         <div
           dangerouslySetInnerHTML={{ __html: data.body_html }}
-          className=" text-xl text-[#3B3C4A] font-normal py-10"
+          className=" text-xl text-[#3B3C4A] font-normal py-4 w-[900px]"
         ></div>
       </div>
 

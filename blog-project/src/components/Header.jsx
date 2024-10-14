@@ -9,24 +9,23 @@ export const Header = () => {
   const router = useRouter();
   const { setInputValue } = useContext(MyContext);
   return (
-    <div className="max-[1220px] h-[100px] flex gap-20 flex-row justify-evenly px-[250px]">
-      <div className=" flex ">
-        <div className="flex items-center">
-          <button>
-            <Link href="/">
-              <MainLogo />
-            </Link>
-          </button>
-          <button className=" text-2xl ml-1">
-            <Link href="/">Meta</Link>
-          </button>
-          <button className=" font-semibold text-2xl">
-            <Link href="/">Blog</Link>
-          </button>
-        </div>
+    <div className=" py-5 flex px-[210px] items-center justify-between">
+      <div className="flex items-center">
+        <button>
+          <Link href="/">
+            <MainLogo />
+          </Link>
+        </button>
+        <button className=" text-2xl ml-1">
+          <Link href="/">Meta</Link>
+        </button>
+        <button className=" font-semibold text-2xl">
+          <Link href="/">Blog</Link>
+        </button>
       </div>
-      <div className=" flex gap-20 text-[ #3B3C4A] items-center">
-        <div>
+
+      <div className=" flex gap-20 text-[ #3B3C4A] items-center w-[800px]">
+        <div className=" flex w-[660px] gap-20 justify-center">
           <Link
             href="/"
             className={`hover:text-white hover:bg-black hover: rounded-md ${
@@ -37,8 +36,7 @@ export const Header = () => {
           >
             Home
           </Link>
-        </div>
-        <div>
+
           <Link
             href="/blog"
             className={` hover:text-white hover:bg-black hover: rounded-md ${
@@ -49,8 +47,7 @@ export const Header = () => {
           >
             Blog
           </Link>
-        </div>
-        <div>
+
           <Link
             href="/contactUs"
             className={` hover:text-white hover:bg-black hover: rounded-md ${
@@ -72,7 +69,7 @@ export const Header = () => {
               onChange={(e) => setInputValue(e.target.value)}
               placeholder="  Search"
             />
-            <span className=" absolute top-[42px] right-3">
+            <span className=" absolute top-[7px] right-3">
               <SearchIcon />
             </span>
           </div>

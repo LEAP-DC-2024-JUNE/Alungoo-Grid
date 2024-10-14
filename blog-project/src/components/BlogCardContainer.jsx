@@ -24,11 +24,11 @@ export const BlogCardContainer = () => {
     );
   } else
     return (
-      <div className=" flex flex-col gap-1 max-[1220px] px-[452px]">
-        <div className=" font-bold py-10 text-xl ">All Blog Post</div>
+      <div className=" flex flex-col items-center ">
+        <div className=" font-bold py-10 text-xl w-[1130px]">All Blog Post</div>
         <div>
           <div>
-            <div className="grid grid-cols-3 grid-rows-4 gap-8 ">
+            <div className="grid grid-cols-3 grid-rows-4 gap-2 ">
               {filteredArticles.map((article, index) => {
                 return (
                   <>

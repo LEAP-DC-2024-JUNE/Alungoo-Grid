@@ -26,7 +26,7 @@ export default function App({ Component, pageProps }) {
         setInputValue,
       }}
     >
-      <Component {...pageProps} />;
+      <Component {...pageProps} />
     </MyContext.Provider>
   );
 }
