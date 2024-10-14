@@ -24,11 +24,11 @@ const singlePost = ({ name, data }) => {
   return (
     <>
       <Header />
-      <div className=" flex flex-col gap-5 items-start pl-[280px] max-[1220px] p-10">
-        <p className=" font-bold text-3xl">{data.title}</p>
+      <div className=" flex flex-col gap-5 items-center py-20">
+        <p className=" font-bold text-3xl w-[900px]">{data.title}</p>
         {/* <p className=" font-bold text-3xl">{name}</p> */}
 
-        <div className=" flex gap-9 py-5">
+        <div className=" flex gap-9 py-5 w-[900px]">
           <img
             src={data?.user?.profile_image}
             width={40}
