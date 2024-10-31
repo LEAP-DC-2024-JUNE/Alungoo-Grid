@@ -1,18 +1,12 @@
-"use client";
+import { useState, useEffect } from "react";
 
-import { useEffect } from "react";
+export default async function Page() {
+  const [count, setCount] = useState("");
+  let data = await fetch("http://127.0.0.1:8000/api");
+  let products = await data.json();
+  console.log(products);
 
-const MyComponent = () => {
-  useEffect(() => {
-    const fetchData = async () => {
-      const response = await fetch("http://127.0.0.1:8000/api");
-      const data = await response.json();
-      console.log(data);
-    };
-
-    fetchData();
-  }, []);
-
-  return <div>Check the console for data!</div>;
-};
-export default MyComponent;
+  return(
+    
+  )
+}
