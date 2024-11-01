@@ -15,16 +15,18 @@ const parseBody = (req) => {
     req.on("error", (err) => reject(err));
   });
 };
-const server = http.createServer((request, response) => {
+const server = http.createServer(async (request, response) => {
+  //catching path (url)
   const reqUrl = url.parse(request.url, true);
+  const pathname = reqUrl.pathname; // asynchronous
+  //catching method
   const method = request.method;
-  const pathname = reqUrl.pathname;
 
   if (pathname === "/api/items" && method === "POST") {
     //create
     console.log("POST method is called");
-    const data = parseBody(request);
-    const newItem = { id: currentId++, ...data };
+    const data = await parseBody(request); //<=== hereglegchees irsen data medeelel
+    const newItem = { id: currentId++, ...data }; ////<=== hadgalj bga data medeelel
     items.push(newItem);
 
     response.writeHead(201, { "Content-Type": "application/json" });
@@ -33,17 +35,64 @@ const server = http.createServer((request, response) => {
     //read all
     response.writeHead(200, { "Content-Type": "application/json" });
     response.end(JSON.stringify(items));
-  } else if (pathname === "/api/items" && method === "GET") {
+  } else if (pathname.startsWith("/api/items") && method === "GET") {
     // read single item
-    console.log("GET method for single  is called");
-  } else if (pathname === "/api/items" && method === "PUT") {
+    // GET /api/items/14
+    const paths = pathname.split("/");
+    const id = parseInt(paths[3]);
+    const selectedItem = items.find((item) => item.id === id);
+
+    if (selectedItem) {
+      response.writeHead(200, { "Content-Type": "application/json" });
+      response.end(JSON.stringify(selectedItem));
+    } else {
+      response.writeHead(404, { "Content-Type": "application/json" });
+      response.end(JSON.stringify({ error: "item is not found" }));
+    }
+  } else if (pathname.startsWith("/api/items") && method === "PUT") {
     // update
-    console.log("PUT method is called");
-  } else if (pathname === "/api/items" && method === "DELETE") {
+    // PUT /api/items/14 header, body  (14 replace to body)
+    const paths = pathname.split("/");
+    const id = parseInt(paths[3]);
+
+    //hadgalsan elemnetuud dotroos tuhain ogogdsun id tei medeeliig indexiig awna
+    const index = items.findIndex((item) => item.id === id);
+
+    if (index === -1) {
+      //oldoogui bol
+      response.writeHead(404, { "Content-Type": "application/json" });
+      response.end(JSON.stringify({ error: "item is not found" }));
+    } else {
+      //oldchihson bol
+      const data = await parseBody(request); //item bwal
+      // items [index] = {id: items[index].id, ...data};
+      items[index] = { ...items[index], ...data };
+      // ... id-g awaa!
+
+      //shinechlegdsen utga response ogson
+      response.writeHead(200, { "Content-Type": "application/json" });
+      response.end(JSON.stringify(items[index]));
+    }
+  } else if (pathname.startsWith("/api/items") && method === "DELETE") {
     //delete
-    console.log("DELETE method is called");
+    const paths = pathname.split("/");
+    const id = parseInt(paths[3]);
+    const index = items.findIndex((item) => item.id === id);
+    if (index === -1) {
+      //oldoogui bol
+      response.writeHead(404, { "Content-Type": "application/json" });
+      response.end(JSON.stringify({ error: "item is not found" }));
+    } else {
+      const deletedItem = items.splice(index, 1)[0];
+      response.writeHead(200, { "Content-Type": "application/json" });
+      response.end(
+        JSON.stringify({ message: "item deleted", item: deletedItem })
+      );
+    }
   } else {
     //page not found
+    response.writeHead(404, { "Content-Type": "application/json" });
+    response.end(JSON.stringify({ error: "item is not found" }));
   }
   //   response.end("Sample response");
 });
