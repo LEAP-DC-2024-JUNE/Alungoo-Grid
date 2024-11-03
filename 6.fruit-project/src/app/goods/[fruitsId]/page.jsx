@@ -1,12 +1,6 @@
-// const Goods = () => {
-//   return <>hello this is goodsiin page bn</>;
-// };
+import { Fruit } from "@/components/Fruit";
 
-// export default Goods;
-
-import { Product } from "@/components/Product";
-
-export default async function Products() {
+export default async function FruitId() {
   let data = await fetch("http://127.0.0.1:8000/api/produces");
   let products = await data.json();
   console.log(products);
@@ -16,12 +10,13 @@ export default async function Products() {
       <p>hello goodsiin page bn</p>
       {products.map((product, index) => {
         return (
-          <div className=" flex flex-row">
-            <Product
+          <div>
+            <Fruit
               key={index}
               name={product.productName}
-              price={product.price}
               from={product.from}
+              desc={product.description}
+              nutri={product.nutrients}
             />
           </div>
         );

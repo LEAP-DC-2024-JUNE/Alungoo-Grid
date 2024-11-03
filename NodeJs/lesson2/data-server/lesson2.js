@@ -11,7 +11,7 @@ const server = http.createServer((req, res) => {
     res.end("Hello , its from HOME page");
   } else if (path === "/products") {
     res.end("Hey yoo! it is from PRODUCTS page!");
-  } else if (path === "/api") {
+  } else if (path === "/api/produces") {
     res.writeHead(200, { "Content-Type": "application/json" });
     res.end(data);
   } else {
