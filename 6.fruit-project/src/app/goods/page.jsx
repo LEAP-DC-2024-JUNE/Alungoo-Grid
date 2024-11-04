@@ -12,11 +12,10 @@ export default async function Products() {
   console.log(products);
 
   return (
-    <div>
-      <p>hello goodsiin page bn</p>
+    <div className=" flex flex-row gap-20 justify-center">
       {products.map((product, index) => {
         return (
-          <div className=" flex flex-row">
+          <div>
             <Product
               key={index}
               name={product.productName}
