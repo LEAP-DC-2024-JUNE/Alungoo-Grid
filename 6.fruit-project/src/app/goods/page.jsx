@@ -5,9 +5,10 @@
 // export default Goods;
 
 import { Product } from "@/components/Product";
+import Link from "next/link";
 
 export default async function Products() {
-  let data = await fetch("http://127.0.0.1:8000/api/produces");
+  let data = await fetch("http://127.0.0.1:8000/api");
   let products = await data.json();
   console.log(products);
 
@@ -21,6 +22,7 @@ export default async function Products() {
               name={product.productName}
               price={product.price}
               from={product.from}
+              id={product.id}
             />
           </div>
         );

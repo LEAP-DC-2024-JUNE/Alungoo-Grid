@@ -3,7 +3,9 @@ const Home = () => {
   return (
     <div>
       <div className=" mt-40">Welcome </div>
-      <Link href="/goods">please click here to shop</Link>
+      <Link href="/goods" className=" border -[2px] bg-gray-100">
+        Shop now
+      </Link>
     </div>
   );
 };

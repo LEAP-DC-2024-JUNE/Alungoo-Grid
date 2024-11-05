@@ -1,10 +1,9 @@
-export const Fruit = ({ name, desc, nutri }) => {
+export const Fruit = ({ name, desc, nutri, id }) => {
   return (
-    <div className=" border-2, bg-pink-200, w-[250px], h-[300px] flex flex-row">
-      <div key={index}>{/* <image src={image} /> */}</div>
+    <div className=" border-[2px] flex flex-col gap-3">
       <div>{name}</div>
+      <div>{id}</div>
       <div>{desc}</div>
-      <div>{from}</div>
       <div>{nutri}</div>
     </div>
   );

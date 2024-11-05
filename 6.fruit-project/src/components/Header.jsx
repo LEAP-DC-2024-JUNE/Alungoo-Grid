@@ -2,11 +2,14 @@ import Cart from "./svg/Cart";
 import LocationLogo from "./svg/LocationLogo";
 import SearchLogo from "./svg/SearchLogo";
 import User from "./svg/User";
+import Link from "next/link";
 
 export const Header = () => {
   return (
     <div className=" bg-green-900 flex flex-row justify-evenly fixed top-0 right-0 left-0 h-[80px] items-center">
-      <div className=" text-white font-bold text-4xl ml-10">GoodFoodS</div>
+      <button className=" text-white font-bold text-4xl ml-10">
+        <Link href={"/"}>GoodFoods</Link>
+      </button>
       <div>
         <input
           typeof=" text"
