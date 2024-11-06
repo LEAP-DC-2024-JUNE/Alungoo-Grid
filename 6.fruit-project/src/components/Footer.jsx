@@ -6,8 +6,8 @@ import Link from "next/link";
 
 export const Footer = () => {
   return (
-    <div className="py-10 flex flex-col gap-2 bg-green-900 ">
-      <div className=" flex  flex-row justify-between px-36 ">
+    <div className=" py-10 flex flex-col gap-2 bg-green-950 ">
+      <div className=" flex  flex-row justify-around ">
         <div className=" flex flex-col gap-4 items-start">
           <button className=" text-white font-bold text-4xl">
             <Link href={"/"}>GoodFoods</Link>
@@ -68,7 +68,7 @@ export const Footer = () => {
           </button>
         </div>
       </div>
-      <div className=" flex py-8 px-24 flex-row justify-between">
+      <div className=" flex py-8  flex-row justify-stretch pl-[250px]">
         <div>
           <p className=" text-white font-light text-xs ml-10">
             © All Rights Reserved.

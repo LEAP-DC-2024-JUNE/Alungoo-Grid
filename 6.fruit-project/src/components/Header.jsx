@@ -20,22 +20,24 @@ export const Header = () => {
           <SearchLogo />
         </button>
       </div>
-      <div className=" flex flex-row items-center gap-2">
-        <div>
+      <div className=" flex flex-row items-center gap-3">
+        <a href="https://www.wholefoodsmarket.com/stores">
           <LocationLogo />
-        </div>
-        <div>
-          <p className=" font-normal text-white font-sans">GoodFoodS</p>
-          <p className=" font-medium text-white">Find a Store</p>
+        </a>
+        <div className=" flex flex-col">
+          <button className=" font-normal text-white font-sans">
+            GoodFoodS
+          </button>
+          <button className=" font-medium text-white">Find a Store</button>
         </div>
       </div>
-      <div className=" flex item-center gap-2">
+      <div className=" flex item-center gap-3">
         <div>
           <User />
         </div>
         <div className=" font-medium text-white">Log In</div>
       </div>
-      <div className=" flex items-center gap-2 mr-10">
+      <div className=" flex items-center gap-3 mr-10">
         <div>
           <Cart />
         </div>

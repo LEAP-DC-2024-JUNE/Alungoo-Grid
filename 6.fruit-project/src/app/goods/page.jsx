@@ -1,11 +1,4 @@
-// const Goods = () => {
-//   return <>hello this is goodsiin page bn</>;
-// };
-
-// export default Goods;
-
 import { Product } from "@/components/Product";
-import Link from "next/link";
 
 export default async function Products() {
   let data = await fetch("http://127.0.0.1:8000/api");
@@ -13,12 +6,11 @@ export default async function Products() {
   console.log(products);
 
   return (
-    <div className=" flex flex-row gap-20 justify-center">
-      {products.map((product, index) => {
+    <div className=" flex flex-row gap-20 justify-center py-10">
+      {products.map((product) => {
         return (
           <div>
             <Product
-              key={index}
               name={product.productName}
               price={product.price}
               from={product.from}
