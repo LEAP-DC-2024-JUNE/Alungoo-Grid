@@ -8,13 +8,13 @@ export default async function FruitId({ params }) {
   console.log(id);
 
   return (
-    <div>
+    <div className="">
       <Fruit
         name={product.productName}
         from={product.from}
         desc={product.description}
         nutri={product.nutrients}
-        id={product.id}
+        pic={product.image}
       />
     </div>
   );

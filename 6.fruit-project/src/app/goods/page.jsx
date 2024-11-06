@@ -6,15 +6,15 @@ export default async function Products() {
   console.log(products);
 
   return (
-    <div className=" flex flex-row gap-20 justify-center py-10">
+    <div className=" grid grid-cols-5 gap-10  py-10 px-[150px]">
       {products.map((product) => {
         return (
           <div>
             <Product
               name={product.productName}
               price={product.price}
-              from={product.from}
               id={product.id}
+              pic={product.image}
             />
           </div>
         );
