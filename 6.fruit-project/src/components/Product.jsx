@@ -1,6 +1,6 @@
 import Link from "next/link";
 
-export const Product = ({ name, price, from, pic, id }) => {
+export const Product = ({ name, price, pic, id }) => {
   return (
     <Link href={`/goods/${id}`}>
       <div className=" border-[2px] w-[200px] h-[180px] rounded-t-lg rounded-b-lg mt-28 flex flex-col items-center bg-green-50">

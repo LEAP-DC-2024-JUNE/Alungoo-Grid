@@ -2,7 +2,7 @@ import { Fruit } from "@/components/Fruit";
 
 export default async function FruitId({ params }) {
   const { id } = await params;
-  const data = await fetch(`http://127.0.0.1:8000/api/goods/${params.id}`);
+  const data = await fetch(`http://127.0.0.1:3001/api/goods/${params.id}`);
   let product = await data.json();
 
   console.log(id);
