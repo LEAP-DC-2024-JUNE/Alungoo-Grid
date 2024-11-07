@@ -1,0 +1,16 @@
+{
+  "name": "lesson4",
+  "version": "1.0.0",
+  "main": "crud.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "npm init\r npm init -y by default\r npm install/ npm i\r npm install <package-name> ex : npm install express",
+  "dependencies": {
+    "express": "^4.21.1"
+  },
+  "devDependencies": {}
+}
