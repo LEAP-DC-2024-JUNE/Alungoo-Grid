@@ -22,16 +22,16 @@ const saveDateToFile = () => {
     JSON.stringify(detailedItems),
     () => console.log("Updated detailed info")
   );
-  fs.writeFile("./fruit-data/brief.json", JSOn.stringify(briefItems), () =>
+  fs.writeFile("./fruit-data/brief.json", JSON.stringify(briefItems), () =>
     console.log("Updated brief info")
   );
 };
 
-const parseBody = () => {
+const parseBody = (req) => {
   return new Promise((resolve, reject) => {
     let body = "";
-    req.on("data", (chunk) => {
-      body += chunk.toString();
+    req.on("data", (chunck) => {
+      body += chunck.toString();
     });
     req.on("end", () => resolve(JSON.parse(body)));
     req.on("error", (err) => reject(err));
@@ -46,10 +46,10 @@ const server = http.createServer(async (request, response) => {
   const method = request.method;
 
   //1. POsT method --> create data
-  if (pathname === "/api/goods" && method === "POST") {
+  if (pathname === "/api/goods/" && method === "POST") {
     //create
     const data = await parseBody(request); // <-- hereglechees irsen data
-
+    console.log(data);
     const detailedItem = {
       id: currentId,
       from: data.from,

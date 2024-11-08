@@ -7,10 +7,11 @@ export default async function Fruits() {
 
   return (
     <div className=" grid grid-cols-5 gap-10  py-10 px-[150px]">
-      {products.map((product) => {
+      {products.map((product, index) => {
         return (
           <div>
             <Product
+              key={index}
               name={product.productName}
               price={product.price}
               id={product.id}

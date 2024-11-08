@@ -6,7 +6,7 @@ import Link from "next/link";
 
 export const Footer = () => {
   return (
-    <div className=" py-10 flex flex-col gap-2 bg-green-950 ">
+    <div className=" py-10 flex flex-col gap-2 bg-green-900 ">
       <div className=" flex  flex-row justify-around ">
         <div className=" flex flex-col gap-4 items-start">
           <button className=" text-white font-bold text-4xl">
