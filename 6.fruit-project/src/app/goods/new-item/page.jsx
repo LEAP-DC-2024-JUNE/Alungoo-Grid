@@ -1,4 +1,5 @@
 "use client";
+import Link from "next/link";
 import { useState } from "react";
 
 const NewItem = () => {
@@ -134,12 +135,18 @@ const NewItem = () => {
           placeholder=" Description"
         ></input>
       </div>
-      <button
-        className=" border-2 px-5 py-1 hover:bg-green-200 hover:duration-75"
-        onClick={(e) => handleClick(e)}
-      >
-        Submit
-      </button>
+      <div className=" flex flex-row justify-center gap-3">
+        <Link href="/goods" className=" border-2 px-4 py-1 hover:bg-green-50">
+          {" "}
+          ← Go Back
+        </Link>
+        <button
+          className=" border-2 px-5 py-1 hover:bg-green-200 hover:duration-75"
+          onClick={(e) => handleClick(e)}
+        >
+          Submit
+        </button>
+      </div>
     </div>
   );
 };

@@ -39,11 +39,24 @@ const parseBody = (req) => {
 };
 
 const server = http.createServer(async (request, response) => {
+  // Set CORS headers
+  response.setHeader("Access-Control-Allow-Origin", "*"); // Allow all origins for development
+  response.setHeader(
+    "Access-Control-Allow-Methods",
+    "GET, POST, PUT, DELETE, OPTIONS"
+  ); // Allow specific HTTP methods
+  response.setHeader("Access-Control-Allow-Headers", "Content-Type"); // Allow specific headers
+
   //catching path (url)
   const reqUrl = url.parse(request.url, true);
   const pathname = reqUrl.pathname;
   //catchin method
   const method = request.method;
+  if (method === "OPTIONS") {
+    response.writeHead(200); //responsepond with 200 OK for preflight
+    response.end();
+    return; // End the response for the preflight request
+  }
 
   //1. POsT method --> create data
   if (pathname === "/api/goods/" && method === "POST") {
@@ -52,6 +65,7 @@ const server = http.createServer(async (request, response) => {
     console.log(data);
     const detailedItem = {
       id: currentId,
+      productName: data.productName,
       from: data.from,
       nutrients: data.nutrients,
       quantity: data.quantity,
@@ -141,7 +155,7 @@ const server = http.createServer(async (request, response) => {
       saveDateToFile();
 
       response.writeHead(200, { "Content-Type": "apllication/text" });
-      responseCookiesToRequestCookies.end("Item id deleted");
+      response.end("Item is deleted");
     }
   } else {
     response.writeHead(404);
