@@ -122,10 +122,7 @@ const server = http.createServer(async (request, response) => {
       // Items[index] = { id: detailedItems[index].id, ...data};
       detailedItems[index] = {
         ...detailedItems[index],
-        from: data.from,
-        nutrients: data.nutrients,
-        quantity: data.quantity,
-        description: data.description,
+        ...data,
       };
       briefItems[index] = {
         ...briefItems[index],
@@ -141,9 +138,9 @@ const server = http.createServer(async (request, response) => {
     }
 
     // 5. DELETE method--> delete a data
-  } else if (pathname.startsWith("/api/items") && method === "DELETE") {
+  } else if (pathname.startsWith("/api/goods/") && method === "DELETE") {
     const paths = pathname.split("/");
-    const id = parseInt(paths[3]);
+    const id = parseInt(paths[3]); //extract ID from the path
     const index = detailedItems.findIndex((item) => item.id === id);
     if (index === -1) {
       response.writeHead(404, { "Content-Type": "application/json" });
