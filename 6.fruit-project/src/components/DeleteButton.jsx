@@ -1,6 +1,7 @@
 "use client";
 
 import { useRouter } from "next/navigation";
+import TrashLogo from "./svg/TrashLogo";
 
 const DeleteButton = ({ id }) => {
   const router = useRouter();
@@ -18,8 +19,8 @@ const DeleteButton = ({ id }) => {
     }
   };
   return (
-    <button className=" border-2 px-3  hover:bg-red-300" onClick={deleted}>
-      Delete Item 🗑️
+    <button className="  hover:bg-red-100" onClick={deleted}>
+      <TrashLogo />
     </button>
   );
 };

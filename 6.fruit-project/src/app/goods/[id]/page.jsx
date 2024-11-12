@@ -17,13 +17,12 @@ const FruitId = async ({ params }) => {
         pic={data.image}
         organic={data.organic}
       />
-      <div className=" flex  gap-2 flex-row justify-center my-10">
+
+      <div className=" text-center my-10">
         <Link href="/goods" className=" border-2 px-3 hover:bg-green-50">
           {" "}
           ← Go Back
         </Link>
-
-        <DeleteButton />
       </div>
     </div>
   );

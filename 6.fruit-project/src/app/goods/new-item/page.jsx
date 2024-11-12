@@ -10,7 +10,7 @@ const NewItem = () => {
     nutrients: "",
     quantity: "",
     price: "",
-    organic: "",
+    organic: false,
     description: "",
   });
 
@@ -32,7 +32,7 @@ const NewItem = () => {
       nutrients: "",
       quantity: "",
       price: "",
-      organic: "",
+      organic: false,
       description: "",
     });
   };
@@ -118,7 +118,7 @@ const NewItem = () => {
           type="radio"
           id="organic"
           name="organic"
-          value={data.organic}
+          value={data.organic ? "true" : "false"}
           onChange={(e) => setData({ ...data, organic: e.target.value })}
           className=" text-black border-[2px] bg-green-50"
         ></input>
