@@ -26,7 +26,7 @@ const saveDateToFile = () => {
     console.log("Updated brief info")
   );
 };
-
+// hereglegchees irsen medeelliig unshdag function (unshij systemd hadgaldag)
 const parseBody = (req) => {
   return new Promise((resolve, reject) => {
     let body = "";
@@ -38,6 +38,7 @@ const parseBody = (req) => {
   });
 };
 
+//serveree vvsgej ogj bn
 const server = http.createServer(async (request, response) => {
   // Set CORS headers
   response.setHeader("Access-Control-Allow-Origin", "*"); // Allow all origins for development
@@ -48,10 +49,10 @@ const server = http.createServer(async (request, response) => {
   response.setHeader("Access-Control-Allow-Headers", "Content-Type"); // Allow specific headers
 
   //catching path (url)
-  const reqUrl = url.parse(request.url, true);
-  const pathname = reqUrl.pathname;
+  const reqUrl = url.parse(request.url, true); //huselt orj irsen URL
+  const pathname = reqUrl.pathname; //huselteed pathname awla
   //catchin method
-  const method = request.method;
+  const method = request.method; //yamar toroliin method um be
   if (method === "OPTIONS") {
     response.writeHead(200); //responsepond with 200 OK for preflight
     response.end();
@@ -61,7 +62,7 @@ const server = http.createServer(async (request, response) => {
   //1. POsT method --> create data
   if (pathname === "/api/goods/" && method === "POST") {
     //create
-    const data = await parseBody(request); // <-- hereglechees irsen data
+    const data = await parseBody(request); // <-- hereglechees irsen data,yamar medeelel vvsgehee huselteesee awj bn
     console.log(data);
     const detailedItem = {
       id: currentId,
@@ -71,7 +72,7 @@ const server = http.createServer(async (request, response) => {
       quantity: data.quantity,
       description: data.description,
     }; //<-- hadgalj bga detailed data medeelel
-    detailedItems.push(detailedItem);
+    detailedItems.push(detailedItem); //deer vvsgesen array ruugaa nemj hj ogj bn
 
     const briefItem = {
       id: currentId,
@@ -85,7 +86,7 @@ const server = http.createServer(async (request, response) => {
 
     currentId++;
 
-    response.writeHead(201, { "Content-type": "application/text" });
+    response.writeHead(201, { "Content-type": "application/text" }); //huselt ogson hereglegchruu hariu ogj bn
     response.end("Successfully created an item");
 
     // 2. GET method--> get a data
@@ -95,9 +96,9 @@ const server = http.createServer(async (request, response) => {
 
     // 3. GET method--> get by ID
   } else if (pathname.startsWith("/api/goods/") && method === "GET") {
-    const paths = pathname.split("/"); // array ruu hiij ogj bn
-    const id = parseInt(paths[3]);
-    const selectedItem = detailedItems.find((item) => item.id === id);
+    const paths = pathname.split("/"); // paths gdg array ruu hiij ogj bn
+    const id = parseInt(paths[3]); // paths gdg array iin 3dahid indexiig salgaj awj bn, irsen ni data STRING bh uchiraas INT bolgoj horwvvlj bn
+    const selectedItem = detailedItems.find((item) => item.id === id); //salgaj awsan ID g detailedItems s haij bn, find loop-r each iterationr yawj bn
     if (selectedItem) {
       response.writeHead(200, { "Content-Type": "application/json" });
       response.end(JSON.stringify(selectedItem));
@@ -113,12 +114,13 @@ const server = http.createServer(async (request, response) => {
 
     // hadgalsan elemnetuud dotroos tuhain ogogdson id tai medeeliin indexiiig ni awch bn
     const index = detailedItems.findIndex((item) => item.id === id);
-
+    //tiim element oldoogui yu
     if (index === -1) {
       response.writeHead(404, { "Content-Type": "application/json" });
       response.end(JSON.stringify({ error: "Item not found" }));
     } else {
-      const data = await parseBody(request);
+      //oldchihson bol
+      const data = await parseBody(request); //oldsonoo iim blgoj oorchil
       // Items[index] = { id: detailedItems[index].id, ...data};
       detailedItems[index] = {
         ...detailedItems[index],
@@ -146,7 +148,7 @@ const server = http.createServer(async (request, response) => {
       response.writeHead(404, { "Content-Type": "application/json" });
       response.end(JSON.stringify({ error: "Item not found" }));
     } else {
-      detailedItems.splice(index, 1);
+      detailedItems.splice(index, 1); //detailsItem-n tuhain index-s 1 elementiig ustga
       briefItems.splice(index, 1);
 
       saveDateToFile();
