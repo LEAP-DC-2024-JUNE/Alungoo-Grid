@@ -23,10 +23,9 @@ const UpdateFruitButton = ({ params }) => {
     fecthData();
   }, []);
 
-  const handleClick = (e) => {
+  const handleClick = async (e) => {
     e.preventDefault();
-    console.log(data);
-    fetch(`http://127.0.0.1:3001/api/goods/${id}`, {
+    const response = await fetch(`http://127.0.0.1:3001/api/goods/${id}`, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",
@@ -38,7 +37,9 @@ const UpdateFruitButton = ({ params }) => {
   return (
     <div className=" flex flex-col items-center m-20 gap-5">
       <div className="">
-        <h1 className=" text-lg font-semibold m-2">Add new items in cart</h1>
+        <h1 className=" text-lg font-semibold my-10 italic text-center">
+          Update items in cart
+        </h1>
         <label htmlFor="productName">Product Name: </label>
         <input
           type="text"
@@ -133,8 +134,8 @@ const UpdateFruitButton = ({ params }) => {
           placeholder=" Description"
         ></input>
       </div>
-      <div className=" flex flex-row justify-center gap-3">
-        <Link href="/goods" className=" border-2 px-4 py-1 hover:bg-green-50">
+      <div className=" flex flex-row justify-center gap-3 my-5">
+        <Link href="/goods" className=" border-2 px-4 py-1 hover:bg-green-200">
           {" "}
           ← Go Back
         </Link>

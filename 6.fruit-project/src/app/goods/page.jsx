@@ -17,6 +17,7 @@ const Fruits = async () => {
               price={product.price}
               id={product.id}
               pic={product.image}
+              qty={product.quantity}
             />
           </div>
         );

@@ -1,5 +1,7 @@
+//API code
+
 const express = require("express");
-const router = express.Router();
+const router = express.Router(); // routeree orulj irne expreesseesee
 
 let items = [];
 let currentId = 1;
@@ -19,6 +21,7 @@ router.get("", (req, res) => {
 });
 //GET method => read a single item by ID
 router.get("/:id", (req, res) => {
+  //"/api/items" + id
   const selectedItem = items.find(
     (item) => item.id === parseInt(req.params.id)
   );
@@ -54,4 +57,4 @@ router.delete("/:id", (req, res) => {
   res.json({ message: "Item is deleted" });
 });
 
-module.exports = router;
+module.exports = router; // routeraa modelur uu hj ogj bn

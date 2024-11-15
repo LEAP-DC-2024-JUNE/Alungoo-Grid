@@ -14,17 +14,16 @@ const NewItem = () => {
     description: "",
   });
 
-  const handleClick = (e) => {
+  const handleClick = async (e) => {
     e.preventDefault();
-    console.log(data);
-    fetch("http://127.0.0.1:3001/api/goods/", {
-      mode: "no-cors",
+    const response = await fetch("http://127.0.0.1:3001/api/goods/", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
       body: JSON.stringify(data),
     });
+
     setData({
       productName: "",
       image: "",
@@ -38,9 +37,11 @@ const NewItem = () => {
   };
 
   return (
-    <div className=" flex flex-col items-center m-20 gap-5">
-      <div className="">
-        <h1 className=" text-lg font-semibold m-2">Add new items in cart</h1>
+    <div className=" flex flex-col items-center my-32 gap-5 w-[500px] border-2 ml-[500px]">
+      <div className=" ">
+        <h1 className=" text-lg font-semibold my-10 italic text-center">
+          Add new items in cart
+        </h1>
         <label htmlFor="productName">Product Name: </label>
         <input
           type="text"
@@ -48,7 +49,7 @@ const NewItem = () => {
           name="productName"
           value={data.productName}
           onChange={(e) => setData({ ...data, productName: e.target.value })}
-          className=" text-black border-[2px] bg-green-50"
+          className=" text-black border-[2px] bg-green-50 inline-block"
           placeholder=" Product Name"
         ></input>
       </div>
@@ -60,7 +61,7 @@ const NewItem = () => {
           name="image"
           value={data.image}
           onChange={(e) => setData({ ...data, image: e.target.value })}
-          className=" text-black border-[2px] bg-green-50"
+          className=" text-black border-[2px] bg-green-50 "
           placeholder=" Image"
         ></input>
       </div>
@@ -84,7 +85,7 @@ const NewItem = () => {
           name="nutrients"
           value={data.nutrients}
           onChange={(e) => setData({ ...data, nutrients: e.target.value })}
-          className=" text-black border-[2px] bg-green-50"
+          className=" text-black border-[2px] bg-green-50 "
           placeholder=" Nutrients"
         ></input>
       </div>
@@ -113,17 +114,6 @@ const NewItem = () => {
         ></input>
       </div>
       <div>
-        <label>Organic</label>
-        <input
-          type="radio"
-          id="organic"
-          name="organic"
-          value={data.organic ? "true" : "false"}
-          onChange={(e) => setData({ ...data, organic: e.target.value })}
-          className=" text-black border-[2px] bg-green-50"
-        ></input>
-      </div>
-      <div>
         <label>Product Description: </label>
         <input
           type="text"
@@ -135,8 +125,19 @@ const NewItem = () => {
           placeholder=" Description"
         ></input>
       </div>
-      <div className=" flex flex-row justify-center gap-3">
-        <Link href="/goods" className=" border-2 px-4 py-1 hover:bg-green-50">
+      <div>
+        <label>Organic</label>
+        <input
+          type="radio"
+          id="organic"
+          name="organic"
+          value={data.organic ? "true" : "false"}
+          onChange={(e) => setData({ ...data, organic: e.target.value })}
+          className=" text-black border-[2px] bg-green-50"
+        ></input>
+      </div>
+      <div className=" flex flex-row justify-center gap-3 my-5">
+        <Link href="/goods" className=" border-2 px-4 py-1 hover:bg-green-200">
           {" "}
           ← Go Back
         </Link>
