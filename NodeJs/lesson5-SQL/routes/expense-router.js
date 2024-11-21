@@ -4,25 +4,31 @@ const db = require("../db");
 
 // Create POST method
 router.post("", (request, response) => {
-  const { date, description, type, amount } = request.body; // gadnaas orj irj bga
+  const { date, description, type, amount } = request.body;
+  console.log(request.body); // gadnaas orj irj bga
   const sql =
-    "INSERT INTO tb_expenses (c_date, c_description, fk_expense_type, c_amount) VALUES ( ?, ?, ?, ? )"; // sql d hiine
-  db.query(sql, [date, description, type, amount], (error, result) => {
-    // db iin query gedeg method duudaj ogj bn 3 params awj bn ,
-    //
-    if (error) {
-      console.log(
-        "error occured while inserting a new expense into db:" + error.message
-      );
-      return response.status(500).json({ error_message: error.message }); // { error_message: error.message } ni JSON data, internal server-error
+    "INSERT INTO tb_expenses (c_date, c_description, fk_expense_type, c_amount) VALUES (?, ?, ?, ?)"; // sql d hiine
+  db.query(
+    sql,
+    [date, description, parseInt(type), amount],
+    (error, result) => {
+      // db iin query gedeg method duudaj ogj bn 3 params awj bn ,
+      //
+      if (error) {
+        console.log(
+          "error occured while inserting a new expense into db:" + error.message
+        );
+        return response.status(500).json({ error_message: error.message }); // { error_message: error.message } ni JSON data, internal server-error
+      }
+      response.status(201).json({ message: "Expense is registered." });
     }
-    response.status(201).json({ message: "Expense is registered." });
-  });
+  );
 });
 
 // Get
 router.get("", (request, response) => {
-  const sql = "SELECT * FROM tb_expenses";
+  const sql =
+    "SELECT ex.c_date, ex.c_description, et.c_type, ex.c_amount  FROM tb_expenses ex INNER JOIN tb_expense_type et ON ex.fk_expense_type = et.pk_id";
   db.query(sql, (error, result) => {
     if (error) {
       console.log(
