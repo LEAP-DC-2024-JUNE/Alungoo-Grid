@@ -58,7 +58,7 @@ const EditExpenseModal = ({ expense, isOpen, onClose, setExpenses }) => {
   return (
     <Modal isOpen={isOpen} onClose={onClose} placement="top-center">
       <ModalContent>
-        <ModalHeader className="flex flex-col gap-1">Add Expense</ModalHeader>
+        <ModalHeader className="flex flex-col gap-1">Edit Expense</ModalHeader>
         <ModalBody>
           <Input
             autoFocus

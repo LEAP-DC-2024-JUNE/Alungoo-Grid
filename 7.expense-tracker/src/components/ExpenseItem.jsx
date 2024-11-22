@@ -5,6 +5,8 @@ import { Tooltip } from "@nextui-org/react";
 import { DeleteButton } from "./DeleteButton";
 import { useState, useEffect } from "react";
 import EditExpenseModal from "./EditExpenseModal";
+import { useTheme } from "next-themes";
+import { EditIconDark } from "@/svg/EditIconDark";
 
 const moment = require("moment");
 const formatDate = (date) => {
@@ -12,6 +14,7 @@ const formatDate = (date) => {
 };
 const ExpenseItem = ({ expense, setExpenses }) => {
   const [isOpen, setIsOpen] = useState(false);
+  const { theme, setTheme } = useTheme();
   const handleOpen = () => {
     setIsOpen(true);
   };
@@ -29,6 +32,13 @@ const ExpenseItem = ({ expense, setExpenses }) => {
   useEffect(() => {
     fetchExpenses();
   }, []);
+  let toggleTheme = () => {
+    if (theme == "dark") {
+      setTheme("light");
+    } else {
+      setTheme("dark");
+    }
+  };
 
   return (
     <tr>
@@ -40,7 +50,13 @@ const ExpenseItem = ({ expense, setExpenses }) => {
         <div className=" flex gap-4">
           <Tooltip content="Edit " color="default-50">
             <span className="text-lg text-default-400 cursor-pointer active:opacity-50">
-              <EditIcon onClick={handleOpen} />
+              <span>
+                {theme == "light" ? (
+                  <EditIcon onClick={handleOpen} />
+                ) : (
+                  <EditIconDark onClick={handleOpen} />
+                )}
+              </span>
               <EditExpenseModal
                 isOpen={isOpen}
                 onClose={handleClose}

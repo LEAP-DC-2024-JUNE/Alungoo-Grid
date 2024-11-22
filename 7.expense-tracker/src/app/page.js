@@ -14,7 +14,6 @@ const Home = () => {
   const handleClose = () => {
     setIsOpen(false);
   };
-  const { editId, setEditId } = useState(-1);
 
   const fetchData = async () => {
     try {
@@ -36,7 +35,7 @@ const Home = () => {
     <div className=" px-[200px] mt-20">
       <table className=" border-2 border-solid to-black ">
         <thead>
-          <tr className="bg-blue-300 text-white">
+          <tr className="bg-blue-700 text-white">
             <th className="text-left w-[15%] p-2">Date</th>
             <th className="text-left w-[30%] ">Description</th>
             <th className="text-left w-[20%]">Category</th>

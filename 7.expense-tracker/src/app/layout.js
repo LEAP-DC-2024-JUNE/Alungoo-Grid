@@ -3,6 +3,8 @@ import "./globals.css";
 import * as React from "react";
 import { NextUIProvider } from "@nextui-org/system";
 import Header from "../components/Header";
+import { ThemeProvider as NextThemesProvider } from "next-themes";
+
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
   variable: "--font-geist-sans",
@@ -26,8 +28,10 @@ export default function RootLayout({ children }) {
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <NextUIProvider>
-          <Header />
-          {children}
+          <NextThemesProvider attribute="class" defaultTheme="dark">
+            <Header />
+            {children}
+          </NextThemesProvider>
         </NextUIProvider>
       </body>
     </html>
