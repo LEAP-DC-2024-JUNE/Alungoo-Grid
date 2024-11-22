@@ -28,7 +28,7 @@ router.post("", (request, response) => {
 // Get
 router.get("", (request, response) => {
   const sql =
-    "SELECT ex.c_date, ex.c_description, et.c_type, ex.c_amount  FROM tb_expenses ex INNER JOIN tb_expense_type et ON ex.fk_expense_type = et.pk_id";
+    "SELECT ex.pk_id, ex.c_date, ex.c_description, et.c_type, ex.c_amount  FROM tb_expenses ex INNER JOIN tb_expense_type et ON ex.fk_expense_type = et.pk_id";
   db.query(sql, (error, result) => {
     if (error) {
       console.log(
@@ -60,19 +60,24 @@ router.get("/:id", (request, response) => {
 
 router.put("/:id", (request, response) => {
   const id = request.params.id;
+
   const sql =
-    "UPDATE tb_expenses SET c_date =? c_description =? fk_expense_type=? c_amount = ? WHERE pk_id = ?";
-  const { date, description, type, amount } = req.body; //orj irj bga info awj bga
-  db.query(sql, [date, description, type, amount, id], (error, result) => {
-    // db iin query gedeg method duudaj ogj bn 3 params awj bn
-    if (error) {
-      console.log(
-        "error occured while inserting a new expense into db:" + error.message
-      );
-      return response.status(500).json({ error_message: error.message }); // { error_message: error.message } ni JSON data, internal server-error
+    "UPDATE tb_expenses SET c_date = ?, c_description = ?, fk_expense_type= ?, c_amount = ? WHERE pk_id = ?";
+  const { date, description, type, amount } = request.body; //orj irj bga info awj bga
+  db.query(
+    sql,
+    [date, description, parseInt(type), amount, id],
+    (error, result) => {
+      // db iin query gedeg method duudaj ogj bn 3 params awj bn
+      if (error) {
+        console.log(
+          "error occured while inserting a new expense into db:" + error.message
+        );
+        return response.status(500).json({ error_message: error.message }); // { error_message: error.message } ni JSON data, internal server-error
+      }
+      response.json({ message: "Expense is updated." });
     }
-    response.json({ message: "Expense is updated." });
-  });
+  );
 });
 //delete method
 router.delete("/:id", (request, response) => {

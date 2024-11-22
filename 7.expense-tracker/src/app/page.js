@@ -14,6 +14,7 @@ const Home = () => {
   const handleClose = () => {
     setIsOpen(false);
   };
+  const { editId, setEditId } = useState(-1);
 
   const fetchData = async () => {
     try {
@@ -45,14 +46,19 @@ const Home = () => {
         </thead>
         <tbody>
           {expenses.map((expense, i) => (
-            <ExpenseItem expense={expense} key={i} />
+            <ExpenseItem
+              expense={expense}
+              setExpenses={setExpenses}
+              fetchData={fetchData}
+              key={i}
+            />
           ))}
         </tbody>
       </table>
 
       <div>
         <Button onClick={handleOpen} color="primary">
-          Add Expenses
+          + Add Expenses
         </Button>
         <AddExpenseModal isOpen={isOpen} onClose={handleClose} />
       </div>

@@ -1,14 +1,35 @@
 "use client";
 
-import { DeleteIcon } from "@/svg/DeleteIcon";
 import { EditIcon } from "@/svg/EditIcon";
 import { Tooltip } from "@nextui-org/react";
+import { DeleteButton } from "./DeleteButton";
+import { useState, useEffect } from "react";
+import EditExpenseModal from "./EditExpenseModal";
 
 const moment = require("moment");
 const formatDate = (date) => {
   return moment(date).format("L");
 };
-const ExpenseItem = ({ expense }) => {
+const ExpenseItem = ({ expense, setExpenses }) => {
+  const [isOpen, setIsOpen] = useState(false);
+  const handleOpen = () => {
+    setIsOpen(true);
+  };
+  const handleClose = () => {
+    setIsOpen(false);
+  };
+  const fetchExpenses = async () => {
+    const response = await fetch("http://127.0.0.1:3001/api/expenses");
+    const data = await response.json();
+    setExpenses(data); // update oorchlolt orj bga
+  };
+  const handleExpenseDeleted = async () => {
+    await fetchExpenses();
+  };
+  useEffect(() => {
+    fetchExpenses();
+  }, []);
+
   return (
     <tr>
       <td className="p-2 align-top">{formatDate(expense.c_date)}</td>
@@ -16,20 +37,21 @@ const ExpenseItem = ({ expense }) => {
       <td className="p-2 align-top">{expense.c_type}</td>
       <td className="p-2 align-top">${expense.c_amount}</td>
       <td className="p-2 align-top">
-        {/* <select>
-          <option value="" defaultValue={true} disabled hidden></option>
-          <option value="edit">Edit</option>
-          <option value="delete">Delete</option>
-        </select> */}
         <div className=" flex gap-4">
           <Tooltip content="Edit " color="default-50">
             <span className="text-lg text-default-400 cursor-pointer active:opacity-50">
-              <EditIcon />
+              <EditIcon onClick={handleOpen} />
+              <EditExpenseModal
+                isOpen={isOpen}
+                onClose={handleClose}
+                expense={expense}
+                setExpenses={setExpenses}
+              />
             </span>
           </Tooltip>
           <Tooltip color="danger" content="Delete">
             <span className="text-lg text-danger cursor-pointer active:opacity-50">
-              <DeleteIcon />
+              <DeleteButton expense={expense} onDelete={handleExpenseDeleted} />
             </span>
           </Tooltip>
         </div>
