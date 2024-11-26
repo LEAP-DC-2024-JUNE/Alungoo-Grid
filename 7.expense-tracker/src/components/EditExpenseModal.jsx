@@ -10,7 +10,7 @@ import {
   ModalFooter,
 } from "@nextui-org/react";
 
-const EditExpenseModal = ({ expense, isOpen, onClose, setExpenses }) => {
+const EditExpenseModal = ({ expense, isOpen, onClose, setExpenses, fetch }) => {
   const [data, setData] = useState({
     date: expense.c_date || "",
     description: expense.c_description || "",
@@ -22,15 +22,22 @@ const EditExpenseModal = ({ expense, isOpen, onClose, setExpenses }) => {
     console.log(data.description);
     const { id, value } = e.target;
     console.log(e.target);
-    setData((prevState) => ({
-      ...prevState,
-      [id]: value,
-    }));
+    if (e.target.name == "type") {
+      setData((prevState) => ({
+        ...prevState,
+        type: value,
+      }));
+    } else {
+      setData((prevState) => ({
+        ...prevState,
+        [id]: value,
+      }));
+    }
   };
 
   const handleEdit = async () => {
     try {
-      data.type = 1;
+      // data.type = 1;
       const res = await fetch(
         `http://127.0.0.1:3001/api/expenses/${expense.pk_id}`,
         {
@@ -41,6 +48,7 @@ const EditExpenseModal = ({ expense, isOpen, onClose, setExpenses }) => {
           body: JSON.stringify(data),
         }
       );
+      console.log(data);
       if (!res.ok) {
         throw new Error("Failed to update expense");
       }
@@ -91,7 +99,6 @@ const EditExpenseModal = ({ expense, isOpen, onClose, setExpenses }) => {
             placeholder="Select category"
             labelPlacement="outside"
             className="max-w-s "
-            // onChange={(e) => setData({ ...data, type: e.target.value })}
             onChange={handleChange}
             disableSelectorIconRotation
             selectorIcon={<SelectorIcon />}
@@ -100,10 +107,10 @@ const EditExpenseModal = ({ expense, isOpen, onClose, setExpenses }) => {
               Food
             </SelectItem>
             <SelectItem value="2" key="2">
-              Entertainment
+              Transportation
             </SelectItem>
             <SelectItem value="3" key="3">
-              Transportation
+              Fun
             </SelectItem>
             <SelectItem value="4" key="4">
               Accommodation

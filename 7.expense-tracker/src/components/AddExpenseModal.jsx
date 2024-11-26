@@ -10,20 +10,21 @@ import {
 } from "@nextui-org/react";
 import { useState } from "react";
 
-const AddExpenseModal = ({ isOpen, onClose }) => {
+const AddExpenseModal = ({ isOpen, onClose, fetchData }) => {
   const initialData = {
     date: "",
     description: "",
-    type: 0,
+    type: "",
     amount: 0,
   };
   const [data, setData] = useState(initialData);
 
   const handleChange = (e) => {
-    const id = e.target.id;
+    const name = e.target.name;
     const value = e.target.value;
     console.log(e.target);
-    setData((prevState) => ({ ...prevState, [id]: value }));
+
+    setData((prevState) => ({ ...prevState, [name]: value }));
   };
   const handleValueChange = (value, name, values) => {
     setData((prevState) => ({ ...prevState, amount: parseFloat(value) }));
@@ -31,7 +32,7 @@ const AddExpenseModal = ({ isOpen, onClose }) => {
 
   const handleClick = async () => {
     console.log(data);
-    data.type = 1;
+    // data.type = 1;
     await fetch("http://127.0.0.1:3001/api/expenses", {
       method: "POST",
       headers: {
@@ -39,6 +40,7 @@ const AddExpenseModal = ({ isOpen, onClose }) => {
       },
       body: JSON.stringify(data),
     });
+    fetchData();
   };
 
   return (
@@ -86,10 +88,10 @@ const AddExpenseModal = ({ isOpen, onClose }) => {
               Food
             </SelectItem>
             <SelectItem value="2" key="2">
-              Entertainment
+              Transportation
             </SelectItem>
             <SelectItem value="3" key="3">
-              Transportation
+              Fun
             </SelectItem>
             <SelectItem value="4" key="4">
               Accommodation

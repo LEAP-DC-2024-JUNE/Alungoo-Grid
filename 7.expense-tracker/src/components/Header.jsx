@@ -29,19 +29,12 @@ export default function Header() {
   return (
     <Navbar shouldHideOnScroll>
       <NavbarBrand>
-        <p className="font-bold text-inherit text-blue-700">MY BUDGET</p>
+        <p className="font-bold  text-blue-400 font-serif">MY EXPENSE</p>
       </NavbarBrand>
-      <NavbarContent className="hidden sm:flex gap-4" justify="center">
-        <NavbarItem>
-          <Link
-            color="foreground"
-            href="#"
-            className=" text-blue-700 font-bold"
-          >
-            Expenses
-          </Link>
-        </NavbarItem>
-      </NavbarContent>
+      <NavbarContent
+        className="hidden sm:flex gap-4"
+        justify="center"
+      ></NavbarContent>
       <NavbarContent justify="end">
         <NavbarItem>
           <Button as={Link} color="primary" href="#" variant="flat">

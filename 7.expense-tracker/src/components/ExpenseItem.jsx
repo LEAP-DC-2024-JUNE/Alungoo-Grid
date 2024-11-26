@@ -42,11 +42,11 @@ const ExpenseItem = ({ expense, setExpenses }) => {
 
   return (
     <tr>
-      <td className="p-2 align-top">{formatDate(expense.c_date)}</td>
-      <td className="p-2 align-top">{expense.c_description}</td>
-      <td className="p-2 align-top">{expense.c_type}</td>
-      <td className="p-2 align-top">${expense.c_amount}</td>
-      <td className="p-2 align-top">
+      <td className="p-2 align-top text-sm ">{formatDate(expense.c_date)}</td>
+      <td className="p-2 align-top text-sm">{expense.c_description}</td>
+      <td className="p-2 align-top text-sm">{expense.c_type}</td>
+      <td className="p-2 align-top text-sm">${expense.c_amount}</td>
+      <td className="p-2 align-top text-sm">
         <div className=" flex gap-4">
           <Tooltip content="Edit " color="default-50">
             <span className="text-lg text-default-400 cursor-pointer active:opacity-50">
@@ -62,6 +62,7 @@ const ExpenseItem = ({ expense, setExpenses }) => {
                 onClose={handleClose}
                 expense={expense}
                 setExpenses={setExpenses}
+                fetch={fetchExpenses}
               />
             </span>
           </Tooltip>
