@@ -19,9 +19,8 @@ const EditExpenseModal = ({ expense, isOpen, onClose, setExpenses, fetch }) => {
   });
 
   const handleChange = (e) => {
-    console.log(data.description);
     const { id, value } = e.target;
-    console.log(e.target);
+
     if (e.target.name == "type") {
       setData((prevState) => ({
         ...prevState,
@@ -48,7 +47,7 @@ const EditExpenseModal = ({ expense, isOpen, onClose, setExpenses, fetch }) => {
           body: JSON.stringify(data),
         }
       );
-      console.log(data);
+      console.log(expense.pk_id);
       if (!res.ok) {
         throw new Error("Failed to update expense");
       }

@@ -64,6 +64,7 @@ router.put("/:id", (request, response) => {
   const sql =
     "UPDATE tb_expenses SET c_date = ?, c_description = ?, fk_expense_type= ?, c_amount = ? WHERE pk_id = ?";
   const { date, description, type, amount } = request.body; //orj irj bga info awj bga
+  console.log(request.body);
   db.query(
     sql,
     [date, description, parseInt(type), amount, id],

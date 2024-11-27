@@ -19,6 +19,7 @@ const Home = () => {
 
   const fetchData = async () => {
     try {
+      console.log("fetchData");
       const res = await fetch("http://127.0.0.1:3001/api/expenses");
       if (!res.ok) throw new Error("Failed to fetch data");
       const data = await res.json();
