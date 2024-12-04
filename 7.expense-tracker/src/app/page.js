@@ -4,17 +4,27 @@ import { useEffect, useState } from "react";
 import AddExpenseModal from "@/components/AddExpenseModal";
 import ExpenseItem from "@/components/ExpenseItem";
 import { Chart } from "@/components/Chart";
-import { LoadingButton } from "@/components/LoadingButton";
+import LoadingButton from "@/components/LoadingButton";
+import IncomeItem from "@/components/IncomeItem";
+import AddIncomeModal from "@/components/AddIncomeModal";
 
 const Home = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [isOpenIncomeModal, setIsOpenIncomeModal] = useState(false);
   const [expenses, setExpenses] = useState([]);
+  const [incomes, setIncome] = useState([]);
   const [loading, setLoading] = useState(true);
   const handleOpen = () => {
     setIsOpen(true);
   };
+  const handleOpenIncomeModal = () => {
+    setIsOpenIncomeModal(true);
+  };
   const handleClose = () => {
     setIsOpen(false);
+  };
+  const handleCloseIncomeModal = () => {
+    setIsOpenIncomeModal(false);
   };
 
   const fetchData = async () => {
@@ -29,8 +39,19 @@ const Home = () => {
     }
   };
 
+  const fetchIncome = async () => {
+    try {
+      const res = await fecth("http://127.0.0.1:3010/api/items");
+      if (!res.ok) throw new Error("Failed to fetch income data");
+      const income = await res.json();
+      setIncome(income);
+    } catch (err) {
+      console.log(err);
+    }
+  };
   useEffect(() => {
     setLoading(true);
+    fetchIncome();
     fetchData().finally(() => setLoading(false));
   }, []);
   if (loading)
@@ -40,17 +61,14 @@ const Home = () => {
       </div>
     );
   return (
-    <div className=" flex flex-row gap-10 justify-center mt-5 ">
-      <div>
-        <Chart />
-      </div>
+    <div className=" flex flex-row gap-10 justify-center mt-5 flex-wrap px-[12rem]">
       <div className=" flex flex-col gap-1 ">
         <table className=" border-2 border-solid to-black ">
           <thead>
-            <tr className="bg-blue-600 text-white shadow-md ">
+            <tr className=" bg-[#F31260] text-white shadow-md ">
               <th className="text-left w-[100px] p-2 font-normal">Date</th>
-              <th className="text-left w-[220px] font-normal">Description</th>
-              <th className="text-left w-[100px] font-normal">Category</th>
+              <th className="text-left w-[200px] font-normal">Description</th>
+              <th className="text-left w-[150px] font-normal">Category</th>
               <th className="text-left w-[100px] font-normal">Amount</th>
               <th className="text-left w-[80px] p-2 font-normal">Action</th>
             </tr>
@@ -69,7 +87,7 @@ const Home = () => {
         <div>
           <Button
             onClick={handleOpen}
-            color="primary"
+            color="danger"
             variant="ghost"
             className=" -right-[470px]"
           >
@@ -81,6 +99,46 @@ const Home = () => {
             fetchData={fetchData}
           />
         </div>
+      </div>
+      <div>
+        <table className=" border-2 border-solid to-black ">
+          <thead>
+            <tr className="bg-[#17C964] text-white shadow-md ">
+              <th className="text-left w-[100px] p-2 font-normal">Date</th>
+              <th className="text-left w-[200px] font-normal">Description</th>
+              <th className="text-left w-[100px] font-normal">Amount</th>
+              <th className="text-left w-[80px] p-2 font-normal">Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            {incomes.map((income, i) => (
+              <IncomeItem
+                income={income}
+                setIncome={setIncome}
+                fetchIncome={fetchIncome}
+                key={i}
+              />
+            ))}
+          </tbody>
+        </table>
+        <div>
+          <Button
+            onClick={handleOpenIncomeModal}
+            color="success"
+            variant="ghost"
+            className=" -right-[340px]"
+          >
+            + Add Income
+          </Button>
+          <AddIncomeModal
+            isOpen={isOpenIncomeModal}
+            onClose={handleCloseIncomeModal}
+            fetchIncome={fetchIncome}
+          />
+        </div>
+      </div>
+      <div>
+        <Chart />
       </div>
     </div>
   );

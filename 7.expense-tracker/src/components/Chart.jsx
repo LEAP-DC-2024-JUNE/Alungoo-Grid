@@ -118,10 +118,10 @@ export const Chart = () => {
   }, []);
 
   return (
-    <div className=" w-[380px] ">
+    <div className=" w-[600px] ">
       <Card>
         <CardHeader>
-          <CardTitle>Expense Chart</CardTitle>
+          <CardTitle>Budget</CardTitle>
           <CardDescription>Jan - Dec 2024</CardDescription>
         </CardHeader>
         <CardContent>

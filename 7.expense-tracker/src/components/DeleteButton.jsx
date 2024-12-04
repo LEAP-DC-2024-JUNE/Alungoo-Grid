@@ -16,7 +16,6 @@ export const DeleteButton = ({ onDelete, expense }) => {
       console.log(expense);
 
       if (res.ok) {
-        prompt("ARE YOU SURE WANTS TO DELETE EXPENSE");
         onDelete();
       } else {
         console.error("Failed to delete the expense.");

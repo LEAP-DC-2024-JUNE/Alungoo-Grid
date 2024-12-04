@@ -1,9 +1,10 @@
-import { Button } from "@nextui-org/react";
+import { Spinner } from "@nextui-org/react";
 
-export const LoadingButton = () => {
+const LoadingButton = () => {
   return (
-    <Button color="primary" isLoading>
-      Loading
-    </Button>
+    <div className="flex gap-4">
+      <Spinner size="lg" />
+    </div>
   );
 };
+export default LoadingButton;

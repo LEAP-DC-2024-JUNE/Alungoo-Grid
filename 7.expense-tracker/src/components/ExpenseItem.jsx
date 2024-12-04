@@ -12,7 +12,7 @@ const moment = require("moment");
 const formatDate = (date) => {
   return moment(date).format("L");
 };
-const ExpenseItem = ({ expense, setExpenses }) => {
+const ExpenseItem = ({ expense, setExpenses, fetchData }) => {
   const [isOpen, setIsOpen] = useState(false);
   const { theme, setTheme } = useTheme();
   const handleOpen = () => {
@@ -21,16 +21,16 @@ const ExpenseItem = ({ expense, setExpenses }) => {
   const handleClose = () => {
     setIsOpen(false);
   };
-  const fetchExpenses = async () => {
-    const response = await fetch("http://127.0.0.1:3001/api/expenses");
-    const data = await response.json();
-    setExpenses(data); // update oorchlolt orj bga
-  };
+  // const fetchExpenses = async () => {
+  //   const response = await fetch("http://127.0.0.1:3001/api/expenses");
+  //   const data = await response.json();
+  //   setExpenses(data); // update oorchlolt orj bga
+  // };
   const handleExpenseDeleted = async () => {
-    await fetchExpenses();
+    await fetchData();
   };
   useEffect(() => {
-    fetchExpenses();
+    fetchData();
   }, []);
   let toggleTheme = () => {
     if (theme == "dark") {
@@ -62,7 +62,6 @@ const ExpenseItem = ({ expense, setExpenses }) => {
                 onClose={handleClose}
                 expense={expense}
                 setExpenses={setExpenses}
-                fetch={fetchExpenses}
               />
             </span>
           </Tooltip>
