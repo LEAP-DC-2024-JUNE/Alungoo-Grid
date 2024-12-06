@@ -12,10 +12,10 @@ import {
 
 const EditExpenseModal = ({ expense, isOpen, onClose, setExpenses, fetch }) => {
   const [data, setData] = useState({
-    date: expense.c_date || "",
-    description: expense.c_description || "",
-    type: expense.c_type || 0,
-    amount: expense.c_amount || 0,
+    date: "",
+    description: "",
+    type: 0,
+    amount: 0,
   });
 
   const handleChange = (e) => {
@@ -36,7 +36,6 @@ const EditExpenseModal = ({ expense, isOpen, onClose, setExpenses, fetch }) => {
 
   const handleEdit = async () => {
     try {
-      // data.type = 1;
       const res = await fetch(
         `http://127.0.0.1:3001/api/expenses/${expense.pk_id}`,
         {

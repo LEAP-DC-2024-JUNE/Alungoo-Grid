@@ -12,7 +12,7 @@ const Home = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isOpenIncomeModal, setIsOpenIncomeModal] = useState(false);
   const [expenses, setExpenses] = useState([]);
-  const [incomes, setIncome] = useState([]);
+  const [incomes, setIncomes] = useState([]);
   const [loading, setLoading] = useState(true);
   const handleOpen = () => {
     setIsOpen(true);
@@ -41,10 +41,10 @@ const Home = () => {
 
   const fetchIncome = async () => {
     try {
-      const res = await fecth("http://127.0.0.1:3010/api/items");
+      const res = await fetch("http://127.0.0.1:3010/api/item");
       if (!res.ok) throw new Error("Failed to fetch income data");
       const income = await res.json();
-      setIncome(income);
+      setIncomes(income);
     } catch (err) {
       console.log(err);
     }
@@ -63,6 +63,7 @@ const Home = () => {
   return (
     <div className=" flex flex-row gap-10 justify-center mt-5 flex-wrap px-[12rem]">
       <div className=" flex flex-col gap-1 ">
+        <span>Expenses</span>
         <table className=" border-2 border-solid to-black ">
           <thead>
             <tr className=" bg-[#F31260] text-white shadow-md ">
@@ -101,12 +102,13 @@ const Home = () => {
         </div>
       </div>
       <div>
+        <span>Income</span>
         <table className=" border-2 border-solid to-black ">
           <thead>
-            <tr className="bg-[#17C964] text-white shadow-md ">
-              <th className="text-left w-[100px] p-2 font-normal">Date</th>
-              <th className="text-left w-[200px] font-normal">Description</th>
-              <th className="text-left w-[100px] font-normal">Amount</th>
+            <tr className="bg-[#17C964] text-white shadow-md items-center ">
+              <th className="text-left w-[120px] p-2 font-normal">Date</th>
+              <th className="text-left w-[300px] font-normal">Income Source</th>
+              <th className="text-left w-[120px] font-normal">Amount</th>
               <th className="text-left w-[80px] p-2 font-normal">Action</th>
             </tr>
           </thead>
@@ -114,7 +116,7 @@ const Home = () => {
             {incomes.map((income, i) => (
               <IncomeItem
                 income={income}
-                setIncome={setIncome}
+                setIncomes={setIncomes}
                 fetchIncome={fetchIncome}
                 key={i}
               />
@@ -126,7 +128,7 @@ const Home = () => {
             onClick={handleOpenIncomeModal}
             color="success"
             variant="ghost"
-            className=" -right-[340px]"
+            className=" -right-[480px]"
           >
             + Add Income
           </Button>

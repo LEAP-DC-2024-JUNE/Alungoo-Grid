@@ -21,11 +21,7 @@ const ExpenseItem = ({ expense, setExpenses, fetchData }) => {
   const handleClose = () => {
     setIsOpen(false);
   };
-  // const fetchExpenses = async () => {
-  //   const response = await fetch("http://127.0.0.1:3001/api/expenses");
-  //   const data = await response.json();
-  //   setExpenses(data); // update oorchlolt orj bga
-  // };
+
   const handleExpenseDeleted = async () => {
     await fetchData();
   };

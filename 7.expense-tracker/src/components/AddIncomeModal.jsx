@@ -10,10 +10,10 @@ import {
 } from "@nextui-org/react";
 import { useState } from "react";
 
-const AddIncomeModal = ({ isOpen, onClose, fetchData }) => {
+const AddIncomeModal = ({ isOpen, onClose, fetchIncome }) => {
   const initialIncomeData = {
-    createdDate: "",
-    description: "",
+    createdData: "",
+    income: "",
     amount: 0,
   };
   const [incomeData, setIncomeData] = useState(initialIncomeData);
@@ -23,21 +23,21 @@ const AddIncomeModal = ({ isOpen, onClose, fetchData }) => {
     const value = e.target.value;
     console.log(e.target);
 
-    setData((prevState) => ({ ...prevState, [name]: value }));
+    setIncomeData((prevState) => ({ ...prevState, [name]: value }));
   };
   const handleValueChange = (value, name, values) => {
-    setData((prevState) => ({ ...prevState, amount: parseFloat(value) }));
+    setIncomeData((prevState) => ({ ...prevState, amount: parseFloat(value) }));
   };
 
   const handleClick = async () => {
-    await fetch("http://127.0.0.1:3010/api/items", {
+    await fetch("http://127.0.0.1:3010/api/item", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
       body: JSON.stringify(incomeData),
     });
-    fetchData();
+    fetchIncome();
   };
 
   return (
@@ -49,9 +49,9 @@ const AddIncomeModal = ({ isOpen, onClose, fetchData }) => {
             autoFocus
             isRequired
             type="date"
-            name="date"
-            id="date"
-            value={incomeData.createdDate}
+            name="createdData"
+            id="createdData"
+            value={incomeData.createdData}
             variant="bordered"
             onChange={handleChange}
           />
@@ -60,10 +60,10 @@ const AddIncomeModal = ({ isOpen, onClose, fetchData }) => {
             isRequired
             label="Income"
             labelPlacement="outside"
-            name="description"
-            id="description"
-            value={incomeData.description}
-            placeholder="Enter your description"
+            name="income"
+            id="income"
+            value={incomeData.income}
+            placeholder="Enter your income source from"
             className="max-w-fullmt-4"
             onChange={handleChange}
           />

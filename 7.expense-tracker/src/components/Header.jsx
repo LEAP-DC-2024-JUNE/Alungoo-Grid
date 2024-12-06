@@ -29,7 +29,7 @@ export default function Header() {
   return (
     <Navbar shouldHideOnScroll>
       <NavbarBrand>
-        <p className="font-bold  text-blue-400 font-serif text-xl bg-gradient-to-r from-blue-300 to-purple-300">
+        <p className="font-bold  text-blue-300 font-serif text-xl ">
           MY BUDGET
         </p>
       </NavbarBrand>

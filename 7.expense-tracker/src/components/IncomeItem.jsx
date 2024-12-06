@@ -2,17 +2,17 @@
 
 import { EditIcon } from "@/svg/EditIcon";
 import { Tooltip } from "@nextui-org/react";
-import { DeleteButton } from "./DeleteButton";
 import { useState, useEffect } from "react";
 import EditExpenseModal from "./EditExpenseModal";
 import { useTheme } from "next-themes";
 import { EditIconDark } from "@/svg/EditIconDark";
+import { IncomeDeleteButton } from "./IncomeDeleteButton";
 
 const moment = require("moment");
 const formatDate = (date) => {
   return moment(date).format("L");
 };
-const IncomeItem = ({ income, setIncome, fetchIncome }) => {
+const IncomeItem = ({ income, setIncomes, fetchIncome }) => {
   const [isOpen, setIsOpen] = useState(false);
   const { theme, setTheme } = useTheme();
   const handleOpen = () => {
@@ -21,12 +21,8 @@ const IncomeItem = ({ income, setIncome, fetchIncome }) => {
   const handleClose = () => {
     setIsOpen(false);
   };
-  //   const fetchExpenses = async () => {
-  //     const response = await fetch("http://127.0.0.1:3010/api/items");
-  //     const data = await response.json();
-  //     setExpenses(data); // update oorchlolt orj bga
-  //   };
-  const handleExpenseDeleted = async () => {
+
+  const handleIncomeDeleted = async () => {
     await fetchIncome();
   };
   useEffect(() => {
@@ -45,8 +41,8 @@ const IncomeItem = ({ income, setIncome, fetchIncome }) => {
       <td className="p-2 align-top text-sm ">
         {formatDate(income.createdData)}
       </td>
-      <td className="p-2 align-top text-sm">{income.description}</td>
-      <td className="p-2 align-top text-sm">{income.name}</td>
+
+      <td className="p-2 align-top text-sm">{income.income}</td>
       <td className="p-2 align-top text-sm">{income.amount}</td>
       <td className="p-2 align-top text-sm">
         <div className=" flex gap-4">
@@ -63,14 +59,17 @@ const IncomeItem = ({ income, setIncome, fetchIncome }) => {
                 isOpen={isOpen}
                 onClose={handleClose}
                 income={income}
-                setIncome={setIncome}
+                setIncomes={setIncomes}
                 fetchIncome={fetchIncome}
               />
             </span>
           </Tooltip>
           <Tooltip color="danger" content="Delete">
             <span className="text-lg text-danger cursor-pointer active:opacity-50">
-              <DeleteButton expense={expense} onDelete={handleExpenseDeleted} />
+              <IncomeDeleteButton
+                income={income}
+                onDelete={handleIncomeDeleted}
+              />
             </span>
           </Tooltip>
         </div>

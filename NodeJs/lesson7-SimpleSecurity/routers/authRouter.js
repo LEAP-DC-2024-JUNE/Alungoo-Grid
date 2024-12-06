@@ -5,4 +5,6 @@ const { signup, login } = require("../controllers/authControllers");
 router.post("/signup", signup);
 router.post("/login", login);
 
-modeule.exports = router;
+module.exports = router;
+
+//appjs-->router-->controller--> model
