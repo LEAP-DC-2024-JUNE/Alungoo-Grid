@@ -7,7 +7,7 @@ export function Promise() {
   const fetchData = () => {
     fetch(`http://dev.to/api/a`)
       .then((response) => response.json())
-      .then((data) => setArticle(data))
+      .then((data) => setArticles(data))
       .catch((error) => {
         setError(true);
       })

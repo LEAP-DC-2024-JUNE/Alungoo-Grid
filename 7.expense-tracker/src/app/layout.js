@@ -4,6 +4,7 @@ import * as React from "react";
 import { NextUIProvider } from "@nextui-org/system";
 import Header from "../components/Header";
 import { ThemeProvider as NextThemesProvider } from "next-themes";
+import { SideMenu } from "@/components/SideMenu";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -29,7 +30,8 @@ export default function RootLayout({ children }) {
       >
         <NextUIProvider>
           <NextThemesProvider attribute="class" defaultTheme="dark">
-            <Header />
+            <SideMenu />
+
             {children}
           </NextThemesProvider>
         </NextUIProvider>

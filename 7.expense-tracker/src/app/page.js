@@ -1,12 +1,14 @@
 "use client";
 import { Button } from "@nextui-org/react";
 import { useEffect, useState } from "react";
-import AddExpenseModal from "@/components/AddExpenseModal";
-import ExpenseItem from "@/components/ExpenseItem";
-import { Chart } from "@/components/Chart";
+import AddExpenseModal from "@/components/Expense/AddExpenseModal";
+import ExpenseItem from "@/components/Expense/ExpenseItem";
 import LoadingButton from "@/components/LoadingButton";
-import IncomeItem from "@/components/IncomeItem";
-import AddIncomeModal from "@/components/AddIncomeModal";
+import IncomeItem from "@/components/Income/IncomeItem";
+import AddIncomeModal from "@/components/Income/AddIncomeModal";
+import { CombinedChart } from "@/components/CombinedChart";
+import { TrendingDown } from "@/svg/TrendingDown";
+import { TrendingUp } from "@/svg/TrendingUp";
 
 const Home = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -61,86 +63,95 @@ const Home = () => {
       </div>
     );
   return (
-    <div className=" flex flex-row gap-10 justify-center mt-5 flex-wrap px-[12rem]">
-      <div className=" flex flex-col gap-1 ">
-        <span>Expenses</span>
-        <table className=" border-2 border-solid to-black ">
-          <thead>
-            <tr className=" bg-[#F31260] text-white shadow-md ">
-              <th className="text-left w-[100px] p-2 font-normal">Date</th>
-              <th className="text-left w-[200px] font-normal">Description</th>
-              <th className="text-left w-[150px] font-normal">Category</th>
-              <th className="text-left w-[100px] font-normal">Amount</th>
-              <th className="text-left w-[80px] p-2 font-normal">Action</th>
-            </tr>
-          </thead>
-          <tbody>
-            {expenses.map((expense, i) => (
-              <ExpenseItem
-                expense={expense}
-                setExpenses={setExpenses}
-                fetchData={fetchData}
-                key={i}
-              />
-            ))}
-          </tbody>
-        </table>
-        <div>
-          <Button
-            onClick={handleOpen}
-            color="danger"
-            variant="ghost"
-            className=" -right-[470px]"
-          >
-            + Add Expenses
-          </Button>
-          <AddExpenseModal
-            isOpen={isOpen}
-            onClose={handleClose}
-            fetchData={fetchData}
-          />
-        </div>
+    <div className=" border-1 border-purple-600 pl-[12rem]  p-20">
+      <div className="  text-white pl-[5rem]">ALL TRANSACTIONS</div>
+      <div className=" mt-4 px-[420px] ">
+        <CombinedChart />
       </div>
-      <div>
-        <span>Income</span>
-        <table className=" border-2 border-solid to-black ">
-          <thead>
-            <tr className="bg-[#17C964] text-white shadow-md items-center ">
-              <th className="text-left w-[120px] p-2 font-normal">Date</th>
-              <th className="text-left w-[300px] font-normal">Income Source</th>
-              <th className="text-left w-[120px] font-normal">Amount</th>
-              <th className="text-left w-[80px] p-2 font-normal">Action</th>
-            </tr>
-          </thead>
-          <tbody>
-            {incomes.map((income, i) => (
-              <IncomeItem
-                income={income}
-                setIncomes={setIncomes}
-                fetchIncome={fetchIncome}
-                key={i}
-              />
-            ))}
-          </tbody>
-        </table>
-        <div>
-          <Button
-            onClick={handleOpenIncomeModal}
-            color="success"
-            variant="ghost"
-            className=" -right-[480px]"
-          >
-            + Add Income
-          </Button>
-          <AddIncomeModal
-            isOpen={isOpenIncomeModal}
-            onClose={handleCloseIncomeModal}
-            fetchIncome={fetchIncome}
-          />
+      <div className=" flex flex-row gap-10 justify-center mt-20  ">
+        <div className=" flex flex-col gap-1 ">
+          <div className=" flex flex-row gap-4 justify-between align-baseline">
+            <div className=" flex gap-1 items-center ">
+              <TrendingDown />
+              <span>Expense</span>
+            </div>
+            <Button onClick={handleOpen} color="danger" variant="ghost">
+              + Add Expense
+            </Button>
+          </div>
+          <table className=" border-1 border-solid to-black ">
+            <thead>
+              <tr className=" bg-[#c20e4d] text-white ">
+                <th className="text-left w-[100px] p-2 font-normal">Date</th>
+                <th className="text-left w-[200px] font-normal">Description</th>
+                <th className="text-left w-[150px] font-normal">Category</th>
+                <th className="text-left w-[100px] font-normal">Amount</th>
+                <th className="text-left w-[80px] p-2 font-normal">Action</th>
+              </tr>
+            </thead>
+            <tbody>
+              {expenses.map((expense, i) => (
+                <ExpenseItem
+                  expense={expense}
+                  setExpenses={setExpenses}
+                  fetchData={fetchData}
+                  key={i}
+                />
+              ))}
+            </tbody>
+          </table>
+          <div>
+            <AddExpenseModal
+              isOpen={isOpen}
+              onClose={handleClose}
+              fetchData={fetchData}
+            />
+          </div>
         </div>
-      </div>
-      <div>
-        <Chart />
+        <div className=" flex flex-col gap-1 ">
+          <div className=" flex flex-row gap-4 justify-between align-baseline">
+            <div className=" flex gap-1 items-center ">
+              <TrendingUp />
+              <span>Income</span>
+            </div>
+            <Button
+              onClick={handleOpenIncomeModal}
+              color="primary"
+              variant="ghost"
+            >
+              + Add Income
+            </Button>
+          </div>
+          <table className=" border-1 border-solid to-black ">
+            <thead>
+              <tr className="bg-[#006FEE] text-white shadow-md items-center ">
+                <th className="text-left w-[120px] p-2 font-normal">Date</th>
+                <th className="text-left w-[300px] font-normal">
+                  Income Source
+                </th>
+                <th className="text-left w-[120px] font-normal">Amount</th>
+                <th className="text-left w-[80px] p-2 font-normal">Action</th>
+              </tr>
+            </thead>
+            <tbody>
+              {incomes.map((income, i) => (
+                <IncomeItem
+                  income={income}
+                  setIncomes={setIncomes}
+                  fetchIncome={fetchIncome}
+                  key={i}
+                />
+              ))}
+            </tbody>
+          </table>
+          <div>
+            <AddIncomeModal
+              isOpen={isOpenIncomeModal}
+              onClose={handleCloseIncomeModal}
+              fetchIncome={fetchIncome}
+            />
+          </div>
+        </div>
       </div>
     </div>
   );

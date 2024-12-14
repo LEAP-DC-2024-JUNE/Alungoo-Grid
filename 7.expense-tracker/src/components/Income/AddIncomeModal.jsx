@@ -1,6 +1,6 @@
 "use client";
 import { Input, Button, Textarea, Select, SelectItem } from "@nextui-org/react";
-import { SelectorIcon } from "../svg/SelectorIcon";
+
 import {
   Modal,
   ModalContent,
@@ -10,93 +10,64 @@ import {
 } from "@nextui-org/react";
 import { useState } from "react";
 
-const AddExpenseModal = ({ isOpen, onClose, fetchData }) => {
-  const initialData = {
-    date: "",
-    description: "",
-    type: "",
+const AddIncomeModal = ({ isOpen, onClose, fetchIncome }) => {
+  const initialIncomeData = {
+    createdData: "",
+    income: "",
     amount: 0,
   };
-  const [data, setData] = useState(initialData);
+  const [incomeData, setIncomeData] = useState(initialIncomeData);
 
   const handleChange = (e) => {
     const name = e.target.name;
     const value = e.target.value;
     console.log(e.target);
 
-    setData((prevState) => ({ ...prevState, [name]: value }));
+    setIncomeData((prevState) => ({ ...prevState, [name]: value }));
   };
   const handleValueChange = (value, name, values) => {
-    setData((prevState) => ({ ...prevState, amount: parseFloat(value) }));
+    setIncomeData((prevState) => ({ ...prevState, amount: parseFloat(value) }));
   };
 
   const handleClick = async () => {
-    console.log(data);
-    // data.type = 1;
-    await fetch("http://127.0.0.1:3001/api/expenses", {
+    await fetch("http://127.0.0.1:3010/api/item", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify(data),
+      body: JSON.stringify(incomeData),
     });
-    fetchData();
+    fetchIncome();
   };
 
   return (
     <Modal isOpen={isOpen} onClose={onClose} placement="top-center">
       <ModalContent>
-        <ModalHeader className="flex flex-col gap-1">Add Expense</ModalHeader>
+        <ModalHeader className="flex flex-col gap-1">Add Income</ModalHeader>
         <ModalBody>
           <Input
             autoFocus
             isRequired
             type="date"
-            name="date"
-            id="date"
-            value={data.date}
+            name="createdData"
+            id="createdData"
+            value={incomeData.createdData}
             variant="bordered"
             onChange={handleChange}
           />
 
           <Textarea
             isRequired
-            label="Description"
+            label="Income"
             labelPlacement="outside"
-            name="description"
-            id="description"
-            value={data.description}
-            placeholder="Enter your description"
+            name="income"
+            id="income"
+            value={incomeData.income}
+            placeholder="Enter your income source from"
             className="max-w-fullmt-4"
             onChange={handleChange}
           />
-          <Select
-            isRequired
-            name="type"
-            id="type"
-            value={data.type}
-            label="Category"
-            placeholder="Select category"
-            labelPlacement="outside"
-            className="max-w-s "
-            // onChange={(e) => setData({ ...data, type: e.target.value })}
-            onChange={handleChange}
-            disableSelectorIconRotation
-            selectorIcon={<SelectorIcon />}
-          >
-            <SelectItem value="1" key="1">
-              Food
-            </SelectItem>
-            <SelectItem value="2" key="2">
-              Transportation
-            </SelectItem>
-            <SelectItem value="3" key="3">
-              Fun
-            </SelectItem>
-            <SelectItem value="4" key="4">
-              Accommodation
-            </SelectItem>
-          </Select>
+
           <Input
             isRequired
             type="number"
@@ -127,4 +98,4 @@ const AddExpenseModal = ({ isOpen, onClose, fetchData }) => {
   );
 };
 
-export default AddExpenseModal;
+export default AddIncomeModal;

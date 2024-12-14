@@ -3,7 +3,7 @@
 import { EditIcon } from "@/svg/EditIcon";
 import { Tooltip } from "@nextui-org/react";
 import { useState, useEffect } from "react";
-import EditExpenseModal from "./EditExpenseModal";
+import EditIncomeModal from "./EditIncomeModal";
 import { useTheme } from "next-themes";
 import { EditIconDark } from "@/svg/EditIconDark";
 import { IncomeDeleteButton } from "./IncomeDeleteButton";
@@ -43,7 +43,7 @@ const IncomeItem = ({ income, setIncomes, fetchIncome }) => {
       </td>
 
       <td className="p-2 align-top text-sm">{income.income}</td>
-      <td className="p-2 align-top text-sm">{income.amount}</td>
+      <td className="p-2 align-top text-sm">${income.amount}</td>
       <td className="p-2 align-top text-sm">
         <div className=" flex gap-4">
           <Tooltip content="Edit " color="default-50">
@@ -55,7 +55,7 @@ const IncomeItem = ({ income, setIncomes, fetchIncome }) => {
                   <EditIconDark onClick={handleOpen} />
                 )}
               </span>
-              <EditExpenseModal
+              <EditIncomeModal
                 isOpen={isOpen}
                 onClose={handleClose}
                 income={income}

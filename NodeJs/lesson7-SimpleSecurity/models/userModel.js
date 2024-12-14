@@ -18,7 +18,7 @@ const userSchema = new mongoose.Schema({
     type: String,
     required: [true, "Please provide your password"],
     minlength: 8,
-    select: false, //pass haruuldaggui!
+    select: false, //password ni  haruuldaggui!
   },
   confirmPassword: {
     type: String,
@@ -48,5 +48,5 @@ userSchema.methods.matchPassword = async function (
 // if (this.isModified("password")) {
 //   return next();
 
-const User = mongoose.model("User", userSchema);
+const User = mongoose.model("User", userSchema); //ene userSchema User gedeg nertei bolj hadgalagdanaa
 module.exports = User;

@@ -1,7 +1,6 @@
 "use client";
-import { useState, useEffect, use } from "react";
-import { SelectorIcon } from "../svg/SelectorIcon";
 import { Input, Button, Textarea, Select, SelectItem } from "@nextui-org/react";
+import { SelectorIcon } from "@/svg/SelectorIcon";
 import {
   Modal,
   ModalContent,
@@ -9,62 +8,45 @@ import {
   ModalBody,
   ModalFooter,
 } from "@nextui-org/react";
+import { useState } from "react";
 
-const EditExpenseModal = ({ expense, isOpen, onClose, setExpenses, fetch }) => {
-  const [data, setData] = useState({
+const AddExpenseModal = ({ isOpen, onClose, fetchData }) => {
+  const initialData = {
     date: "",
     description: "",
-    type: 0,
+    type: "",
     amount: 0,
-  });
+  };
+  const [data, setData] = useState(initialData);
 
   const handleChange = (e) => {
-    const { id, value } = e.target;
+    const name = e.target.name;
+    const value = e.target.value;
+    console.log(e.target);
 
-    if (e.target.name == "type") {
-      setData((prevState) => ({
-        ...prevState,
-        type: value,
-      }));
-    } else {
-      setData((prevState) => ({
-        ...prevState,
-        [id]: value,
-      }));
-    }
+    setData((prevState) => ({ ...prevState, [name]: value }));
+  };
+  const handleValueChange = (value, name, values) => {
+    setData((prevState) => ({ ...prevState, amount: parseFloat(value) }));
   };
 
-  const handleEdit = async () => {
-    try {
-      const res = await fetch(
-        `http://127.0.0.1:3001/api/expenses/${expense.pk_id}`,
-        {
-          method: "PUT",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify(data),
-        }
-      );
-      console.log(expense.pk_id);
-      if (!res.ok) {
-        throw new Error("Failed to update expense");
-      }
-      const updatedData = await res.json();
-      setExpenses((prevState) =>
-        prevState.map((item) =>
-          item.pk_id === updatedData.pk_id ? updatedData : item
-        )
-      );
-      onClose();
-    } catch (error) {
-      console.error("Error updating expense:", error);
-    }
+  const handleClick = async () => {
+    console.log(data);
+
+    await fetch("http://127.0.0.1:3001/api/expenses", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(data),
+    });
+    fetchData();
   };
+
   return (
     <Modal isOpen={isOpen} onClose={onClose} placement="top-center">
       <ModalContent>
-        <ModalHeader className="flex flex-col gap-1">Edit Expense</ModalHeader>
+        <ModalHeader className="flex flex-col gap-1">Add Expense</ModalHeader>
         <ModalBody>
           <Input
             autoFocus
@@ -97,6 +79,7 @@ const EditExpenseModal = ({ expense, isOpen, onClose, setExpenses, fetch }) => {
             placeholder="Select category"
             labelPlacement="outside"
             className="max-w-s "
+            // onChange={(e) => setData({ ...data, type: e.target.value })}
             onChange={handleChange}
             disableSelectorIconRotation
             selectorIcon={<SelectorIcon />}
@@ -135,12 +118,13 @@ const EditExpenseModal = ({ expense, isOpen, onClose, setExpenses, fetch }) => {
           <Button color="danger" variant="flat" onPress={onClose}>
             Cancel
           </Button>
-          <Button color="primary" onPress={onClose} onClick={handleEdit}>
-            Update
+          <Button color="primary" onPress={onClose} onClick={handleClick}>
+            Add
           </Button>
         </ModalFooter>
       </ModalContent>
     </Modal>
   );
 };
-export default EditExpenseModal;
+
+export default AddExpenseModal;

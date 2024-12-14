@@ -10,6 +10,7 @@ import {
 import { useTheme } from "next-themes";
 import { useEffect, useState } from "react";
 import { Switch } from "@nextui-org/react";
+import LogIn from "./LogIn/Login";
 
 export default function Header() {
   const [mounted, setMounted] = useState(false);
@@ -29,9 +30,7 @@ export default function Header() {
   return (
     <Navbar shouldHideOnScroll>
       <NavbarBrand>
-        <p className="font-bold  text-blue-300 font-serif text-xl ">
-          MY BUDGET
-        </p>
+        <p className="font-bold  text-blue-100  text-xl ">MY BUDGET</p>
       </NavbarBrand>
       <NavbarContent
         className="hidden sm:flex gap-4"
@@ -40,16 +39,13 @@ export default function Header() {
       <NavbarContent justify="end">
         <NavbarItem>
           <Button as={Link} color="primary" href="#" variant="flat">
-            Sign out
+            {/* <LogIn /> */}
+            Log In
           </Button>
         </NavbarItem>
         <NavbarItem>
           {" "}
-          <Switch
-            defaultSelected
-            aria-label="Automatic updates"
-            onClick={toggleTheme}
-          />
+          <Switch defaultSelected size="sm" onClick={toggleTheme} />
         </NavbarItem>
       </NavbarContent>
     </Navbar>

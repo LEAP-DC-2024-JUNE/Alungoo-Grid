@@ -1,6 +1,7 @@
 "use client";
+
 import { Input, Button, Textarea, Select, SelectItem } from "@nextui-org/react";
-import { SelectorIcon } from "../svg/SelectorIcon";
+
 import {
   Modal,
   ModalContent,
@@ -10,13 +11,13 @@ import {
 } from "@nextui-org/react";
 import { useState } from "react";
 
-const AddIncomeModal = ({ isOpen, onClose, fetchIncome }) => {
+const EditIncomeModal = ({ isOpen, onClose, fetchIncome, income }) => {
   const initialIncomeData = {
     createdData: "",
     income: "",
     amount: 0,
   };
-  const [incomeData, setIncomeData] = useState(initialIncomeData);
+  const [incomeData, setIncomeData] = useState(income);
 
   const handleChange = (e) => {
     const name = e.target.name;
@@ -30,8 +31,8 @@ const AddIncomeModal = ({ isOpen, onClose, fetchIncome }) => {
   };
 
   const handleClick = async () => {
-    await fetch("http://127.0.0.1:3010/api/item", {
-      method: "POST",
+    await fetch(`http://127.0.0.1:3010/api/item/${income._id}`, {
+      method: "PUT",
       headers: {
         "Content-Type": "application/json",
       },
@@ -90,7 +91,7 @@ const AddIncomeModal = ({ isOpen, onClose, fetchIncome }) => {
             Cancel
           </Button>
           <Button color="primary" onPress={onClose} onClick={handleClick}>
-            Add
+            Update
           </Button>
         </ModalFooter>
       </ModalContent>
@@ -98,4 +99,4 @@ const AddIncomeModal = ({ isOpen, onClose, fetchIncome }) => {
   );
 };
 
-export default AddIncomeModal;
+export default EditIncomeModal;

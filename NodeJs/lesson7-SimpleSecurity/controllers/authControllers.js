@@ -44,7 +44,7 @@ exports.login = async (req, res) => {
   }
   try {
     const user = await User.findOne({ email }).select("+password"); //tuhain hereglegchiin data medeeleliin DBs shalgaj bn
-    if (!user || !user.matchPassword(password, user.password)) {
+    if (!user || !(await user.matchPassword(password, user.password))) {
       //user.password bol Db -d hadgalagdsan pass
       return res.status(401).json({
         status: "fail",
