@@ -11,7 +11,7 @@ import {
 } from "@nextui-org/react";
 
 const EditExpenseModal = ({ expense, isOpen, onClose, setExpenses, fetch }) => {
-  const [data, setData] = useState({
+  const [expenseData, setExpenseData] = useState({
     date: "",
     description: "",
     type: 0,
@@ -33,14 +33,14 @@ const EditExpenseModal = ({ expense, isOpen, onClose, setExpenses, fetch }) => {
     const name = e.target.name;
     const value = e.target.value;
     console.log(e.target);
-    setData((prevState) => ({
+    setExpenseData((prevState) => ({
       ...prevState,
       [name]: value,
     }));
   };
-  const handleValueChange = (value, name, values) => {
-    setData((prevState) => ({ ...prevState, amount: parseFloat(value) }));
-  };
+  // const handleValueChange = (value, name, values) => {
+  //   setData((prevState) => ({ ...prevState, amount: parseFloat(value) }));
+  // };
 
   // if (e.target.name == "type") {
   //   setData((prevState) => ({
@@ -64,7 +64,7 @@ const EditExpenseModal = ({ expense, isOpen, onClose, setExpenses, fetch }) => {
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify(data),
+      body: JSON.stringify(expenseData),
     });
     fetch();
   };
@@ -79,7 +79,7 @@ const EditExpenseModal = ({ expense, isOpen, onClose, setExpenses, fetch }) => {
             type="date"
             name="date"
             id="date"
-            value={data.date}
+            value={expenseData.date}
             variant="bordered"
             onChange={handleChange}
           />
@@ -90,7 +90,7 @@ const EditExpenseModal = ({ expense, isOpen, onClose, setExpenses, fetch }) => {
             labelPlacement="outside"
             name="description"
             id="description"
-            value={data.description}
+            value={expenseData.description}
             placeholder="Enter your description"
             className="max-w-fullmt-4"
             onChange={handleChange}
@@ -99,7 +99,7 @@ const EditExpenseModal = ({ expense, isOpen, onClose, setExpenses, fetch }) => {
             isRequired
             name="type"
             id="type"
-            value={data.type}
+            value={expenseData.type}
             label="Category"
             placeholder="Select category"
             labelPlacement="outside"

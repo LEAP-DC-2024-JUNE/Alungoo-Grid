@@ -26,9 +26,9 @@ const EditIncomeModal = ({ isOpen, onClose, fetchIncome, income }) => {
 
     setIncomeData((prevState) => ({ ...prevState, [name]: value }));
   };
-  const handleValueChange = (value, name, values) => {
-    setIncomeData((prevState) => ({ ...prevState, amount: parseFloat(value) }));
-  };
+  // const handleValueChange = (value, name, values) => {
+  //   setIncomeData((prevState) => ({ ...prevState, amount: parseFloat(value) }));
+  // };
 
   const handleClick = async () => {
     await fetch(`http://127.0.0.1:3010/api/item/${income._id}`, {
