@@ -34,12 +34,12 @@ const HomePage = () => {
             You are <span className="text-red-600 underline">not </span> logged
             in!
           </h1>
-          <button
+          {/* <button
             className=" bg-blue-500 text-white font-medium px-2 rounded-md py-1"
             onClick={() => router.push("/login")}
           >
             Go to login page
-          </button>
+          </button> */}
         </div>
       )}
     </div>
